@@ -15,8 +15,3 @@ if first==second:
 else:
 	print	'wrong'
 
-print sys.argv[1]
-print sys.argv[2]
-print md5_file(sys.argv[1])
-
-print md5_file(sys.argv[2])
