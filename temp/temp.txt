@@ -1,0 +1,1 @@
+package: name='com.example.crackme0201' versionCode='1' versionName='1.0'
