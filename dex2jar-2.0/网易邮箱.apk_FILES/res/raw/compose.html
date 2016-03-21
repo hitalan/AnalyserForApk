@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      html {
+        margin:0px!important;
+        padding:0px!important;
+      }
+      body {
+        margin:14px 14px 0px 14px!important;
+        padding:0px !important;
+      }
+      a {color:#2a97ff!important;}
+      .ntes-wait-for-download-img {
+      }
+      blockquote {
+        margin:0px!important;
+        padding:0px 0px 0px 1ex!important;
+        border-left:#ccc 1px solid
+      }
+    </style>
+</head>
+<body>
+  <div id="rawContent" style="margin:0px 0px 0px 0px">${content}</div>
+</body>
+<script>
+/* called by java begin */
+function getText() {
+  var bodyText = document.body.innerText;
+  if (undefined === bodyText) {
+    bodyText = "";
+  }
+  //NETEASE_HELPER.setText(bodyText);
+  prompt(JSON.stringify({name:"$NE-MAIL-APP-SET-TEXT$", text:bodyText}));
+}
+ var imgsMap = {};
+
+  function queryAll(doc, selector) {
+    return (doc || document.documentElement).querySelectorAll(selector);
+  }
+
+  function addClass(ele, clsName) {
+    ele.className += " " + clsName;
+  }
+
+  function removeClass(ele, clsName) {
+    ele.className = ele.className.replace(clsName, "");
+  }
+
+  function handleAllImages() {
+    var imgs = queryAll(document.body, "img");
+    var r = /^cid:(.*)/i
+    for (var i = 0; i < imgs.length; ++i) {
+      var img = imgs[i];
+      var src = img.src;
+      if (r.test(src)) {
+        var tokens = src.match(r);
+        var cid = tokens[1];
+        if (cid && cid.length > 0) {
+          if (!imgsMap[cid]) {
+            imgsMap[cid] = [];
+          }
+          img.src = "file:///android_asset/bg.png?r=" + i;
+          addClass(img, 'ntes-wait-for-download-img');
+          imgsMap[cid].push(img);
+        }
+      }
+    }
+  }
+
+  window.showInline = function(cid, src) {
+    var imgs = imgsMap[cid];
+    if (imgs) {
+      for (var i = 0; i < imgs.length; ++i) {
+        var img = imgs[i];
+        removeClass(img, 'ntes-wait-for-download-img');
+        img.src = "file:///" + src;
+      }
+    }
+  }
+  handleAllImages();
+</script>
+</html>

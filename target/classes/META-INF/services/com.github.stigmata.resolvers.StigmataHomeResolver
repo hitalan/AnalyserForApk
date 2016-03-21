@@ -1,0 +1,2 @@
+com.github.stigmata.resolvers.MacOSXStigmataHomeResolver
+com.github.stigmata.resolvers.WindowsStigmataHomeResolver

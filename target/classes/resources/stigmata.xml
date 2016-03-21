@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<stigmata>
+  <filterset-list>
+    <filterset>
+      <name>threshold</name>
+      <!--
+        available value is `all' or `any':
+        match all of filters or match any of filters
+      -->
+      <match>all</match>
+      <filter-list>
+        <filter>
+          <filter-type>similarity</filter-type>
+          <criterion>GREATER_THAN</criterion>
+          <attributes>
+            <attribute>
+              <name>threshold</name>
+              <value>0.8</value>
+            </attribute>
+          </attributes>
+        </filter>
+        <filter>
+          <filter-type>name</filter-type>
+          <criterion>NOT_MATCH</criterion>
+          <attributes>
+            <attribute>
+              <name>value</name>
+              <value><!-- value --></value>
+            </attribute>
+          </attributes>
+        </filter>
+      </filter-list>
+    </filterset>
+    <filterset>
+      <name>elementcounts</name>
+      <match>all</match>
+      <filter-list>
+        <filter>
+          <filter-type>elementcount</filter-type>
+          <criterion>GREATER_EQUALS</criterion>
+          <attributes>
+            <attribute>
+              <name>target</name>
+              <value>ONE_OF_TARGETS</value>
+            </attribute>
+            <attribute>
+              <name>birthmarkType</name>
+              <value>uc</value>
+            </attribute>
+            <attribute>
+              <name>threshold</name>
+              <value>10</value>
+            </attribute>
+          </attributes>
+        </filter>
+      </filter-list>
+    </filterset>
+  </filterset-list>
+
+  <!--
+    Settings for wellknown classes.
+    パッケージの接頭辞，クラス名の接尾辞，クラスの完全修飾名で
+    設定することができる．
+   -->
+  <wellknown-classes>
+    <!--
+      Those names are excluded from wellknown classes, even if
+      following parts define the name is contain wellknown classes.
+
+      この中に含まれるものは他でいくら wellknown と設定されていても無視する．
+    -->
+    <exclude><fully-name><suffix>Exception</suffix></fully-name></exclude>
+    <exclude><fully-name><suffix>Error</suffix></fully-name></exclude>
+    <exclude><fully-name><match>java.lang.Throwable</match></fully-name></exclude>
+    <exclude><fully-name><match>java.lang.ThreadDeath</match></fully-name></exclude>
+
+    <!-- Package names includes JDK 1.5 -->
+    <package-name><prefix>java</prefix></package-name>
+    <package-name><prefix>javax</prefix></package-name>
+    <package-name><prefix>org.omg</prefix></package-name>
+    <package-name><prefix>org.xml</prefix></package-name>
+    <package-name><prefix>org.w3c</prefix></package-name>
+    <package-name><prefix>org.ietf</prefix></package-name>
+
+    <!-- その他，よく使われていそうなパッケージ -->
+    <package-name><prefix>org.gnu</prefix></package-name>
+    <package-name><prefix>com.apple</prefix></package-name>
+    <package-name><prefix>pnuts</prefix></package-name>
+    <package-name><prefix>org.eclipse</prefix></package-name>
+    <package-name><prefix>com.sun</prefix></package-name>
+    <package-name><prefix>sun</prefix></package-name>
+    <package-name><prefix>junit</prefix></package-name>
+    <package-name><prefix>org.apache</prefix></package-name>
+
+    <class-name><suffix>Test</suffix></class-name>
+<!--
+    <class-name><match>well.known.class.name</match></class-name>
+-->
+<!--
+    <fully-name><suffix>Test</suffix></fully-name>
+    <fully-name><prefix>fully.class.name.preffix</prefix></fully-name>
+    <fully-name><match>fully.class.name.match</match></fully-name>
+-->
+  </wellknown-classes>
+
+  <classpath-list>
+    <!-- classpath setting in url representation -->
+    <!--
+    <classpath>url/format/of/path/to/jar/file</classpath>
+    -->
+  </classpath-list>
+
+  <!-- Properties for birthmark context -->
+  <properties>
+    <property>
+      <name>birthmark.store.target</name>
+      <value>MEMORY</value>
+    </property>
+    <property>
+      <name>override.exists.plugin</name>
+      <value>yes</value>
+    </property>
+    <property>
+      <name>update.plugins.startup</name>
+      <value>yes</value>
+    </property>
+<!--
+  If you want to use latest plugins, uncomment below property.
+    <property>
+      <name>location.hermes.config</name>
+      <value>http://stigmata.sourceforge.jp/plugins/hermes.xml</value>
+    </property>
+-->
+<!--
+    <property>
+      <property-name>name</property-name>
+      <property-value>value</property-value>
+    </property>
+-->
+  </properties>
+</stigmata>

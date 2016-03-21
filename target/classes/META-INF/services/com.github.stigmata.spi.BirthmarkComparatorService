@@ -1,0 +1,6 @@
+com.github.stigmata.birthmarks.comparators.CosineSimilarityBirthmarkComparatorService
+com.github.stigmata.birthmarks.comparators.DPMatchingBirthmarkComparatorService
+com.github.stigmata.birthmarks.comparators.EditDistanceBirthmarkComparatorService
+com.github.stigmata.birthmarks.comparators.ExtendedEditDistanceBirthmarkComparatorService
+com.github.stigmata.birthmarks.comparators.LogicalAndBirthmarkComparatorService
+com.github.stigmata.birthmarks.comparators.PlainBirthmarkComparatorService

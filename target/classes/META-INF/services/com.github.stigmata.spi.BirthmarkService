@@ -1,0 +1,8 @@
+com.github.stigmata.birthmarks.cvfv.ConstantValueOfFieldVariableBirthmarkService
+com.github.stigmata.birthmarks.fmc.FrequencyMethodCallBirthmarkService
+com.github.stigmata.birthmarks.fuc.FrequencyUsedClassesBirthmarkService
+com.github.stigmata.birthmarks.kgram.KGramBasedBirthmarkService
+com.github.stigmata.birthmarks.is.InheritanceStructureBirthmarkService
+com.github.stigmata.birthmarks.smc.SequentialMethodCallBirthmarkService
+com.github.stigmata.birthmarks.uc.UsedClassesBirthmarkService
+com.github.stigmata.birthmarks.wsp.StackPatternBasedBirthmarkService

@@ -1,0 +1,2 @@
+com.github.stigmata.printer.xml.XmlResultPrinterService
+com.github.stigmata.printer.csv.CsvResultPrinterService

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<command-line name="stigmata">
+  <definitions>
+    <definition name="classpath">
+      <short-option>c</short-option>
+      <long-option>classpath</long-option>
+      <description>$(cli.option.classpath)</description>
+      <argument>REQUIRED</argument>
+      <argument-name>CLASSPATH</argument-name>
+      <value-separator>,</value-separator>
+      <multiple-args />
+    </definition>
+
+    <definition name="birthmark">
+      <short-option>b</short-option>
+      <long-option>birthmark</long-option>
+      <description>$(cli.option.birthmark)</description>
+      <argument>REQUIRED</argument>
+      <argument-name>BIRTHMARKS</argument-name>
+      <value-separator>,</value-separator>
+      <multiple-args />
+    </definition>
+
+    <definition name="format">
+      <short-option>f</short-option>
+      <long-option>format</long-option>
+      <description>$(cli.option.format)</description>
+      <argument>REQUIRED</argument>
+      <argument-name>FORMAT</argument-name>
+    </definition>
+
+    <definition name="filter">
+      <short-option>F</short-option>
+      <long-option>filter</long-option>
+      <description>$(cli.option.filter)</description>
+      <argument>REQUIRED</argument>
+      <argument-name>FILTER_NAME</argument-name>
+    </definition>
+
+    <definition name="config-file">
+      <long-option>config-file</long-option>
+      <description>$(cli.option.config-file)</description>
+      <argument>REQUIRED</argument>
+      <argument-name>CONFIG-FILE</argument-name>
+    </definition>
+
+    <definition name="reset-config">
+      <long-option>reset-config</long-option>
+      <description>$(cli.option.reset-config)</description>
+      <argument>NONE</argument>
+    </definition>
+
+    <definition name="extraction-unit">
+      <short-option>e</short-option>
+      <long-option>extraction-unit</long-option>
+      <argument>REQUIRED</argument>
+      <argument-name>EXTRACT_UNIT</argument-name>
+      <description>$(cli.option.extraction-unit)</description>
+    </definition>
+
+    <definition name="store-target">
+      <long-option>store-target</long-option>
+      <argument>REQUIRED</argument>
+      <argument-name>STORE_TARGET</argument-name>
+      <description>$(cli.option.store-target)</description>
+    </definition>
+  </definitions>
+
+  <available-options>
+    <option>classpath</option>
+    <option>birthmark</option>
+    <option>filter</option>
+    <option>format</option>
+    <option>extraction-unit</option>
+
+    <option>store-target</option>
+    <option>config-file</option>
+    <option>reset-config</option>
+  </available-options>
+</command-line>

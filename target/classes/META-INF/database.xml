@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<database name="birthmark-store">
+  <table name="extracted_birthmarks" description="extracted birthmark">
+    <column name="extracted_id"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="128"
+            description="stored date" />
+    <column name="unit"
+            required="true"
+            type="VARCHAR"
+            size="128"
+            description="extracted unit" />
+  </table>
+
+  <table name="extracted_birthmark">
+    <column name="extracted_id"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="128"
+            description="stored date" />
+    <column name="name"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="256"
+            description="location of target" />
+    <column name="location"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="256"
+            description="location of target" />
+    <column name="store_target"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="64"
+            description="target_x, target_y, target_xy?" />
+    <column name="type"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="64"
+            description="birthmark type name" />
+    <column name="element"
+            required="true"
+            primaryKey="false"
+            type="VARCHAR"
+            size="256"
+            description="birthmark element" />
+    <column name="index"
+            required="true"
+            primaryKey="false"
+            type="INTEGER"
+            size="10"
+            description="birthmark element order index" />
+    <foreign-key foreignTable="extracted_birthmark"
+      <reference local="extracted_id"
+                 foreign="extracted_id" />
+      <reference local="name"
+                 foreign="name" />
+      <reference local="location"
+                 foreign="location" />
+      <reference local="store_target"
+                 foreign="store_target" />
+    </foreign-key>
+    <foreign-key foreignTable="birthmark_type"
+      <reference local="type"
+                 foreign="type" />
+    </foreign-key>
+  </table>
+
+  <table name="extracted_birthmark_types">
+    <column name="extracted_id"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="128"
+            description="stored date" />
+    <column name="type"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="64"
+            description="birthmark type name" />
+    <foreign-key foreignTable="extracted_birthmarks"
+      <reference
+        local="extracted_id"
+        foreign="extracted_id" />
+    </foreign-key>
+    <foreign-key foreignTable="birthmark_type"
+      <reference
+        local="type"
+        foreign="type" />
+    </foreign-key>
+  </table>
+
+  <table name="birthmark_type"
+         description="birthmark type">
+    <column name="type"
+            required="true"
+            primaryKey="true"
+            type="VARCHAR"
+            size="64"
+            description="birthmark type name" />
+    <column name="display_name"
+            type="VARCHAR"
+            size="256" />
+    <column name="description"
+            type="VARCHAR"
+            size="256" />
+    <column name="class_name"
+            type="VARCHAR"
+            size="256" />
+    <column name="extractor"
+            type="VARCHAR"
+            size="256" />
+    <column name="comparator"
+            type="VARCHAR"
+            size="256" />
+  </table>
+</database>

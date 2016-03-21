@@ -1,0 +1,230 @@
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <ref name="stigmata"/>
+  </start>
+
+  <define name="stigmata">
+    <element name="stigmata">
+      <interleave>
+        <optional>
+          <ref name="birthmark-services"/>
+        </optional>
+        <optional>
+          <ref name="filterset-list"/>
+        </optional>
+        <optional>
+          <ref name="wellknown-classes"/>
+        </optional>
+        <optional>
+          <ref name="classpath-list"/>
+        </optional>
+        <optional>
+          <ref name="properties"/>
+        </optional>
+      </interleave>
+    </element>
+  </define>
+
+  <define name="birthmark-services">
+    <element name="birthmark-services">
+      <zeroOrMore>
+        <ref name="birthmark-service"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="birthmark-service">
+    <element name="birthmark-service">
+      <element name="type">
+        <data type="type"/>
+      </element>
+      <element name="display-name">
+        <data type="token"/>
+      </element>
+      <optional>
+        <element name="description">
+          <data type="string"/>
+        </element>
+      </optional>
+      <element name="extractor">
+        <data type="token"/>
+      </element>
+      <element name="comparator">
+        <data type="token"/>
+      </element>
+    </element>
+  </define>
+
+  <define name="filterset-list">
+    <element name="filterset-list">
+      <zeroOrMore>
+        <ref name="filterset"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="filterset">
+    <element name="filterset">
+      <element name="name">
+        <data type="token"/>
+      </element>
+      <element name="match">
+        <choice>
+          <value>any</value>
+          <value>all</value>
+        <choice>
+      </element>
+      <ref name="filter-list"/>
+    </element>
+  </define>
+
+  <define name="filter-list">
+    <element name="filter-list">
+      <zeroOrMore>
+        <ref name="filter"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="filter">
+    <element name="filter">
+      <element name="filter-type">
+        <data type="token"/>
+      </element>
+      <element name="criterion">
+        <choice>
+          <value>LESS_THAN</value>
+          <value>LESS_EQUALS</value>
+          <value>GREATER_THAN</value>
+          <value>GREATER_EQUALS</value>
+          <value>EQUALS_AS</value>
+          <value>NOT_EQUALS_AS</value>
+          <value>STARTS_WITH</value>
+          <value>NOT_STARTS_WITH</value>
+          <value>ENDS_WITH</value>
+          <value>NOT_ENDS_WITH</value>
+          <value>MATCH</value>
+          <value>NOT_MATCH</value>
+        </choice>
+      </element>
+      <ref name="attributes"/>
+    </element>
+  </define>
+
+  <define name="attributes">
+    <element name="attributes">
+      <zeroOrMore>
+        <ref name="attribute"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="attribute">
+    <element name="attribute">
+      <element name="name">
+        <data type="string"/>
+      </element>
+      <element name="value">
+        <data type="string"/>
+      </element>
+    </element>
+  </define>
+
+  <define name="wellknown-classes">
+    <element name="wellknown-classes">
+      <zeroOrMore>
+        <choice>
+          <ref name="exclude"/>
+          <ref name="judge-rule"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="classpath-list">
+    <element name="classpath-list">
+      <zeroOrMore>
+        <element name="classpath">
+          <data type="string" />
+        </element>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="exclude">
+    <element name="exclude">
+      <ref name="judge-rule"/>
+    </element>
+  </define>
+
+  <define name="judge-rule">
+    <choice>
+      <ref name="package-name"/>
+      <ref name="class-name"/>
+      <ref name="fully-name"/>
+    </choice>
+  </define>
+  <define name="package">
+    <element name="package">
+      <ref name="match-type"/>
+    </element>
+  </define>
+  <define name="class-name">
+    <element name="class-name">
+      <ref name="match-type"/>
+    </element>
+  </define>
+  <define name="fully-name">
+    <element name="fully-name">
+      <ref name="match-type"/>
+    </element>
+  </define>
+
+  <define name="match-type">
+    <choice>
+      <ref name="prefix"/>
+      <ref name="match"/>
+      <ref name="suffix"/>
+      <ref name="not-match"/>
+    </choice>
+  </define>
+
+  <define name="match">
+    <element name="match">
+      <data type="string"/>
+    </element>
+  </define>
+  <define name="not-match">
+    <element name="not-match">
+      <data type="string"/>
+    </element>
+  </define>
+  <define name="suffix">
+    <element name="suffix">
+      <data type="string"/>
+    </element>
+  </define>
+  <define name="prefix">
+    <element name="prefix">
+      <data type="string"/>
+    </element>
+  </define>
+
+  <define name="properties">
+    <element name="properties">
+      <ref name="property"/>
+    </element>
+  </define>
+
+  <define name="property">
+    <element name="property">
+      <element name="name">
+        <data type="token"/>
+      </element>
+      <element name="value">
+        <data type="string"/>
+      </element>
+    </element>
+  </define>
+</grammar>

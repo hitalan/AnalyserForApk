@@ -1,0 +1,4 @@
+com.github.stigmata.filter.BirthmarkElementCountComparisonPairFilterService
+com.github.stigmata.filter.SimilarityComparisonPairFilterService
+com.github.stigmata.filter.TargetNameComparisonPairFilterService
+com.github.stigmata.filter.TotalElementCountComparisonPairFilterService

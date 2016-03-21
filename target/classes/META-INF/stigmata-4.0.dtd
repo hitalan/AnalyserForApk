@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="euc-jp"?>
+
+<!ELEMENT classpath               (#PCDATA)>
+
+<!ELEMENT type                    (#PCDATA)>
+<!ELEMENT display-name            (#PCDATA)>
+<!ELEMENT description             (#PCDATA)>
+<!ELEMENT extractor               (#PCDATA)>
+<!ELEMENT comparator              (#PCDATA)>
+
+<!ELEMENT suffix                  (#PCDATA)>
+<!ELEMENT prefix                  (#PCDATA)>
+<!ELEMENT match                   (#PCDATA)>
+
+<!ELEMENT name                    (#PCDATA)>
+<!ELEMENT value                   (#PCDATA)>
+
+<!ELEMENT criterion               (#PCDATA)>
+<!ELEMENT filter-type             (#PCDATA)>
+
+<!ELEMENT package                 (suffix|prefix|match|not-match)>
+<!ELEMENT class-name              (suffix|prefix|match|not-match)>
+<!ELEMENT fully-name              (suffix|prefix|match|not-match)>
+
+<!ELEMENT exclude                 (package|class-name|fully-name)>
+<!ELEMENT wellknown-classes       ((exclude|package|class-name|fully-name)*)>
+
+<!ELEMENT property                (name,value)>
+<!ELEMENT properties              (property*)>
+
+<!ELEMENT birthmark-service       (type,display-name,description?,extractor,comparator)>
+<!ELEMENT birthmark-services      (birthmark-service*)>
+
+<!ELEMENT classpath-list          (classpath*)>
+
+<!ELEMENT attribute               (name,value)>
+<!ELEMENT attributes              (attribute*)>
+<!ELEMENT filter                  (filter-type,criterion,attributes)>
+<!ELEMENT filter-list             (filter*)>
+<!ELEMENT filterset               (name,match,filter-list)>
+<!ELEMENT filterset-list          (filterset*)>
+
+<!ELEMENT stigmata (birthmark-services,wellknown-classes?,classpath-list?,properties?,filterset-list?) >
+

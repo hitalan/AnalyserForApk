@@ -1,0 +1,4 @@
+jp.sourceforge.stigmata.ui.swing.filter.BirthmarkElementCountComparisonPairFilterComponentService
+jp.sourceforge.stigmata.ui.swing.filter.SimilarityComparisonPairFilterComponentService
+jp.sourceforge.stigmata.ui.swing.filter.TargetNameComparisonPairFilterComponentService
+jp.sourceforge.stigmata.ui.swing.filter.TotalElementCountComparisonPairFilterComponentService

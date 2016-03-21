@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html kitkat_title_height = '${kitkat_title_height}' content_width='${content_width}' client_width='${client_width}' need_scale='${need_scale}'>
+<head>
+<meta id='viewport' name='viewport' content='width=${width}'/>
+<style>
+  * {
+    word-break: break-word!important;
+  }
+  a {color:#2a97ff !important;}
+  html {
+      margin:0px!important;
+      padding:0px!important;
+  }
+  body {
+      margin:0px!important;
+      padding:0px!important;
+  }
+  img {
+    max-width:100%!important;
+  }
+
+  table img {
+    max-width:none!important;
+    display:block!important;
+  }
+
+  .ntes-wait-for-download-img {
+  }
+  .mail_master_ext_loading {
+    display:block!important;
+  }
+  .mail_master_ext_loading_error {
+    display:none!important;
+  }
+  .other_platform {
+    display:none!important;
+  }
+</style>
+</head>
+<body>
+  <div id="rawContent" style="margin:20px 20px 20px 20px">${content}</div>
+  <script type="text/javascript" src="file:///android_asset/appHostHelper.js"></script>
+  <script type="text/javascript" src="file:///android_asset/activity.js"></script>
+  <script>
+  var NE$ = function(qs, doc) {
+    return (doc || document).querySelectorAll(qs);
+  }
+  var getAttr = function(dom, name) {
+    return dom.getAttribute(name);
+  }
+  var curScale = 1.0;
+  var clientWidth = parseInt(getAttr(document.documentElement, "client_width")) || 360;
+  var contentWidth = parseInt(getAttr(document.documentElement, "content_width")) || 360;
+  var needExtendVP = true;
+  var needDelay = document.documentElement.scrollWidth > contentWidth;
+  var curVPWidth = contentWidth, curKKTitleHeight = 0;
+  function fixViewport(width, initScale) {
+    var viewport = document.getElementById("viewport");
+    if (viewport) {
+      var content = viewport.getAttribute("content");
+      var wc = undefined, ic = undefined;
+      if (width) {
+        width = Math.max(contentWidth, width);
+        wc =  "width=" + width;
+        if (content && content.length > 0) {
+          if (content.indexOf("width") !== -1) {
+            content = content.replace(/width=[^,]+/, wc)
+          } else {
+            content += "," + wc;
+          }
+        } else {
+          content = wc;
+        }
+      }
+      if (initScale) {
+        ic = "initial-scale=" + initScale;
+        if (content && content.length > 0) {
+          if (content.indexOf("initial-scale=") !== -1) {
+            content = content.replace(/initial-scale=[^,]+/, ic)
+          } else {
+            content += "," + ic;
+          }
+        } else {
+          content = ic;
+        }
+      }
+      viewport.setAttribute("content", content);
+    }
+  }
+  function getImgOriWidthOrHeight(img, name) {
+  	var w = img.style.width || getAttr(img, name);
+  	if (w && w.indexOf("%") == -1) {
+  		return parseInt(w);
+  	}
+  	return null;
+  }
+  function fixImgScale() {
+    var imgs = NE$("img");
+    for (var i = 0; i < imgs.length; ++i) {
+      var w = getImgOriWidthOrHeight(imgs[i], "width");
+      var h = getImgOriWidthOrHeight(imgs[i], "height");
+      if (!w && !h) {
+        imgs[i].style.setProperty("height", "auto", "important");
+      }
+    }
+  }
+  /* called by java begin */
+  // for android 4.4
+  function adjustKKTitleBar(kkHeight) {
+    if (undefined === kkHeight) {
+      kkHeight = parseFloat(getAttr(document.documentElement, "kitkat_title_height")) || 0;
+      kkHeight = kkHeight / curScale;
+    }
+    if (kkHeight > 0 && curKKTitleHeight != kkHeight) {
+      curKKTitleHeight = kkHeight;
+      //document.body.style.setProperty("padding-top", kkHeight + "px", "important");
+      var id = "163mail-kktitle-bar";
+      var kkBar = document.getElementById(id);
+      if (!kkBar) {
+        kkBar = document.createElement("div");
+        kkBar.style.width = "1px";
+        kkBar.id = id;
+        document.documentElement.insertBefore(kkBar, document.body);
+      }
+      kkBar.style.height = kkHeight + "px";
+    }
+  }
+  function resetViewPort() {
+    if (!shouldScale()) {
+      return;
+    }
+    var sw = document.body.scrollWidth;
+    var bodyW = document.body.clientWidth;
+    if (needExtendVP && (bodyW == contentWidth)) {
+      needExtendVP = false;
+      var content = document.getElementById("rawContent");
+      var ml = parseInt(content.style.marginLeft);
+      sw -= ml;
+      var f = sw / (bodyW - 40);
+      var margin = (20 * f) + "px";
+      sw += (40 * f);
+      content.style.setProperty("margin-left", margin, "important");
+      content.style.setProperty("margin-right", margin, "important");
+    }
+    curScale = clientWidth / sw;
+    var initScale = bodyW / sw;
+    // we use 0.95 as default scale to avoid scroll bar for some special device
+    if (sw > bodyW && curVPWidth != sw) {
+      curVPWidth = sw;
+      fixViewport(sw, Math.min(initScale, 0.95));
+    } else {
+      //fixViewport(undefined, 0.95);
+    }
+    fixImgScale();
+  }
+  function setBodyPadding(top, bottom) {
+    //document.body.style.setProperty("padding-top", top + "px", "important");
+    document.body.style.setProperty("padding-bottom", bottom + "px", "important");
+  }
+
+  function shouldScale() {
+    var needScale = getAttr(document.documentElement, "need_scale");
+    if ("false" == needScale) {
+        return false;
+    }
+    // 特殊邮件不进行缩放
+    var ele = document.getElementById("mail_master_mail_content_ext");
+    return !!!ele;
+  }
+
+  
+  function getText() {
+    var bodyText = document.body.innerText;
+    if (undefined === bodyText) {
+      bodyText = "";
+    }
+    //NETEASE_HELPER.setText(bodyText);
+    prompt(JSON.stringify({name:"$NE-MAIL-APP-SET-TEXT$", text:bodyText}));
+  }
+  
+  var waitBodyTimer = 0;
+  function tryToResetViewport() {
+    // 连续resetViewport会导致viewport渲染失效,改变viewport的宽度之后，JS获取的值有延时。
+    var times = 0;
+    waitBodyTimer = setInterval(function() {
+      var bodyW = document.body.clientWidth;
+      if ((bodyW == contentWidth) || (++times >= 5)) {
+        resetViewPort();
+        clearInterval(waitBodyTimer);
+      }
+    }, 100)
+    
+  }
+  
+  function orientationChanged(newContentWidth, newScreenWidth) {
+    if (clientWidth != newScreenWidth) {
+      clientWidth = newScreenWidth;
+      curVPWidth = contentWidth = newContentWidth;
+      fixViewport(newContentWidth, 1.0);
+      needExtendVP = true;
+      adjustKKTitleBar();
+      clearInterval(waitBodyTimer);
+      tryToResetViewport();
+    }
+  }
+  /* called by java end */
+  adjustKKTitleBar();
+  function resetVPAndAdjustKKTitle() {
+    if (needDelay) {
+      setTimeout(function() {
+        resetViewPort();
+        adjustKKTitleBar();
+      }, 0);
+    } else {
+      resetViewPort();
+      adjustKKTitleBar();
+    }
+  }
+
+  function processBigAttachment() {
+    var div = document.getElementById("QQMailBigAttach");
+    if (!!div) {
+      div.style.display="none";
+    }
+    div = document.getElementById("divNeteaseBigAttach");
+    if (!!div) {
+      div.style.display="none";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    resetVPAndAdjustKKTitle();
+    // 防止开始加载时部分恶心的手机上获取到错误的scrollwidth 和 bodywidth
+    tryToResetViewport();
+    processBigAttachment();
+    loadExtContent();
+  }, false);
+  var imgsMap = {};
+
+  window.reflowAndRepaint = function() {
+		document.body.style.overflow = "hidden";
+		document.body.offsetHeight;
+		document.body.style.overflow = "auto";
+		console.log("reflowAndRepaint");
+	}
+
+  function queryAll(doc, selector) {
+    return (doc || document.documentElement).querySelectorAll(selector);
+  }
+
+  function addClass(ele, clsName) {
+    ele.className += " " + clsName;
+  }
+
+  function removeClass(ele, clsName) {
+    ele.className = ele.className.replace(clsName, "");
+  }
+
+  function handleAllImages() {
+    var imgs = queryAll(document.body, "img");
+    var r = /^cid:(.*)/i
+    for (var i = 0; i < imgs.length; ++i) {
+      var img = imgs[i];
+      var src = img.src;
+      if (r.test(src)) {
+        var tokens = src.match(r);
+        var cid = tokens[1];
+        if (cid && cid.length > 0) {
+          if (!imgsMap[cid]) {
+            imgsMap[cid] = [];
+          }
+          img.src = "file:///android_asset/bg.png?r=" + i;
+          addClass(img, 'ntes-wait-for-download-img');
+          imgsMap[cid].push(img);
+        }
+      }
+    }
+  }
+  
+  var delayScaleTaskCount = 0;
+
+  function inlineOnloaded() {
+    reflowAndRepaint();
+    if (delayScaleTaskCount == 0) {
+      delayScaleTaskCount++;
+      window.setTimeout(function() {
+        delayScaleTaskCount--;
+        //reScale();
+      }, 500);
+    }
+  }
+
+  window.showInline = function(cid, src) {
+    var imgs = imgsMap[cid];
+    if (imgs) {
+      for (var i = 0; i < imgs.length; ++i) {
+        var img = imgs[i];
+        removeClass(img, 'ntes-wait-for-download-img');
+        //img.onload = inlineOnloaded;
+        img.src = "file:///" + src;
+      }
+    }
+  }
+
+  handleAllImages();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,535 @@
+about.message.file=/resources/about.html.ja
+license.file=/META-INF/license.txt.ja
+
+################################################
+# StigmataFrame
+################################################
+stigmata.frame.title=Stigmata: Java バースマークツールキット
+
+control.tab.label=コントロール
+control.tab.tooltip=バースマーク抽出・比較設定
+
+extract.tab.label=抽出結果 {0}
+extract.tab.tooltip=抽出したバースマーク({0}).
+
+compare.tab.label=比較結果 {0}
+compare.tab.tooltip=<{1}>と<{2}>を比較({0}).
+
+comparedetail.tab.label=比較詳細 {0}
+comparedetail.tab.tooltip={1}と{2}から{0}バースマークを抽出・比較した結果
+
+similaritygraph.tab.label=類似性グラフ {0}
+similaritygraph.tab.tooltip=類似度分布図
+
+mappinggraph.tab.label=MDSグラフ {0}
+mappinggraph.tab.tooltip=バースマーク類似度によるMDSのクラス分布
+
+store.description=結果の保存 ({0})
+
+fileMenu.menu.label=ファイル
+
+newframe.menuitem.label=新規フレーム
+newframe.menuitem.tooltip=新しいフレームを作成します
+
+installplugin.menuitem.label=プラグインのインストール...
+installplugin.menuitem.tooltip=Stigmataのプラグインをインストールします．
+installplugin.fileopen.description=Stigmataのプラグインjarファイル
+reload.after.installplugin=<html><body><p>プラグインのインストールは終了しました．<br>インストールしたプラグインを使うためには，Stigmataを再起動する必要があります．<br>再起動しますか．</p></body></html>
+reload.after.installplugin.title=Stigmataの再起動
+reload.manually.title=再起動
+reload.manually=<html><body><p>インストールしたプラグインを使うために，Stigmataを再起動，<br>もしくは，「${fileMenu.menu.label}」メニューから「${refreshsetting.menuitem.label}」を選択してください．</p></body></html>
+
+install.error.title=インストール失敗
+install.error={0}: インストールに失敗しました．\
+原因は以下の通りです．
+install.error.file.missing=ファイルが見つかりません．
+install.error.servicedescriptor.missing=サービス記述子がjarファイル内に含まれていません．
+install.error.notjarfile=jarファイルではありません．
+
+opensettingdir.menuitem.label=設定ディレクトリを開く
+opensettingdir.menuitem.tooltip=Stigmata の設定ディレクトリを開きます．
+opensettingdir.fail=<html><body><p>フォルダを開けませんでした．</p><p>原因: {0}</p></body></html>
+opensettingdir.fail.title=フォルダが開けませんでした
+
+savesetting.menuitem.label=設定を保存
+savesetting.menuitem.tooltip=現在の設定を保存します
+
+exportsetting.menuitem.label=設定を別名で保存...
+exportsetting.menuitem.tooltip=設定をXMLファイルに保存します
+export.description=設定ファイル ({0})
+
+refreshsetting.menuitem.label=設定の再読込
+refreshsetting.menuitem.tooltip=現在の設定をもう一度読み込み，アプリケーションの再初期化を行います
+
+clearsetting.menuitem.label=設定を初期化
+clearsetting.menuitem.tooltip=設定をデフォルトに初期化します
+
+closetab.menuitem.label=タブを閉じる
+closetab.menuteim.tooltip=現在のタブを閉じます
+
+closeframe.menuitem.label=閉じる
+closeframe.menuitem.tooltip=現在のフレームを閉じます
+
+exit.menuitem.label=終了
+exit.menuitem.tooltip=アプリケーションを終了します
+
+helpmenu.menu.label=ヘルプ
+
+about.menuitem.label=このアプリケーションについて...
+about.menuitem.tooltip=このアプリケーションについての情報を表示します
+about.dialog.title=このアプリケーションについて
+
+license.menuitem.label=ライセンス...
+license.menuitem.tooltip=このアプリケーションのライセンスを表示します
+license.dialog.title=ライセンス
+
+helpmenu.menuitem.label=ヘルプ...
+helpmenu.menuitem.tooltip=ヘルプを表示
+
+experimentalmenu.menuitem.label=実験的機能モード
+experimentalmenu.menuitem.tooltip=実験的機能モードに移行 (より多くのバースマークの選択，また，新たなバースマークの定義が可能になります．ただし，まだ実験的な機能です)
+
+lookandfeel.menu.label=ルック&フィール
+
+cannotclosecontroltab.dialog.title=エラー
+cannotclosecontroltab.dialog.message=コントロールタブを閉じることはできません
+
+notdirectory.dialog.title=エラー
+notdirectory.dialog.message={0}はディレクトリではありません．
+
+needtosave.settings.title=設定が変更されています．
+needtosave.settings.message=設定が変更されています．保存しますか．
+
+################################################
+# TargetSelectionPane
+################################################
+addpackage.button.label=追加...
+addpackage.button.tooltip=リストにパッケージを追加します
+
+removepackage.button.label=削除
+removepackage.button.tooltip=指定されたパッケージをリストから削除します
+
+unsupportedfiletype.dialog.title=エラー
+unsupportedfiletype.dialog.message=以下のファイルはサポートされていない形式のファイルです．
+
+################################################
+# WellknownClassesSettingsPane
+################################################
+addwellknown.button.label=追加...
+addwellknown.button.tooltip=既知のクラス判定ルールを追加します
+addwellknown.dialog.title=新規: 既知のクラス判定ルール
+
+addwellknown.newrule.pattern.tooltip=新規ルールの判定文字列パターン
+addwellknown.newrule.pattern.border=パターン
+addwellknown.newrule.exclude.label=除外ルール
+addwellknown.newrule.exclude.tooltip=チェックが入れられている場合，以下で指定するルールは既知のクラス判定ルールから除外されるルールとして扱われます
+
+updatewellknown.button.label=変更...
+updatewellknown.button.tooltip=選択中のルールを変更します
+
+matchparttype.FULLY_NAME=クラスの完全修飾名が
+matchparttype.CLASS_NAME=パッケージ名を除くクラス名が
+matchparttype.PACKAGE_NAME=パッケージ名が
+
+matchtype.PREFIX=次のパターンで始まっている
+matchtype.SUFFIX=次のパターンで終わっている
+matchtype.EXACT=次のパターンと完全に一致している
+matchtype.NOT_MATCH=次のパターンと一致していない
+
+removewellknown.button.label=削除
+removewellknown.button.tooltip=指定された既知のクラス判定ルールを削除します
+
+checkwellknown.button.label=チェック
+checkwellknown.button.tooltip=入力されたクラスが既知のクラスであるかどうかを判定します
+
+# wellknown class checker
+wellknownclasschecker.border=既知のクラス判定器
+wellknownclasschecker.default.tooltip=
+wellknownclasschecker.wellknown.tooltip=既知のクラスです．
+wellknownclasschecker.notwellknown.tooltip=既知のクラスではありません．
+wellknownclasschecker.dialog.title=判定結果
+
+#rule table
+prefix.label=接頭辞
+suffix.label=接尾辞
+exactmatch.label=完全一致
+fully.label=クラスの完全修飾名
+package.label=パッケージ名 (除クラス名)
+classname.label=クラス名 (除パッケージ名)
+exclude.label=除外対象 (クラスの完全修飾名)
+
+rules.border=既知のクラス判定ルール
+
+matchtype.table.column=判定ルール
+checkpart.table.column=判定対象
+pattern.table.column=パターン
+
+################################################
+# ControlPane
+################################################
+reset.button.label=リセット
+reset.button.tooltip=全ての設定をリセットします．
+
+extract.button.label=抽出
+extract.button.tooltip=上記のjarファイルに含まれるクラスから指定されたバースマークを抽出します．
+
+compare.button.label=比較
+compare.button.tooltip=上記のjarファイルに含まれるクラスから指定されたバースマークを抽出し，比較します．
+
+findclass.button.label=検索
+findclass.button.tooltip=上記のクラスパスから入力されたクラスを検索します．
+
+targets.tab.label=分析対象
+targets.tab.tooltip=バースマーク抽出・比較の対象選択
+
+wellknown.tab.label=既知のクラス
+wellknown.tab.tooltip=既知のクラス設定
+
+classpath.tab.label=クラスパス
+classpath.tab.tooltip=クラスパス設定
+
+targets.description=対象 ({0}ファイル)
+targetx.border=X 軸
+targety.border=Y 軸
+
+birthmarkspane.border=抽出するバースマーク
+checkall.button.label=全てチェックする
+checkall.butotn.tooltip=全てのチェックを付け，全てのバースマークの抽出・比較を行います．
+checkall.button.icon=
+uncheckall.button.label=全てチェックを外す
+uncheckall.butotn.tooltip=全てのチェックを外し，抽出・比較するバースマークを選択しません．
+uncheckall.button.icon=
+
+userclasspath.border=クラスパス
+userclasspath.description=ユーザクラスパス ({0}ファイル)
+
+bootclasspath.border=ブートクラスパス
+
+classpathchecker.border=クラス検索器
+classpathchecker.default.tooltip=
+classpathchecker.found.tooltip=見つかりました
+classpathchecker.notfound.tooltip=見つかりませんでした
++classpathchecker.dialog.title=検索結果
+
+################################################
+#CompareTablePane
+################################################
+savecomparison.button.label=保存
+savecomparison.button.tooltip=Save comparation result to a file.
+
+showgraph.button.label=グラフ
+showgraph.button.tooltip=バースマークの類似性の分布図
+
+mdsmap.menuitem.label=MDS分析
+mdsmap.menuitem.tooltip=類似度から全てのクラスを2D平面上に最適配置します．
+
+changecolor.label=色の変更
+changecolor.title=色の変更
+
+showlabel.button.label=ラベルの表示
+
+################################################
+#BirthmarksViewPane
+################################################
+savebirthmark.button.label=保存
+savebirthmark.button.tooltip=抽出されたバースマークを保存します．
+
+comparebirthmark.button.label=総当たりで比較
+comparebirthmark.button.tooltip=抽出されたバースマークを総当たりで比較します．
+
+birthmarktree.root.label=バースマーク
+
+################################################
+# graphpane
+################################################
+similarity.label=類似度
+
+similarity.border=類似度
+elementcount.border=バースマークの要素数
+comparisoncount.border=比較回数
+matchcount.border=要素の一致回数
+numberofclasses.border=ユニット数(クラス，パッケージ，プロダクト)
+distinctionratio.border=識別率
+average.border=平均
+minimum.border=最小
+maximum.border=最大
+
+comparepair.tab.label=ペアの比較結果 {0}
+comparepair.tab.tooltip={1}と{2}から{0}バースマークを抽出・比較した結果
+comparepair.target1.label=クラス名 1
+comparepair.target2.label=クラス名 2
+comparepair.similarity.label=類似度
+
+#compareguess.button.label=関係を推測して比較
+#compareguess.button.tooltip=クラスファイルを指定したバースマークで比較します．どのクラスを比較するかはクラス名から自動的に推測されます．
+
+#comparemapping.button.label=関係を指定して比較...
+#comparemapping.button.tooltip=クラスファイルを指定したバースマークで比較します．どのクラスを比較するかはファイルで指定する必要があります．
+
+comparemapping.description=対応関係ファイル ({0})
+
+roundrobin.label=総当たりで比較
+guessedpair.label=ペアを推測して比較
+specifiedpair.label=ペアを指定して比較...
+roundrobin.filtering.label=総当り結果をフィルタリング...
+
+roundrobin.button.label=総当たりで比較
+roundrobin.button.tooltip=抽出された全てのバースマークを総当たりで比較する．
+
+unit.class=クラス単位で抽出
+unit.package=パッケージ単位で抽出
+unit.archive=アーカイブ単位で抽出
+
+guessedpair.button.label=ペアを推測して比較
+guessedpair.button.tooltip=抽出されたバースマークを抽出元の名前を元にペアを推測して比較する．
+
+specifiedpair.menuitem.label=ペアを指定して比較...
+specifiedpair.menuitem.tooltip=バースマークの抽出元の名前でペアを指定して比較する．
+
+roundrobin.filtering.menuitem.label=総当たり比較の結果をフィルタリング...
+roundrobin.filtering.menuitem.tooltip=総当たり比較の結果を特定の条件でフィルタリングする．
+
+result.border=比較結果類似度
+eachbirthmarksimilarity.border=各バースマーク間の類似度
+comparisonresultset.tab.label=ペアの比較結果 {0}
+comparisonresultset.tab.tooltip=クラスファイルのペアで比較した結果
+
+obfuscate.button.label=難読化...
+obfuscate.button.tooltip=クラス名を意味のない名前に変え，難読化します．また，難読化前後のマッピングをCVS形式で保存します．
+obfuscationmapping.description=難読化前後の名前のマッピングを保存 (csv)
+
+################################################
+# mds graph pane
+################################################
+
+savemds.label=MDSグラフを保存...
+savemds.tooltip=グラフイメージをファイルに保存します．
+savemds.description=MDSグラフを画像ファイルに保存 ({0})
+
+savelocation.label=座標を保存...
+savelocation.tooltip=座標をCSV形式に保存します．
+savelocation.description=座標の保存 (csv)
+
+updatecolor.label=色の更新...
+updatecolor.tooltip=プロットしている点の色を更新します．
+updateovercolor.label=強調時の色の更新...
+updateovercolor.tooltip=マウスオーバー時の色を更新します．
+
+mdsgraph.count.border=点の数
+mdsgraph.group.border=マークごとの点の数
+
+###########################################################
+# BirthmarkDefinitionPane
+###########################################################
+servicelist.border=バースマーク一覧
+servicelist.tooltip=登録されているバースマークの一覧です．
+definition.tab.label=新規バースマーク
+definition.tab.tooltip=新たなバースマークの定義，既存バースマークの定義を確認
+removeservice.button.label=削除
+removeservice.button.tooltip=リストで選択されたバースマークをシステムから削除します．
+newservice.button.label=新規バースマーク
+newservice.button.tooltip=新たなバースマークを定義し，システムに追加します．
+
+define.type.tooltip=バースマークのID
+define.type.border=タイプ
+define.displaytype.tooltip=表示名
+define.displaytype.border=バースマークの表示名
+define.description.tooltip=バースマークの説明
+define.description.border=説明
+define.extractor.tooltip=クラスファイルからバースマークを抽出するクラス
+define.extractor.border=バースマーク抽出器
+define.comparator.tooltip=得られたバースマークを比較するクラス
+define.comparator.border=バースマーク比較器
+define.experimental.label=実験的機能
+define.experimental.tooltip=実験的なバースマークであるか
+define.userdef.label=ユーザ定義
+define.userdef.tooltip=ユーザが定義したバースマークであるか
+newservice.definition.label=(新規バースマーク)
+
+############################################################
+# property pane
+############################################################
+property.tab.label=プロパティ
+property.tab.tooltip=プロパティを編集します．
+
+propertyadd.dialog.title=新規プロパティ
+propertyname.label=プロパティ名
+propertyvalue.label=プロパティ値
+
+propertyadd.button.label=追加...
+propertyadd.button.tooltip=新しいプロパティを追加します．
+
+propertyremove.button.label=削除
+propertyremove.button.tooltip=選択しているプロパティを削除します．
+
+propertychange.button.label=変更
+propertychange.button.tooltip=選択しているプロパティを変更します．
+
+
+############################################################
+# Filter pane
+############################################################
+filter.tab.label=フィルタ
+filter.tab.tooltip=フィルタ
+filterselection.dialog.title=適用するフィルタの選択
+
+filtersetlist.pane.border=定義済みフィルタセット
+filtersetlist.pane.tooltip=定義済みのフィルタセットの集合
+filterdefinition.pane.border=フィルタセットの定義
+filterdefinition.pane.tooltip=選択されているフィルタセットの定義
+filter.pane.border=フィルタ
+filter.pane.tooltip=フィルタ内容
+
+newfilter.button.label=
+newfilter.button.tooltip=新たなフィルタを定義します
+removefilter.button.label=
+removefilter.button.tooltip=選択されているフィルタを削除します．
+updatefilter.button.label=
+updatefilter.button.tooltip=選択されているフィルタを編集します．
+moveup.button.label=
+moveup.button.tooltip=選択されているフィルタの適用順序を上げます．
+movedown.button.label=
+movedown.button.tooltip=選択されているフィルタの適用順序を下げます．
+
+matchall.button.label=全ての条件に一致
+matchall.button.tooltip=全ての条件に一致したペアのみを表示するようフィルタリングを行う
+matchany.button.label=いずれかの条件に一致
+matchany.button.tooltip=いずれかの条件に一致したペアのみを表示するようフィルタリングを行う
+
+filterorder.border=フィルタの適用順序
+filtername.border=フィルタ名
+filtername.label=フィルタ名
+
+enablefilter.label=適用
+
+filter.similarity.label=バースマーク間の類似度
+filter.totalelementcount.label=バースマークの要素数の合計
+filter.elementcount.label=バースマーク
+filter.elementcount.label.next=の要素数
+filter.name.label=クラス名
+
+############################################################
+# Criterion
+############################################################
+criterion.LESS_THAN=が次の値より小さい
+criterion.LESS_EQUALS=が次の値以下
+criterion.GREATER_THAN=が次の値より大きい
+criterion.GREATER_EQUALS=が次の値以上
+criterion.EQUALS_AS=が次と一致する
+criterion.NOT_EQUALS_AS=が次と一致しない
+criterion.STARTS_WITH=が次で始まる
+criterion.NOT_STARTS_WITH=が次で始まらない
+criterion.ENDS_WITH=が次で終わる
+criterion.NOT_ENDS_WITH=が次で終わらない
+criterion.MATCH=が一致する
+criterion.NOT_MATCH=が一致しない
+
+target.TARGET1=対象1
+target.TARGET2=対象2
+target.BOTH_TARGET=両方
+target.ONE_OF_TARGET=どちらか
+
+error.dialog.title=エラー
+error.message.outofmemory=メモリ不足です．バースマークの抽出・比較に十分なJavaヒープサイズがありません．以下の対応を選択することができます．<ul><li>Javaコマンドに -Xmx オプションを指定し，最大ヒープサイズを増やす</li><li>選択した比較・抽出対象のファイルを減らす</li><li>抽出するバースマークを減らす</li></ul>
+error.message.classpath=以下のクラスが見つからなかったため，指定された処理を完了することができませんでした．<br>「コントロール」タブのクラスパス設定を見直して再実行してください．
+error.message.contactus=以下の例外が発生したため，指定された処理を完了することができませんでした．<br>エラーメッセージを添付して開発者までレポートをお願いします．
+error.empty.threshold=閾値が入力されていません．
+error.empty.value=値が入力されていません．
+error.invalid.format={0}: フォーマット以上です．
+error.invalid.format.double={0}: 入力された値を実数に変換することができません．
+error.invalid.format.integer={0}: 入力された値を整数値変換することができません．
+error.filter.cannotcreate=フィルタは以下の理由により作成されませんでした:
+error.negative.value={0}: 負の値を入力することはできません．
+error.over.range=範囲を越えています．{0}の範囲に収まるようにしてください．
+error.io=I/Oエラー: {0}
+error.unsupportedformat={0}: サポートされていないフォーマットが指定されました．
+
+target1.button.label=${target.TARGET1}バースマーク
+target2.button.label=${target.TARGET2}バースマーク
+both.button.label=${target.BOTH}バースマーク
+
+target1.name.button.label=${target.TARGET1}クラス名
+target2.name.button.label=${target.TARGET2}クラス名
+both.name.button.label=${target.BOTH}クラス名
+
+############################################################
+# history pane
+############################################################
+
+history.tab.label=バースマーク抽出履歴
+history.tab.tooltip=抽出したバースマークの履歴
+
+historylist.border=抽出履歴
+historylist.tooltip=今までにバースマークを抽出した履歴のリスト
+
+historylocation.border=抽出履歴の保存場所
+historylocation.tooltip=抽出履歴の保存場所のリスト
+
+showhistory.button.label=履歴の表示
+showhistory.button.tooltip=抽出した履歴を表示します．
+
+refreshhistory.button.label=リフレッシュ
+refreshhistory.button.tooltip=履歴を検索しなおします．
+
+deletehistory.button.label=削除
+deletehistory.button.tooltip=選択された履歴を削除します（履歴ファイルを削除します）．
+
+################################################
+# update table cell color
+################################################
+
+updatecellcolor.button.label=セル色変更...
+updatecellcolor.button.tooltip=表のセル色を変更します．
+
+updatecellcolor.dialog.title=色の変更
+updatecellfore.button.label=文字色...
+updatecellfore.button.tooltip=文字色を変更します．
+updatecellback.button.label=背景色...
+updatecellback.button.tooltip=背景色を変更します．
+
+forecolor_0.label=文字色 (類似度=0)
+backcolor_0.label=背景色 (類似度=0)
+forecolor_1.label=文字色 (0 < 類似度 <= 0.2)
+backcolor_1.label=背景色 (0 < 類似度 <= 0.2)
+forecolor_2.label=文字色 (0.2 < 類似度 <= 0.4)
+backcolor_2.label=背景色 (0.2 < 類似度 <= 0.4)
+forecolor_3.label=文字色 (0.4 < 類似度 <= 0.6)
+backcolor_3.label=背景色 (0.4 < 類似度 <= 0.6)
+forecolor_4.label=文字色 (0.6 < 類似度 <= 0.8)
+backcolor_4.label=背景色 (0.6 < 類似度 <= 0.8)
+forecolor_5.label=文字色 (0.8 < 類似度 <= 1.0)
+backcolor_5.label=背景色 (0.8 < 類似度 <= 1.0)
+
+updatecell.title=色の更新 ({0})
+
+rank_0.label=類似度: 0.0
+rank_1.label=類似度: (0.0, 0.2]
+rank_2.label=類似度: (0.2, 0.4]
+rank_3.label=類似度: (0.4, 0.6]
+rank_4.label=類似度: (0.6, 0.8]
+rank_5.label=類似度: (0.8, 1.0]
+
+
+hermes.check.button.label=更新確認
+hermes.check.button.tooltip=依存ライブラリが更新可能か確認します．
+hermes.update.button.label=更新
+hermes.update.button.tooltip=依存ライブラリが更新可能であれば，更新します．
+hermes.artifacts.labels=グループID,アーティファクトID,古いバージョン,新しいバージョン,スコープ,状態
+
+pluginsMenu.menu.label=プラグイン
+onlineupdate.menuitem.label=オンラインアップデート...
+onlineupdate.menuitem.tooltip=オンラインアップデートを実行します．
+
+progress.done=ダウンロード終了
+progress.canceled=キャンセル
+progress.not_started=ダウンロード可能
+availabe.artifacts.notfound=更新可能なライブラリは見つかりませんでした．
+restart.stigmata.requrested=更新したライブラリを使うにはStigmataを再起動する必要があります．
+今すぐ再起動を行いますか?
+message.dialog.title=メッセージ
+restart.now=再起動
+restart.later=手動で再起動
+
+apply.licenses=ライセンス条項を受け入れます．
+discard.licenses=ライセンス条項を受け入れません．
+no.valid.licenses=ライセンスが定義されていません．

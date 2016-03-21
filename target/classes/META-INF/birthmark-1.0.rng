@@ -1,0 +1,164 @@
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+  <start>
+    <ref name="birthmark-result-set"/>
+  </start>
+
+  <define name="birthmark-result-set">
+    <element name="birthmark-result-set">
+      <optional>
+        <ref name="birthmark-services"/>
+      </optional>
+      <optional>
+        <ref name="extracted-birthmarks"/>
+      </optional>
+      <optional>
+        <ref name="comparison-result-set"/>
+      </optional>
+    </element>
+  </define>
+
+  <define name="birthmark-services">
+    <element name="birthmark-services">
+      <zeroOrMore>
+        <ref name="birthmark-service"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="birthmark-service">
+      <element name="birthmark-service">
+      <element name="type">
+        <data type="type"/>
+      </element>
+      <interleaves>
+        <optional>
+          <element name="display-name">
+            <data type="token"/>
+          </element>
+        </optional>
+        <optional>
+          <element name="description">
+            <data type="string"/>
+          </element>
+        </optional>
+        <optional>
+          <element name="class-name">
+            <data type="token"/>
+          </element>
+        </optional>
+        <optional>
+          <element name="extractor">
+            <data type="token"/>
+          </element>
+        </optional>
+        <optional>
+          <element name="comparator">
+            <data type="token"/>
+          </element>
+        </optional>
+      </element>
+    </interleaves>
+  </define>
+
+  <define name="extracted-birthmarks">
+    <element name="extracted-birthmarks">
+      <optional>
+        <element name="unit">
+          <choice>
+            <value>CLASS</value>
+            <value>PACKAGE</value>
+            <value>ARCHIVE</value>
+          </choice>
+        </element>
+      </optional>
+      <optional>
+        <element name="birthmark-types">
+          <oneOrMore>
+            <element name="birthmark-type">
+              <data type="string" />
+            </element>
+          </oneOrMore>
+        </element>
+      </optional>
+      <zeroOrMore>
+        <ref name="extracted-birthmark"/>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="extracted-birthmark">
+    <element name="extracted-birthmark">
+      <element name="name">
+        <data type="string"/>
+      </element>
+      <element name="location">
+        <data type="string"/>
+      </element>
+      <ref name="birthmark" />
+    </element>
+  </define>
+
+  <define name="birthmark">
+    <element name="birthmark">
+      <attribute name="type">
+        <data type="string"/>
+      </attribute>
+      <attribute name="count">
+        <data type="nonNegativeInteger"/>
+      </attribute>
+      <zeroOrMore>
+        <element name="element">
+          <data type="string"/>
+        </element>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="comparison-result-set">
+    <element name="comparison-result-set">
+      <zeroOrMore>
+        <ref name="comparison-result" />
+      </zeroOrMore>
+    </element>
+  </define>
+  <define name="comparison-result">
+    <element name="comparison-result">
+      <element name="target1">
+        <ref name="target" />
+      </element>
+      <element name="target2">
+        <ref name="target" />
+      </element>
+      <element name="birthmark-similarities">
+        <zeroOrMore>
+          <ref name="birthmark-similarity">
+        </zeroOrMore>
+      </element>
+      <element name="similarity">
+        <data type="double" />
+      </element>
+    </element>
+  </define>
+
+  <define name="target">
+    <element name="name">
+      <data type="string" />
+    </element>
+    <element name="location">
+      <data type="string" />
+    </element>
+  </define>
+
+  <define name="birthmark-similarity">
+    <element name="birthmark-similarity">
+      <attribute name="type">
+        <data type="string" />
+      </attribute>
+      <attribute name="comparison-count">
+        <data type="nonNegativeInteger" />
+      </attribute>
+      <data type="double" />
+    </element>
+  </define>
+</grammar>

@@ -1,0 +1,3 @@
+com.github.stigmata.result.MemoryExtractedBirthmarkService
+com.github.stigmata.result.XmlFileExtractedBirthmarkService
+com.github.stigmata.result.RDBExtractedBirthmarkService

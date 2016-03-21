@@ -1,0 +1,9 @@
+com.github.stigmata.command.CompareCommand
+com.github.stigmata.command.ExportConfigCommand
+com.github.stigmata.command.ExtractCommand
+com.github.stigmata.command.InstallCommand
+com.github.stigmata.command.LicenseCommand
+com.github.stigmata.command.ListBirthmarksCommand
+com.github.stigmata.command.UninstallCommand
+com.github.stigmata.command.VersionCommand
+com.github.stigmata.command.OpenSettingFolderCommand
