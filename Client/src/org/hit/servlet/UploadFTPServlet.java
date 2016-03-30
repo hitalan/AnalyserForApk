@@ -63,7 +63,7 @@ public class UploadFTPServlet extends HttpServlet {
         FTPUtil.uploadFile("10.109.252.36",21, "student", "123456", "\\", fileName, input);
 	    response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.println("收到了上传到FTP的请求了");
+		out.println("鏀跺埌浜嗕笂浼犲埌FTP鐨勮姹備簡");
 		out.flush();
 		out.close();
 	}
