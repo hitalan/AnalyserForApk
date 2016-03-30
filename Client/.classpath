@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/code about the analysis/commons-net-3.4/commons-net-3.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Lenovo/Desktop/code about the analysis/gson-2.3.1.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>
