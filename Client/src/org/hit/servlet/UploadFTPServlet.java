@@ -58,7 +58,7 @@ public class UploadFTPServlet extends HttpServlet {
 			throws ServletException, IOException {
         String filePath = request.getParameter("filePath");
         String fileName = request.getParameter("fileName");
-        FileInputStream input = new FileInputStream(new File(filePath+"\\"+fileName));
+        FileInputStream input = new FileInputStream(new File(filePath+fileName));
         fileName=new String(fileName.getBytes("GBK"),"iso-8859-1");
         FTPUtil.uploadFile("10.109.252.36",21, "student", "123456", "\\", fileName, input);
 	    response.setCharacterEncoding("UTF-8");

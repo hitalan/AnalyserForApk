@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.hit.util.ApkInfo;
 import org.hit.util.FTPUtil;
 import org.hit.util.HttpUtil;
+import org.hit.util.ShellUtil;
 
 import com.google.gson.Gson;
 public class ReceiveServlet extends HttpServlet {
@@ -72,7 +73,7 @@ public class ReceiveServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String str =  request.getParameter("str");
+	/*	String str =  request.getParameter("str");
 		Gson gson = new Gson();
 		ApkInfo info = gson.fromJson(str, ApkInfo.class);
 		String taskId = info.getTaskId();
@@ -100,11 +101,7 @@ public class ReceiveServlet extends HttpServlet {
 		String channelFilePath = channelUrl.substring(channelUrl.lastIndexOf("=")+1);
 		System.out.println("the channelFilePath is "+channelFilePath);
 		
-		
-		//«˛µ¿œ¬‘ÿ≤…”√http¥´ÀÕ–≠“È
-		HttpUtil.download("D:\\downloadAPK\\", channelUrlInfo, channelFileName, channelFilePath);
-		
-		//øÕªß…œ¥´µƒœ¬‘ÿ≤≈”√ftp–≠“È
+		HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/", channelUrlInfo, channelFileName, channelFilePath);
 		for(int i = 0;i<clientUrl.size();i++){
 			HttpUtil.post(clientUrls[i],clientFilePath[i], clientFileName[i]);
 			try 
@@ -114,13 +111,24 @@ public class ReceiveServlet extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", clientFileName[i], "D:\\downloadAPK");
+			FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", clientFileName[i], "/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/");
 		}
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("∑¢ÀÕ≥…π¶");
+		out.print("ÂèëÈÄÅÊàêÂäü");
 		out.flush();
-		out.close();
+		out.close();*/
+		String shellPath = "/home/hit_alan/";
+	   try {
+		   ShellUtil.runShell("sh  "+shellPath+"a.sh");
+		  
+		   //System.out.println("the check apk is"+channelFileName+"and client APK is"+clientFileName[0]);
+	       //ShellUtil.runShell("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/./test.sh "+"  "+channelFileName+"  "+clientFileName[0]) ;
+	  } catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
 	}
 
 	/**

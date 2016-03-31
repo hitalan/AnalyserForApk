@@ -49,17 +49,17 @@ public class SendServlet extends HttpServlet {
 		ApkInfo app = new ApkInfo();
 		 app.setTaskId("task001");
 		 app.setChannelId("channel001");
-	     app.setChannelsAppUrl(URLEncoder.encode("http://10.108.115.251:8080/Client/download?fileName=牛客.apk&filePath=E:\\sendAPk\\","UTF-8"));
+	     app.setChannelsAppUrl(URLEncoder.encode("http://localhost:8080/Client/download?fileName=牛客.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
 	     List<String> clientsAppUrlList = new ArrayList<String>();
 	     String urls[] = new String [2];
-	     urls[0] = URLEncoder.encode("http://10.108.115.251:8080/Client/upload?fileName=中国联航.apk&filePath=E:\\sendAPK\\","UTF-8");
-	     urls[1] = URLEncoder.encode("http://10.108.115.251:8080/Client/upload?fileName=蚂蜂窝自由行.apk&filePath=E:\\sendAPK\\","UTF-8");
+	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/upload?fileName=中国联航.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/upload?fileName=蚂蜂窝自由行.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
 	     for(int i = 0;i<urls.length;i++){
 	    	 clientsAppUrlList.add(urls[i]);
 	     }
 	     System.out.println("urls.length is "+urls.length);
 	     app.setClientsAppUrls(clientsAppUrlList);
-		 String info = util.post("http://10.108.115.188:8080/Server/receiveTask",app);
+		 String info = util.post("http://localhost:8080/Server/receiveTask",app);
 		 System.out.println(info+"is the info");
 		 request.setAttribute("info", info);
 		 request.getRequestDispatcher("index.jsp").forward(request, response);

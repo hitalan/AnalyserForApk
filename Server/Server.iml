@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar" />
+    <libelement value="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar" />
+    <libelement value="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar" />
+    <libelement value="file://C:/Users/Lenovo/Desktop/code about the analysis/commons-net-3.4/commons-net-3.4.jar" />
+    <libelement value="file://C:/Users/Lenovo/Desktop/code about the analysis/gson-2.3.1.jar" />
+    <conelement value="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER" />
+    <conelement value="org.eclipse.jst.j2ee.internal.web.container" />
+    <conelement value="org.eclipse.jst.j2ee.internal.module.container" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/WebRoot/WEB-INF/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="library" name="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER" level="application" />
+    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.web.container" level="application" />
+    <orderEntry type="library" name="org.eclipse.jst.j2ee.internal.module.container" level="application" />
+    <orderEntry type="module-library">
+      <library name="commons-logging-1.2.jar">
+        <CLASSES>
+          <root url="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/commons-logging-1.2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="httpclient-4.5.2.jar">
+        <CLASSES>
+          <root url="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpclient-4.5.2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="httpcore-4.4.4.jar">
+        <CLASSES>
+          <root url="file://C:/Users/Lenovo/Desktop/code about the analysis/httpcomponents-client-4.5.2-bin/httpcomponents-client-4.5.2/lib/httpcore-4.4.4.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-net-3.4.jar">
+        <CLASSES>
+          <root url="file://C:/Users/Lenovo/Desktop/code about the analysis/commons-net-3.4/commons-net-3.4.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gson-2.3.1.jar">
+        <CLASSES>
+          <root url="file://C:/Users/Lenovo/Desktop/code about the analysis/gson-2.3.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

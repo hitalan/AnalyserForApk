@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
@@ -11,7 +13,9 @@ import org.apache.commons.net.ftp.FTPReply;
 public class FTPUtil {
 	 public static boolean uploadFile(String url, int port, String username,  String password, String path, String filename, InputStream input) {    
 		boolean success = false;    
-	    FTPClient ftp = new FTPClient();   
+	    FTPClient ftp = new FTPClient();
+		
+
 	    try {   
 		     int reply;   
 		     ftp.connect(url, port);   
@@ -22,6 +26,7 @@ public class FTPUtil {
 		        ftp.disconnect();   
 		        return success;   
 		     }    
+		 	ftp.setFileType(FTP.BINARY_FILE_TYPE);
 		     ftp.changeWorkingDirectory(path);   
 		     ftp.storeFile(filename, input);    
 		     input.close();   

@@ -4,6 +4,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
@@ -22,6 +24,7 @@ public class FTPUtil {
 		        ftp.disconnect();   
 		        return success;   
 		     }    
+			 ftp.setFileType(FTP.BINARY_FILE_TYPE);
 		     ftp.changeWorkingDirectory(path);   
 		     ftp.storeFile(filename, input);    
 		     input.close();   
@@ -57,6 +60,7 @@ public class FTPUtil {
 		        return success;   
 		     } 
 		    ftp.changeWorkingDirectory(remotePath);    
+		 	ftp.setFileType(FTP.BINARY_FILE_TYPE);
 		    FTPFile[] fs = ftp.listFiles();    
 			fileName=new String(fileName.getBytes("GBK"),"iso-8859-1");
 		    for (FTPFile ff : fs) {   

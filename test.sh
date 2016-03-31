@@ -39,21 +39,16 @@ echo "====================Hash值不同开始进行包名和版本名检测=====
   	echo "=============应用包名不相同判定应用是否是白名单 ==================="
         echo "==================若是白名单则为不相关应用========================="
         echo "=================不是白名单 开始进行androguard相似度分析==========="
-        cd androguard-2.0
-        ./androsim.py -i  ../$1 ../$2 |grep 'methods' >temp.txt
-        read simtemp<temp.txt
-        simtmp=${simtemp:13}
-        sim=${simtmp%% *}
-        rm temp.txt
-        echo $sim
+        /home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/androsim.py -i $1 $2  |grep 'methods'
+        echo $?
         echo "=================不是白名单 开始进行stigmata相似度分析============="
-        cd ../dex2jar-2.0
-        ./d2j-dex2jar.sh ../$s
-        ./d2j-dex2jar.sh ../$s2
+        #cd ../dex2jar-2.0
+        ./d2j-dex2jar.sh $s
+        ./d2j-dex2jar.sh $s2
         ./changename.sh
-        cd ../target
-        java -jar stigmata-5.0-SNAPSHOT.jar   -f xml  -b   cvfv  compare ../dex2jar-2.0/classes1-dex2jar.jar  ../dex2jar-2.0/classes2-dex2jar.jar        
-        rm ../dex2jar-2.0/*-dex2jar.jar
+        java -jar stigmata-5.0-SNAPSHOT.jar   -f xml  -b   cvfv  compare classes1-dex2jar.jar classes2-dex2jar.jar>2.txt       
+        rm *-dex2jar.jar
+        rm *.dex
         fi
 fi
 
