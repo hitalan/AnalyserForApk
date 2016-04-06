@@ -73,7 +73,7 @@ public class ReceiveServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	/*	String str =  request.getParameter("str");
+		String str =  request.getParameter("str");
 		Gson gson = new Gson();
 		ApkInfo info = gson.fromJson(str, ApkInfo.class);
 		String taskId = info.getTaskId();
@@ -101,8 +101,11 @@ public class ReceiveServlet extends HttpServlet {
 		String channelFilePath = channelUrl.substring(channelUrl.lastIndexOf("=")+1);
 		System.out.println("the channelFilePath is "+channelFilePath);
 		
-		HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/", channelUrlInfo, channelFileName, channelFilePath);
+		HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/channelapk/", channelUrlInfo, channelFileName, channelFilePath);
 		for(int i = 0;i<clientUrl.size();i++){
+			HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/clientapk/", clientUrls[i] , clientFileName[i], clientFilePath[i]);
+		}
+		/*for(int i = 0;i<clientUrl.size();i++){
 			HttpUtil.post(clientUrls[i],clientFilePath[i], clientFileName[i]);
 			try 
 			{
@@ -112,13 +115,13 @@ public class ReceiveServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", clientFileName[i], "/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/");
-		}
+		}*/
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print("发送成功");
 		out.flush();
-		out.close();*/
-		String shellPath = "/home/hit_alan/";
+		out.close();
+	/*	String shellPath = "/home/hit_alan/";
 	   try {
 		   ShellUtil.runShell("sh  "+shellPath+"a.sh");
 		  
@@ -127,7 +130,7 @@ public class ReceiveServlet extends HttpServlet {
 	  } catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-	}
+	}*/
 		
 	}
 

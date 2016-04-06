@@ -52,8 +52,8 @@ public class SendServlet extends HttpServlet {
 	     app.setChannelsAppUrl(URLEncoder.encode("http://localhost:8080/Client/download?fileName=牛客.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
 	     List<String> clientsAppUrlList = new ArrayList<String>();
 	     String urls[] = new String [2];
-	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/upload?fileName=中国联航.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
-	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/upload?fileName=蚂蜂窝自由行.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=中国联航.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=蚂蜂窝自由行.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
 	     for(int i = 0;i<urls.length;i++){
 	    	 clientsAppUrlList.add(urls[i]);
 	     }

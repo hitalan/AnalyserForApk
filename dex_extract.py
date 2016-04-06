@@ -14,6 +14,7 @@ for APK in apklist:
  
     if portion[1] =='.apk':
         newname = portion[0] + '.zip' # change them into zip file to extract dex files
+        os.chdir(path)        
         os.rename(APK,newname)
  
 # if APK.endswith('.zip'):
