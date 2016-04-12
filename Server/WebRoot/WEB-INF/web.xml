@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
- 
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <servlet-name>ReceiveServlet</servlet-name>
     <servlet-class>org.hit.servlet.ReceiveServlet</servlet-class>
@@ -16,12 +11,22 @@
   <servlet-mapping>
     <servlet-name>AnalysisServlet</servlet-name>
     <url-pattern>/analysis</url-pattern>
-  </servlet-mapping>	
+  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ReceiveServlet</servlet-name>
     <url-pattern>/receiveTask</url-pattern>
-  </servlet-mapping>	
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>secondReceiveTask</display-name>
+    <servlet-name>secondReceiveTask</servlet-name>
+    <servlet-class>org.hit.servlet.SecondReceiveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>secondReceiveTask</servlet-name>
+    <url-pattern>/secondReceiveTask</url-pattern>
+  </servlet-mapping>
 </web-app>

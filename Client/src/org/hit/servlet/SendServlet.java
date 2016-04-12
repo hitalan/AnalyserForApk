@@ -4,14 +4,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hit.util.ApkInfo;
+import org.hit.util.MessageInfo;
 import org.hit.util.HttpUtil;
 
 import com.google.gson.Gson;
@@ -46,16 +48,24 @@ public class SendServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpUtil util = new HttpUtil();
-		ApkInfo app = new ApkInfo();
-		 app.setTaskId("task001");
-		 app.setChannelId("channel001");
-	     app.setChannelsAppUrl(URLEncoder.encode("http://localhost:8080/Client/download?fileName=牛客.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
-	     List<String> clientsAppUrlList = new ArrayList<String>();
+		MessageInfo app = new MessageInfo();
+		 app.setSubtaskId("task001");
+		// app.setChannelId("channel001");
+		 HashMap<String,String> channelmap  = new HashMap<String,String>();
+		 channelmap.put("url", URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIChangePackage.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
+	     channelmap.put("hash", "channelhash");
+	     app.setChannelsAppUrl(channelmap);
+		 //   app.setChannelsAppUrl(URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIChangePackage.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
+	     Map<String,String> clientmap; 
+	     List<HashMap<String, String>> clientsAppUrlList = new ArrayList<HashMap<String,String>>();
 	     String urls[] = new String [2];
-	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=中国联航.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
-	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=蚂蜂窝自由行.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIBestPractice.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIChangeVersion.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
 	     for(int i = 0;i<urls.length;i++){
-	    	 clientsAppUrlList.add(urls[i]);
+	    	 clientmap = new HashMap<String,String>();
+		     clientmap.put("url", urls[0]);
+		     clientmap.put("hash", "hash"+i+1);
+	    	 clientsAppUrlList.add((HashMap<String, String>) clientmap);
 	     }
 	     System.out.println("urls.length is "+urls.length);
 	     app.setClientsAppUrls(clientsAppUrlList);

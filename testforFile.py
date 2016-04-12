@@ -9,9 +9,5 @@ def md5_file(name):
     return m.hexdigest()
   
 first = md5_file(sys.argv[1])
-second = md5_file(sys.argv[2])
-if first==second:
-	print	'yes'
-else:
-	print	'wrong'
+print first
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-cd clientapk
+cd $1
 c=0
 for file in `ls *.apk`
 do

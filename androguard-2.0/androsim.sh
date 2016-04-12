@@ -1,8 +1,7 @@
 channelapkfile=`ls ../channelapk/*.apk`
 for file in `ls ../clientapk/*.apk`
 do
- echo $file
- echo $channelapkfile
- ./androsim.py -i  $file $channelapkfile
-#  echo $value
+echo $file
+value=`./androsim.py -i $channelapkfile $file|grep 'similarity' `
+echo $value
 done

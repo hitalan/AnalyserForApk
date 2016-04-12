@@ -14,6 +14,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -90,7 +91,6 @@ public class HttpUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// 关闭连接,释放资源  
 			try {
 				httpclient.close();
 			} catch (IOException e) {
@@ -99,4 +99,36 @@ public class HttpUtil {
 		}
 		return result;
 	}
+	  
+	  public static void requestByGetMethod(String urlString){
+	        CloseableHttpClient httpClient =  HttpClients.createDefault();
+	        try {
+	            HttpGet get = new HttpGet(urlString);
+	            System.out.println("鎵цget璇锋眰:...."+get.getURI());
+	            CloseableHttpResponse httpResponse = null;
+	            httpResponse = httpClient.execute(get);
+	            try{
+	                //response瀹炰綋
+	                HttpEntity entity = httpResponse.getEntity();
+	                if (null != entity){
+	                    System.out.println("鍝嶅簲鐘舵�佺爜:"+ httpResponse.getStatusLine());
+	                    System.out.println("-------------------------------------------------");
+	                    System.out.println("鍝嶅簲鍐呭:" + EntityUtils.toString(entity));
+	                    System.out.println("-------------------------------------------------");                    
+	                }
+	            }
+	            finally{
+	                httpResponse.close();
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        finally{
+	            try{
+	            	httpClient.close();
+	            } catch (IOException e){
+	                e.printStackTrace();
+	            }
+	        }
+	  }
 }

@@ -17,7 +17,7 @@ import org.apache.http.util.EntityUtils;
 import com.google.gson.Gson;
 
 public class HttpUtil {
-	public String post(String url,ApkInfo app) {
+	public String post(String url,MessageInfo app) {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpPost httppost = new HttpPost(url); 
 		Gson gson = new Gson();
@@ -50,7 +50,6 @@ public class HttpUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
-			// 关闭连接,释放资源  
 			try {
 				httpclient.close();
 			} catch (IOException e) {

@@ -1,52 +1,54 @@
 package org.hit.util;
 
-import java.util.List;
-
 public class ApkInfo {
 
-    private String taskId;
-	private String channelId;
-	private List<String> clientsAppUrls;
-	private String channelsAppUrl;
-	
-	
-	public List<String> getClientsAppUrls() 
-	{
-		return clientsAppUrls;
+private String apkType;	
+ private String  apkName;
+ private String packageName;
+ private String versionCode;
+  private String versionName;
+  private String dexHashCode;
+  private String apkHashCode;
+  public String getApkName() {
+		return apkName;
 	}
-	
-	public String getTaskId() {
-		return taskId;
+	public void setApkName(String apkName) {
+		this.apkName = apkName;
 	}
-
-	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+	public String getPackageName() {
+		return packageName;
 	}
-
-	public String getChannelId() {
-		return channelId;
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
 	}
-
-	public void setChannelId(String channelId) {
-		this.channelId = channelId;
+	public String getVersionCode() {
+		return versionCode;
 	}
-
-	public void setClientsAppUrls(List<String> clientsAppUrls) 
-	{
-		this.clientsAppUrls = clientsAppUrls;
+	public void setVersionCode(String versionCode) {
+		this.versionCode = versionCode;
 	}
-	
-	public String getChannelsAppUrl() 
-	{
-		return channelsAppUrl;
+	public String getVersionName() {
+		return versionName;
 	}
-	
-	public void setChannelsAppUrl(String channelsAppUrl) 
-	{
-		this.channelsAppUrl = channelsAppUrl;
+	public void setVersionName(String versionName) {
+		this.versionName = versionName;
 	}
-	
-	
-	
-	
+	public String getDexHashCode() {
+		return dexHashCode;
+	}
+	public void setDexHashCode(String dexHashCode) {
+		this.dexHashCode = dexHashCode;
+	}	
+	 public String getApkType() {
+			return apkType;
+	 }
+	public void setApkType(String apkType) {
+			this.apkType = apkType;
+	}
+	public String getApkHashCode() {
+		return apkHashCode;
+	}
+	public void setApkHashCode(String apkHashCode) {
+		this.apkHashCode = apkHashCode;
+	}
 }

@@ -3,14 +3,19 @@ package org.hit.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hit.util.ApkInfo;
+import org.hit.util.MessageInfo;
+import org.hit.util.AnalysisUtil;
 import org.hit.util.FTPUtil;
 import org.hit.util.HttpUtil;
 import org.hit.util.ShellUtil;
@@ -74,15 +79,36 @@ public class ReceiveServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String str =  request.getParameter("str");
-		Gson gson = new Gson();
-		ApkInfo info = gson.fromJson(str, ApkInfo.class);
-		String taskId = info.getTaskId();
-		String channelId = info.getChannelId();
-		String channelUrl = URLDecoder.decode(info.getChannelsAppUrl(),"UTF-8");
-		List<String> clientUrl = info.getClientsAppUrls();
-		for(int i = 0;i<clientUrl.size();i++){
-			clientUrl.set(i,URLDecoder.decode(clientUrl.get(i),"UTF-8"));
+		System.out.println("alan "+str);
+	    Gson gson = new Gson();
+		MessageInfo info = gson.fromJson(str, MessageInfo.class);
+		String taskId = info.getSubtaskId();
+		 String channelUrl = "";
+		HashMap <String ,String> hash =  info.getChannelsAppUrl();
+		Iterator iter = hash.entrySet().iterator();
+		while (iter.hasNext()) {
+		Map.Entry entry = (Map.Entry) iter.next();
+	    Object key = entry.getKey();
+	    if(key.equals("url")){
+	    	 channelUrl = URLDecoder.decode((String)entry.getValue(),"UTF-8");
+	    }
 		}
+		//String channelUrl = URLDecoder.decode(info.getChannelsAppUrl(),"UTF-8");
+		List<HashMap<String,String>> hashList = info.getClientsAppUrls();
+		List<String> clientUrl = new ArrayList<String>();
+		for(HashMap hashmap : hashList){
+			iter = hashmap.entrySet().iterator();
+			while (iter.hasNext()) {
+			Map.Entry entry = (Map.Entry) iter.next();
+		    Object key = entry.getKey();
+		    if(key.equals("url")){
+		    	clientUrl.add( URLDecoder.decode((String)entry.getValue(),"UTF-8"));
+		    }
+		    }
+		    }
+	    /*for(int i = 0;i<clientUrl.size();i++){
+			clientUrl.set(i,URLDecoder.decode(clientUrl.get(i),"UTF-8"));
+		}*/
 		System.out.println("clientUrl.size() is " + clientUrl.size());
 		String [] clientUrls = new String[clientUrl.size()];
 		String [] clientFileName = new String[clientUrl.size()];
@@ -93,45 +119,23 @@ public class ReceiveServlet extends HttpServlet {
 			clientFileName[i] = clientUrl.get(i).substring(clientUrl.get(i).indexOf("=")+1,clientUrl.get(i).lastIndexOf("&"));
  			clientFilePath[i] = clientUrl.get(i).substring(clientUrl.get(i).lastIndexOf("=")+1);
 		}
-		System.out.println("the taskId is "+taskId+" the chanelId is "+channelId +" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
+		System.out.println("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
 		String channelUrlInfo = channelUrl.substring(0, channelUrl.lastIndexOf('?'));
 		System.out.println("the channelurlinfo is "+channelUrlInfo);
 		String channelFileName = channelUrl.substring(channelUrl.indexOf("=")+1,channelUrl.lastIndexOf("&") );
 		System.out.println("the channelFileName is "+channelFileName);
 		String channelFilePath = channelUrl.substring(channelUrl.lastIndexOf("=")+1);
 		System.out.println("the channelFilePath is "+channelFilePath);
-		
 		HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/channelapk/", channelUrlInfo, channelFileName, channelFilePath);
 		for(int i = 0;i<clientUrl.size();i++){
 			HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/clientapk/", clientUrls[i] , clientFileName[i], clientFilePath[i]);
 		}
-		/*for(int i = 0;i<clientUrl.size();i++){
-			HttpUtil.post(clientUrls[i],clientFilePath[i], clientFileName[i]);
-			try 
-			{
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", clientFileName[i], "/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/");
-		}*/
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
-		out.print("发送成功");
+		out.print("下载成功");
 		out.flush();
-		out.close();
-	/*	String shellPath = "/home/hit_alan/";
-	   try {
-		   ShellUtil.runShell("sh  "+shellPath+"a.sh");
-		  
-		   //System.out.println("the check apk is"+channelFileName+"and client APK is"+clientFileName[0]);
-	       //ShellUtil.runShell("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/./test.sh "+"  "+channelFileName+"  "+clientFileName[0]) ;
-	  } catch (Exception e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}*/
-		
+		out.close();  
+	    AnalysisUtil.dealTheApk(0);
 	}
 
 	/**

@@ -1,5 +1,7 @@
 filepath=`pwd`
-result=`python getDexHash.py $filepath $filepath` 
-echo $result
+python getDexHash.py $filepath $filepath
 ./change.sh
+result=`python md5.py $filepath`
+echo $result 
+
 
