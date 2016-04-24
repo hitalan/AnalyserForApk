@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,21 +17,24 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.message.BasicHeader;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 public class HttpUtil {
-	  public static void download(String localfile,String url,String fileName,String filePath){
+	  public static void download(String localfile,String url,String fileName/*,String filePath*/){
 			CloseableHttpClient client = HttpClients.createDefault();
 			HttpPost post = new HttpPost(url); 
-				List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+			/*List<NameValuePair> formparams = new ArrayList<NameValuePair>();
 				formparams.add(new BasicNameValuePair("fileName", fileName));
-				formparams.add(new BasicNameValuePair("filePath", filePath));
-				UrlEncodedFormEntity uefEntity;
-					try {
-						uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
-						post.setEntity(uefEntity);
+			    formparams.add(new BasicNameValuePair("filePath", filePath));*/
+				//UrlEncodedFormEntity uefEntity;
+				/*	try {*/
+					   /*uefEntity = new UrlEncodedFormEntity(formparams, "UTF-8");
+						post.setEntity(uefEntity);*/
 						CloseableHttpResponse response;
 						try {
 							response = client.execute(post);
@@ -55,12 +59,12 @@ public class HttpUtil {
 						   } catch (IOException e) {
 							e.printStackTrace();
 						   }
-					    } catch (UnsupportedEncodingException e) {
+					  /*  } catch (UnsupportedEncodingException e) {
 						e.printStackTrace();
-					}
+					}*/
 			  System.out.println("Done");
 	  }
-	  public static String post(String url,String filePath,String fileName) {
+	  /*public static String post(String url,String filePath,String fileName) {
 		CloseableHttpClient httpclient = HttpClients.createDefault();
 		HttpPost httppost = new HttpPost(url); 
 		List<NameValuePair> formparams = new ArrayList<NameValuePair>();
@@ -98,10 +102,11 @@ public class HttpUtil {
 			}
 		}
 		return result;
-	}
+	}*/
 	  
-	  public static void requestByGetMethod(String urlString){
+	  public static String requestByGetMethod(String urlString){
 	        CloseableHttpClient httpClient =  HttpClients.createDefault();
+	        String result = "";
 	        try {
 	            HttpGet get = new HttpGet(urlString);
 	            System.out.println("执行get请求:...."+get.getURI());
@@ -113,14 +118,17 @@ public class HttpUtil {
 	                if (null != entity){
 	                    System.out.println("响应状态码:"+ httpResponse.getStatusLine());
 	                    System.out.println("-------------------------------------------------");
-	                    System.out.println("响应内容:" + EntityUtils.toString(entity));
+	                    result = EntityUtils.toString(entity);
+	                    //System.out.println("响应内容:" + EntityUtils.toString(entity));
 	                    System.out.println("-------------------------------------------------");                    
+	             
 	                }
 	            }
 	            finally{
 	                httpResponse.close();
 	            }
-	        } catch (Exception e) {
+	        }
+	        catch (Exception e) {
 	            e.printStackTrace();
 	        }
 	        finally{
@@ -130,5 +138,21 @@ public class HttpUtil {
 	                e.printStackTrace();
 	            }
 	        }
+        return result;        
 	  }
+	  
+		private static final String APPLICATION_JSON = "application/json";
+		private static final String CONTENT_TYPE_TEXT_JSON = "text/json";
+		public static void httpPostWithJSON(String url, String json) throws Exception {
+	        // 将JSON进行UTF-8编码,以便传输中文
+	        String encoderJson = URLEncoder.encode(json, "UTF-8");
+	        CloseableHttpClient httpClient = HttpClients.createDefault();
+	        HttpPost httpPost = new HttpPost(url);
+	        httpPost.addHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON);
+	        StringEntity se = new StringEntity(encoderJson);
+	        se.setContentType(CONTENT_TYPE_TEXT_JSON);
+	        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON));
+	        httpPost.setEntity(se);
+	        httpClient.execute(httpPost);
+	    }
 }

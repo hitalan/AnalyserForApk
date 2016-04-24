@@ -62,15 +62,15 @@ public class AnalysisServlet extends HttpServlet {
 	 */
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {		
-		HttpUtil.download("D:\\downloadAPK\\", "http://localhost:8080/Client/download", "±±¾©.apk", "E:\\sendAPk\\");
-		/*HttpUtil.post("E:\\sendAPK", "±±¾©.apk");
+		//HttpUtil.download("D:\\downloadAPK\\", "http://localhost:8080/Client/download", "ï¿½ï¿½ï¿½ï¿½.apk", "E:\\sendAPk\\");
+		/*HttpUtil.post("E:\\sendAPK", "ï¿½ï¿½ï¿½ï¿½.apk");
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", "±±¾©.apk", "D:\\downloadAPK");*/
+		FTPUtil.downFile("10.109.252.36", 21, "student", "123456", "\\", "ï¿½ï¿½ï¿½ï¿½.apk", "D:\\downloadAPK");*/
 	}
 
 	/**

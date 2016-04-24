@@ -18,6 +18,8 @@ import org.hit.util.HttpUtil;
 
 import com.google.gson.Gson;
 
+import net.sf.json.JSONObject;
+
 public class SendServlet extends HttpServlet {
 
 	/**
@@ -47,16 +49,43 @@ public class SendServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpUtil util = new HttpUtil();
+		JSONObject jsonObject = new JSONObject();
+        jsonObject.put("subtaskId", "subtaskId");
+        HashMap<String,String> channelmap  = new HashMap<String,String>();
+		//channelmap.put("url", URLEncoder.encode("http://localhost:8080/Client/download?fileName=newUIchangeVersion.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
+        channelmap.put("url", URLEncoder.encode("app3/M00/38/21/wKgCAVaEKHSAJ_yLAARp7OGEqXo7644838","UTF-8"));
+        channelmap.put("hash", "channelhash");
+	    jsonObject.put("channelApp", channelmap);
+	    Map<String,String> clientmap; 
+	    List<HashMap<String, String>> clientsAppUrlList = new ArrayList<HashMap<String,String>>();
+	    String urls[] = new String [2];
+	    urls[1] = URLEncoder.encode("app5/M00/2F/85/Cmx6LlZ7rEyAS5J8ABxV-ZvVVKs9070081","UTF-8");
+	    urls[0] = URLEncoder.encode("app0/M00/64/C0/wKgMAVcN81iAckh8AIg2kC8C2ig3365363","UTF-8");
+	     for(int i = 0;i<urls.length;i++){
+	    	 clientmap = new HashMap<String,String>();
+		     clientmap.put("url", urls[i]);
+		     clientmap.put("hash", "hash"+i+1);
+	    	 clientsAppUrlList.add((HashMap<String, String>) clientmap);
+	     }
+	     jsonObject.put("clientsApp", clientsAppUrlList);
+        try {
+			HttpUtil.httpPostWithJSON("http://localhost:8080/Server/receiveTask", jsonObject.toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+              
+		
+	/*	HttpUtil util = new HttpUtil();
 		MessageInfo app = new MessageInfo();
 		 app.setSubtaskId("task001");
 		// app.setChannelId("channel001");
 		 HashMap<String,String> channelmap  = new HashMap<String,String>();
 		 channelmap.put("url", URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIChangePackage.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
 	     channelmap.put("hash", "channelhash");
-	     app.setChannelsAppUrl(channelmap);
+	     app.setChannelsAppUrl(channelmap);*/
 		 //   app.setChannelsAppUrl(URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIChangePackage.apk&filePath=/home/hit_alan/sendAPK/","UTF-8"));
-	     Map<String,String> clientmap; 
+	   /*  Map<String,String> clientmap; 
 	     List<HashMap<String, String>> clientsAppUrlList = new ArrayList<HashMap<String,String>>();
 	     String urls[] = new String [2];
 	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=UIBestPractice.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
@@ -72,7 +101,7 @@ public class SendServlet extends HttpServlet {
 		 String info = util.post("http://localhost:8080/Server/receiveTask",app);
 		 System.out.println(info+"is the info");
 		 request.setAttribute("info", info);
-		 request.getRequestDispatcher("index.jsp").forward(request, response);
+		 request.getRequestDispatcher("index.jsp").forward(request, response);*/
 	}
 
 	/**

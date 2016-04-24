@@ -1,6 +1,8 @@
 package org.hit.servlet;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -47,13 +49,24 @@ public class SecondReceiveServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String str =  request.getParameter("str");
-		Gson gson = new Gson();
-		MessageInfo info = gson.fromJson(str, MessageInfo.class);
+		//String str =  request.getParameter("str");
+	/*	Gson gson = new Gson();
+		BufferedReader br = new BufferedReader(new InputStreamReader(request.getInputStream()));
+        String line = null;
+        StringBuilder sb = new StringBuilder();
+        while((line = br.readLine())!=null){
+            sb.append(line);
+        }
+        // 将资料解码
+        String reqBody = sb.toString();
+        String result = URLDecoder.decode(reqBody, "UTF-8");
+		MessageInfo info = gson.fromJson(result, MessageInfo.class);
 		String taskId = info.getSubtaskId();
 		//String channelId = info.getChannelId();
 		//String channelUrl = URLDecoder.decode(info.getChannelsAppUrl(),"UTF-8");
-		List<HashMap<String,String>> hashList = info.getClientsAppUrls();
+		List<HashMap<String,String>> hashList = info.getClientsApp();
+	if(hashList!=null)
+		{
 		List<String> clientUrl = new ArrayList<String>();
 		for(HashMap hashmap : hashList){
 			Iterator iter = hashmap.entrySet().iterator();
@@ -69,7 +82,7 @@ public class SecondReceiveServlet extends HttpServlet {
 		for(int i = 0;i<clientUrl.size();i++){
 			clientUrl.set(i,URLDecoder.decode(clientUrl.get(i),"UTF-8"));
 		}*/
-		System.out.println("clientUrl.size() is " + clientUrl.size());
+	/*	System.out.println("clientUrl.size() is " + clientUrl.size());
 		String [] clientUrls = new String[clientUrl.size()];
 		String [] clientFileName = new String[clientUrl.size()];
 		String [] clientFilePath = new String [clientUrl.size()];
@@ -88,6 +101,19 @@ public class SecondReceiveServlet extends HttpServlet {
 		out.flush();
 		out.close();
 		AnalysisUtil.dealTheApk(1);
+		}
+	
+	else 
+	{
+		response.setCharacterEncoding("UTF-8");
+		PrintWriter out = response.getWriter();
+		out.print("再次下载成功");
+		out.flush();
+		out.close();
+		AnalysisUtil.dealTheApk(1);
+
+	}
+*/
 	}
 
 }

@@ -3,29 +3,29 @@ package org.hit.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.hit.util.MessageInfo;
 import org.hit.util.AnalysisUtil;
-import org.hit.util.FTPUtil;
-import org.hit.util.HttpUtil;
-import org.hit.util.ShellUtil;
+import org.hit.util.HttpClientUtils;
+import org.hit.util.getInfoByRedis;
+import org.hit.util.HttpClientUtils.HttpClientDownLoadProgress;
 
 import com.google.gson.Gson;
-public class ReceiveServlet extends HttpServlet {
-
+public class ReceiveServlet extends HttpServlet{
 	/**
-	 * Constructor of the object.
+	 * 
 	 */
+	private static final long serialVersionUID = 6731251846319286501L;
 	public ReceiveServlet() {
 		super();
 	}
@@ -34,57 +34,41 @@ public class ReceiveServlet extends HttpServlet {
 	 * Destruction of the servlet. <br>
 	 */
 	public void destroy() {
-		super.destroy(); // Just puts "destroy" string in log
-		// Put your code here
+		super.destroy(); 
 	}
 
-	/**
-	 * The doGet method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to get.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
+	public static int count;
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-		out.println("<HTML>");
-		out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-		out.println("  <BODY>");
-		out.print("    This is ");
-		out.print(this.getClass());
-		out.println(", using the GET method");
-		out.println("  </BODY>");
-		out.println("</HTML>");
-		out.flush();
-		out.close();
+    doPost(request,response);
 	}
-
-	/**
-	 * The doPost method of the servlet. <br>
-	 *
-	 * This method is called when a form has its tag value method equals to post.
-	 * 
-	 * @param request the request send by the client to the server
-	 * @param response the response send by the server to the client
-	 * @throws ServletException if an error occurred
-	 * @throws IOException if an error occurred
-	 */
+	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String str =  request.getParameter("str");
-		System.out.println("alan "+str);
-	    Gson gson = new Gson();
-		MessageInfo info = gson.fromJson(str, MessageInfo.class);
-		String taskId = info.getSubtaskId();
+		List<Object> apkinfo =  getInfoByRedis.getInfo();
+		System.out.println("the apkinfo from the task is "+apkinfo.get(0));
+		if(apkinfo.get(0)=="")
+			System.out.println(1);
+		else
+			System.out.println(0);
+		if(apkinfo.get(0).toString()=="[]"){
+			   System.out.println("we have no task");	
+				response.setCharacterEncoding("UTF-8");
+				PrintWriter out = response.getWriter();
+				out.print("结束");
+				out.flush();
+				out.close();  
+		}
+		else
+		{
+		Gson gson = new Gson();
+		MessageInfo[] info = gson.fromJson(apkinfo.get(0).toString(), MessageInfo[].class);
+		String urlhost = "http://dfs.asec.buptnsrc.com/";
+		String channelpath = "/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/channelapk/";
+		String clientpath = "/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/clientapk/";
+		String taskId = info[0].getSubtaskId();
 		 String channelUrl = "";
-		HashMap <String ,String> hash =  info.getChannelsAppUrl();
+		HashMap <String ,String> hash =  info[0].getChannelApp();
 		Iterator iter = hash.entrySet().iterator();
 		while (iter.hasNext()) {
 		Map.Entry entry = (Map.Entry) iter.next();
@@ -93,8 +77,7 @@ public class ReceiveServlet extends HttpServlet {
 	    	 channelUrl = URLDecoder.decode((String)entry.getValue(),"UTF-8");
 	    }
 		}
-		//String channelUrl = URLDecoder.decode(info.getChannelsAppUrl(),"UTF-8");
-		List<HashMap<String,String>> hashList = info.getClientsAppUrls();
+		List<HashMap<String,String>> hashList = info[0].getClientsApp();
 		List<String> clientUrl = new ArrayList<String>();
 		for(HashMap hashmap : hashList){
 			iter = hashmap.entrySet().iterator();
@@ -106,45 +89,66 @@ public class ReceiveServlet extends HttpServlet {
 		    }
 		    }
 		    }
-	    /*for(int i = 0;i<clientUrl.size();i++){
-			clientUrl.set(i,URLDecoder.decode(clientUrl.get(i),"UTF-8"));
-		}*/
 		System.out.println("clientUrl.size() is " + clientUrl.size());
 		String [] clientUrls = new String[clientUrl.size()];
-		String [] clientFileName = new String[clientUrl.size()];
-		String [] clientFilePath = new String [clientUrl.size()];
 		for(int i = 0;i<clientUrl.size();i++){
-			
-			clientUrls[i] = clientUrl.get(i).substring(0,clientUrl.get(i).lastIndexOf("?"));
-			clientFileName[i] = clientUrl.get(i).substring(clientUrl.get(i).indexOf("=")+1,clientUrl.get(i).lastIndexOf("&"));
- 			clientFilePath[i] = clientUrl.get(i).substring(clientUrl.get(i).lastIndexOf("=")+1);
+			clientUrls[i] = clientUrl.get(i);
 		}
 		System.out.println("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
-		String channelUrlInfo = channelUrl.substring(0, channelUrl.lastIndexOf('?'));
+		String channelUrlInfo = channelUrl;
 		System.out.println("the channelurlinfo is "+channelUrlInfo);
-		String channelFileName = channelUrl.substring(channelUrl.indexOf("=")+1,channelUrl.lastIndexOf("&") );
+		String channelFileName = "channel.apk";
 		System.out.println("the channelFileName is "+channelFileName);
-		String channelFilePath = channelUrl.substring(channelUrl.lastIndexOf("=")+1);
-		System.out.println("the channelFilePath is "+channelFilePath);
-		HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/channelapk/", channelUrlInfo, channelFileName, channelFilePath);
-		for(int i = 0;i<clientUrl.size();i++){
-			HttpUtil.download("/home/hit_alan/zhoufandi/somefilebetweenlinuxandwindows/clientapk/", clientUrls[i] , clientFileName[i], clientFilePath[i]);
+		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
+        String dirPath = 	df.format(new Date());
+        List<String> makeDirList = new ArrayList<String>();
+        makeDirList =new AnalysisUtil().getShellEcho(makeDirList,"makeDir.sh  0 "+dirPath);
+		HttpClientUtils.getInstance().download(urlhost+channelUrlInfo, channelpath+dirPath+"/channel.apk",new HttpClientDownLoadProgress() { 
+			  public void onProgress(int progress) 
+			  {
+				  if(progress==100)
+				  {
+				  System.out.println("download channel progress = " + progress);
+				  count++;
+				System.out.println("the count is "+count);
+				  }
+			  }
 		}
-		response.setCharacterEncoding("UTF-8");
-		PrintWriter out = response.getWriter();
-		out.print("下载成功");
-		out.flush();
-		out.close();  
-	    AnalysisUtil.dealTheApk(0);
+		);
+		for(int i = 0;i<clientUrl.size();i++){
+			HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/client"+i+".apk",new HttpClientDownLoadProgress() {
+				public void onProgress(int progress) {
+					if(progress==100){
+						System.out.println("download client progress = " + progress);	
+						count++;
+						System.out.println("the count is "+count);
+					}    
+				}
+			});
+		}
+		while(count<=clientUrl.size()+1){
+			System.out.print("");
+			if(count==clientUrl.size()+1){
+				System.out.println("finish done");
+				count=0;
+				try {
+					  Thread.sleep(2000);
+					   System.out.println("done already");	
+						response.setCharacterEncoding("UTF-8");
+						PrintWriter out = response.getWriter();
+						out.print("下载成功");
+						out.flush();
+						out.close();  
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				new AnalysisUtil().dealTheApk(0,taskId,dirPath);
+				break;
+			}
+		}
+		}
 	}
-
-	/**
-	 * Initialization of the servlet. <br>
-	 *
-	 * @throws ServletException if an error occurs
-	 */
 	public void init() throws ServletException {
-		// Put your code here
 	}
-
 }

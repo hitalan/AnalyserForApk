@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.hit.util.HttpUtil;
 import org.hit.util.MessageInfo;
 
+import com.google.gson.Gson;
+
 /**
  * Servlet implementation class SearchServlet
  */
@@ -35,38 +37,28 @@ public class SearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-       response.getWriter().append("Served at: ").append(request.getContextPath());
 		String packageName = request.getParameter("package");
 		System.out.println("we all ready find the pacakage"+packageName);
 	   //search send again
-		HttpUtil util = new HttpUtil();
 		MessageInfo app = new MessageInfo();
-		// app.setTaskId("task001");
-		 app.setSubtaskId("task001");
-		 //app.setChannelId("channel001");
-		 
 		 Map<String,String> clientmap; 
+		 //如果查询结果不为空：则
 	     List<HashMap<String, String>> clientsAppUrlList = new ArrayList<HashMap<String,String>>();
 	     String urls[] = new String [2];
-	     urls[1] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=newUIchangeActivity.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
-	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=newUIchangeXml.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
+	     urls[0] = URLEncoder.encode("app3/M00/38/21/wKgCAVaEKHSAJ_yLAARp7OGEqXo7644838","UTF-8");
+	     urls[1] = URLEncoder.encode("app7/M00/CB/CB/wKhkBFbPr5GAYNXMAOhxbnhHbsY4348423","UTF-8");
 	     for(int i = 0;i<urls.length;i++){
 	    	 clientmap = new HashMap<String,String>();
-		     clientmap.put("url", urls[0]);
-		     clientmap.put("hash", "hash"+i+1);
+		     clientmap.put("url", urls[i]);
+		     clientmap.put("hash", "hash"+i);
 	    	 clientsAppUrlList.add((HashMap<String, String>) clientmap);
 	     }
-	    /* List<String> clientsAppUrlList = new ArrayList<String>();
-	     String urls[] = new String [1];
-	     urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=newUIchangeActivity.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
-	     //urls[0] = URLEncoder.encode("http://localhost:8080/Client/download?fileName=newUIchangeXml.apk&filePath=/home/hit_alan/sendAPK/","UTF-8");
-	     for(int i = 0;i<urls.length;i++){
-	    	 clientsAppUrlList.add(urls[i]);
-	     }*/
 	     System.out.println("urls.length is "+urls.length);
-	     app.setClientsAppUrls(clientsAppUrlList);
-		 String info = util.post("http://localhost:8080/Server/secondReceiveTask",app);
-		 System.out.println(info+"is the info");
+	     app.setClientsApp(clientsAppUrlList);
+		response.setCharacterEncoding("UTF-8");
+		  PrintWriter out = response.getWriter();
+	       Gson gson = new Gson();
+		   out.print(gson.toJson(app));
 	}
 
 	/**
