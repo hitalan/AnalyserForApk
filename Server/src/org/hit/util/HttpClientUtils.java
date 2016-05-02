@@ -1,6 +1,5 @@
 package org.hit.util;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +15,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -25,6 +23,8 @@ import org.apache.http.util.EntityUtils;
 public class HttpClientUtils 
 
 {
+public static  String taskId;
+public static boolean isBad = false;
 public static final int THREAD_POOL_SIZE = 2;
 
 	public interface HttpClientDownLoadProgress {
@@ -57,26 +57,14 @@ public static final int THREAD_POOL_SIZE = 2;
 	}
 
 
-	public void  download(final String url, final String filePath,
+public void  download(final String url, final String filePath,
 			final HttpClientDownLoadProgress progress) {
 		downloadExcutorService.execute(new Runnable() {
 			public void run() {
 				httpDownloadFile(url, filePath, progress, null);
-				//isAlived();
 			}
 		});
 	}
-
-	public int isAlived(){
-		if (downloadExcutorService.isShutdown())
-			 return 1;
-			//System.out.println("shutdown");
-		else
-			 return 0; 
-			
-			//System.out.println("continue");
-	}
-
 	private void httpDownloadFile(String url, String filePath,HttpClientDownLoadProgress progress, Map<String, String> headMap) {
 		    CloseableHttpClient httpclient = HttpClients.createDefault();
 		try {
@@ -85,6 +73,14 @@ public static final int THREAD_POOL_SIZE = 2;
 			CloseableHttpResponse response1 = httpclient.execute(httpGet);
 			try {
 				System.out.println(response1.getStatusLine());
+				if(response1.getStatusLine().getStatusCode()==404)
+				{
+					isBad = true;
+					System.out.println("we will finish this task");
+					//new DealException().sendWrongAnswerBy404(taskId);
+				}
+				else
+				{
 				HttpEntity httpEntity = response1.getEntity();
 				long contentLength = httpEntity.getContentLength();
 				InputStream is = httpEntity.getContent();
@@ -106,7 +102,8 @@ public static final int THREAD_POOL_SIZE = 2;
 				output.close();
 				fos.close();
 				EntityUtils.consume(httpEntity);
-			//	downloadExcutorService.shutdown();
+				}
+
 			} finally {
 				response1.close();
 			}

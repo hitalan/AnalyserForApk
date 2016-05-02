@@ -1,15 +1,15 @@
 package org.hit.util;
 
 public class ApkInfo {
-
 private String apkType;	
- private String  apkName;
- private String packageName;
- private String versionCode;
-  private String versionName;
-  private String dexHashCode;
-  private String apkHashCode;
-  public String getApkName() {
+private String signaTure;
+private String  apkName;
+private String packageName;
+private String versionCode;
+private String versionName;
+private String dexHashCode;
+private String apkHashCode;
+public String getApkName() {
 		return apkName;
 	}
 	public void setApkName(String apkName) {
@@ -50,5 +50,11 @@ private String apkType;
 	}
 	public void setApkHashCode(String apkHashCode) {
 		this.apkHashCode = apkHashCode;
+	}
+	 public String getSignaTure() {
+			return signaTure;
+	}
+	public void setSignaTure(String signaTure) {
+			this.signaTure = signaTure;
 	}
 }

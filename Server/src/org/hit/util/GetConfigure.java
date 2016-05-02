@@ -1,35 +1,78 @@
 package org.hit.util;
-
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 public class GetConfigure {
 	
-	public String url;
-	public String name;
-	public String port;
-	public String count;
-	public String ip;
-	public String version;
-	public String redis_timeout;
-	public String maxCap;
-	public String maxCapOriginal;
-	public String type;
-	public String redis_host;
-	public String redis_port;
-	public String redis_queue;
-	public String path;
-	public String redis_result;
-	public String cacheSize;
-	public String proxy;
+	private String url;
+	private String name;
+	private String port;
+	private String count;
+	private String ip;
+	private String version;
+	private String redis_timeout;
+	private String maxCap;
+	private String maxCapOriginal;
+	private String type;
+	private String redis_host;
+	private String redis_port;
+	private String redis_queue;
+	private String path;
+	private String redis_result;
+	private String cacheSize;
+	private String proxy;
+	private String downloadChannelPath;
+	private String downloadClientPath;
+	private String downloadUrl;
+	private String shellPath;
+	private String analyzerPath;
+	private String whiteListUrl;
+	private String downloadSecondClientPath;
+	public String getDownloadSecondClientPath() {
+		return downloadSecondClientPath;
+	}
+
+	public void setDownloadSecondClientPath(String downloadSecondClientPath) {
+		this.downloadSecondClientPath = downloadSecondClientPath;
+	}
+
+	public String getWhiteListUrl() {
+		return whiteListUrl;
+	}
+
+	public void setWhiteListUrl(String whiteListUrl) {
+		this.whiteListUrl = whiteListUrl;
+	}
+
+	public String getAnalyzerPath() {
+		return analyzerPath;
+	}
+
+	public void setAnalyzerPath(String analyzerPath) {
+		this.analyzerPath = analyzerPath;
+	}
+
+	public String getShellPath() {
+		return shellPath;
+	}
+
+	public void setShellPath(String shellPath) {
+		this.shellPath = shellPath;
+	}
+
+	public String getDownloadUrl() {
+		return downloadUrl;
+	}
+
+	public void setDownloadUrl(String downloadUrl) {
+		this.downloadUrl = downloadUrl;
+	}
+
 	public  GetConfigure(){
 		  Properties pros = new Properties();
 			try {
-
 				    pros.load(GetConfigure.class.getResourceAsStream("/info.properties"));
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			url=pros.getProperty("url");
@@ -43,14 +86,65 @@ public class GetConfigure {
 			maxCapOriginal=pros.getProperty("maxCapOriginal");
 			type=pros.getProperty("type");
 			redis_queue=pros.getProperty("redis.queue");
-			 redis_host=pros.getProperty("redis.host");
-			 redis_port=pros.getProperty("redis.port");
-			 path=pros.getProperty("path");
-			 redis_result=pros.getProperty("redis_result");
-			 cacheSize=pros.getProperty("cacheSize");
+			redis_host=pros.getProperty("redis.host");
+			redis_port=pros.getProperty("redis.port");
+			path=pros.getProperty("path");
+			redis_result=pros.getProperty("redis_result");
+			cacheSize=pros.getProperty("cacheSize");
 			proxy=pros.getProperty("proxy");
+			downloadChannelPath=pros.getProperty("downloadChannelPath");
+			downloadClientPath=pros.getProperty("downloadClientPath");
+			downloadUrl=pros.getProperty("downloadUrl");
+			shellPath=pros.getProperty("shellPath");
+			analyzerPath=pros.getProperty("analyzerPath");
+			whiteListUrl=pros.getProperty("whiteListUrl");
+			downloadSecondClientPath=pros.getProperty("downloadSecondClientPath");
 	}
 	
+	public String getRedis_timeout() {
+		return redis_timeout;
+	}
+
+	public void setRedis_timeout(String redis_timeout) {
+		this.redis_timeout = redis_timeout;
+	}
+
+	public String getRedis_result() {
+		return redis_result;
+	}
+
+	public void setRedis_result(String redis_result) {
+		this.redis_result = redis_result;
+	}
+
+	public String getCacheSize() {
+		return cacheSize;
+	}
+
+	public void setCacheSize(String cacheSize) {
+		this.cacheSize = cacheSize;
+	}
+
+	public String getDownloadChannelPath() {
+		return downloadChannelPath;
+	}
+
+	public void setDownloadChannelPath(String downloadChannelPath) {
+		this.downloadChannelPath = downloadChannelPath;
+	}
+
+	public String getDownloadClientPath() {
+		return downloadClientPath;
+	}
+
+	public void setDownloadClientPath(String downloadClientPath) {
+		this.downloadClientPath = downloadClientPath;
+	}
+
+	public void setProxy(String proxy) {
+		this.proxy = proxy;
+	}
+
 	public String getUrl() {
 		return url;
 	}

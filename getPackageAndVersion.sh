@@ -6,7 +6,14 @@ do
   filelist[$c]=$file
   c=`expr $c + 1`
 done
-echo "${filelist[*]}"
+echo "${filelist[*]}" 
+c=0
+for file in ${filelist[*]}
+do
+  filesignature[$c]=$(java -cp ../../getSignature.jar com.wandoujia.tools.ApkSignatureToolsMain $file |grep 'signatureMd5')
+  c=`expr $c + 1`
+done
+echo "${filesignature[*]}"
 c=0
 for file in ${filelist[*]}
 do

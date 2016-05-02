@@ -4,14 +4,6 @@
     <servlet-name>ReceiveServlet</servlet-name>
     <servlet-class>org.hit.servlet.ReceiveServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>AnalysisServlet</servlet-name>
-    <servlet-class>org.hit.servlet.AnalysisServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>AnalysisServlet</servlet-name>
-    <url-pattern>/analysis</url-pattern>
-  </servlet-mapping>
   <servlet-mapping>
     <servlet-name>ReceiveServlet</servlet-name>
     <url-pattern>/receiveTask</url-pattern>
@@ -19,14 +11,4 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <description></description>
-    <display-name>secondReceiveTask</display-name>
-    <servlet-name>secondReceiveTask</servlet-name>
-    <servlet-class>org.hit.servlet.SecondReceiveServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>secondReceiveTask</servlet-name>
-    <url-pattern>/secondReceiveTask</url-pattern>
-  </servlet-mapping>
 </web-app>
