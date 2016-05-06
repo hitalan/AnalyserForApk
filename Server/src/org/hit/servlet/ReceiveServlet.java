@@ -19,13 +19,14 @@ import org.hit.util.AnalysisUtil;
 import org.hit.util.DealException;
 import org.hit.util.GetConfigure;
 import org.hit.util.HttpClientUtils;
-import org.hit.util.Main;
 import org.hit.util.getInfoByRedis;
 import org.hit.util.HttpClientUtils.HttpClientDownLoadProgress;
 import com.google.gson.Gson;
 public class ReceiveServlet extends HttpServlet{
-	private static Logger logger = Logger.getLogger(Main.class);  
+	private static Logger logger = Logger.getLogger(ReceiveServlet.class);  
 	public static boolean isBad;
+	public static int failtimes;
+	public static String failTaskId;
 	private static final long serialVersionUID = 6731251846319286501L;
 	public ReceiveServlet() {
 		super();
@@ -42,9 +43,11 @@ public class ReceiveServlet extends HttpServlet{
 			throws ServletException, IOException {
 		List<Object> apkinfo =  getInfoByRedis.getInfo();
 		GetConfigure getConfigure=new GetConfigure();
-		logger.debug("the apkinfo from the task is "+apkinfo.get(0));
+		logger.info("the apkinfo from the task is "+apkinfo.get(0));
+		System.out.println("the apkinfo from the task is "+apkinfo.get(0));
 		if(apkinfo.get(0).toString().equals("[]")){
-			   logger.info("we have no task");	
+			 logger.info("we have no task");	
+			   System.out.println("we have no task");	
 				response.setCharacterEncoding("UTF-8");
 				PrintWriter out = response.getWriter();
 				out.print("结束");
@@ -70,7 +73,7 @@ public class ReceiveServlet extends HttpServlet{
 	    }
 		}
 		List<HashMap<String,String>> hashList = info[0].getClientsApp();
-		List<String> clientUrl = new ArrayList<String>();
+		final List<String> clientUrl = new ArrayList<String>();
 		for(HashMap hashmap : hashList){
 			iter = hashmap.entrySet().iterator();
 			while (iter.hasNext()) {
@@ -81,16 +84,24 @@ public class ReceiveServlet extends HttpServlet{
 		    }
 		    }
 		    }
-		logger.debug("clientUrl.size() is " + clientUrl.size());
+		System.out.println("clientUrl.size() is " + clientUrl.size());
+		//logger.info("clientUrl.size() is " + clientUrl.size());
 		String [] clientUrls = new String[clientUrl.size()];
+		boolean isClientUrlEmptyTrue =  false;
 		for(int i = 0;i<clientUrl.size();i++){
 			clientUrls[i] = clientUrl.get(i);
+			if(clientUrls[i].equals(""))
+				 isClientUrlEmptyTrue =  true;
 		}
-		logger.debug("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
+		
+		if(channelUrl.equals("")||isClientUrlEmptyTrue){
+			 new DealException().	sendWrongAnswerByEmptyUrl(taskId);
+		}
+		else{
+		System.out.println("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
+		//logger.info("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
 		String channelUrlInfo = channelUrl;
 		String channelFileName = "channel.apk";
-		logger.debug("the channelurlinfo is "+channelUrlInfo);
-		logger.debug("the channelFileName is "+channelFileName);
 		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
         String dirPath = 	df.format(new Date());
         List<String> makeDirList = new ArrayList<String>();
@@ -99,65 +110,87 @@ public class ReceiveServlet extends HttpServlet{
 		HttpClientUtils.getInstance().download(urlhost+channelUrlInfo, channelpath+dirPath+"/channel.apk",new HttpClientDownLoadProgress() { 
 			  public void onProgress(int progress) 
 			  {
-				  if(HttpClientUtils.isBad==true){
-					  isBad = true;
-				  }
 				  if(progress==100)
 				  {
-						logger.debug("download channel progress = " + progress);
-				  count++;
-					logger.debug("the count is "+count);
+						logger.info("download channel progress = " + progress);
+						System.out.println("download channel progress = " + progress);
+				       count++;
 				  }
 			  }
 		}
-		);
+		,"channelapk");
 		for(int i = 0;i<clientUrl.size();i++){
 			HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/client"+i+".apk",new HttpClientDownLoadProgress() {
 				public void onProgress(int progress) {
-					  if(HttpClientUtils.isBad==true){
-						  isBad = true;
-					  }
+				//System.out.println("the badClientCount is "+HttpClientUtils.badClientCount);
 					if(progress==100){
-						logger.debug("download client progress = " + progress);	
+						System.out.println("download client progress = " + progress);
+						logger.info("download client progress = " + progress);	
 						count++;
-						logger.debug("the count is "+count);
 					}    
 				}
-			});
+			},"clientapk");
 		}
-		while(count<=clientUrl.size()+1)
+	while(count<=clientUrl.size()+1)
 		{
-			logger.debug("");
-			  if(isBad)
-			  {
-				 new DealException().sendWrongAnswerBy404(taskId);
-			      HttpClientUtils.isBad=false;
-			      isBad=true;
-			  	  logger.error("we finish this analyze because the bad 404 download");
-				  count=0;
-			      break;
-			  }			  
-			  else
-			  {
-				  if(count==clientUrl.size()+1){
-						logger.info("finish download task");
-						count=0;
-						try {
-							  Thread.sleep(2000);
-								response.setCharacterEncoding("UTF-8");
-								PrintWriter out = response.getWriter();
-								out.print("下载成功");
-								out.flush();
-								out.close();  
-								new AnalysisUtil().dealTheApk(0,taskId,dirPath);
-							  }
-						 catch (InterruptedException e) {
-							e.printStackTrace();
+			try {
+				Thread.sleep(1000);
+				System.out.println("the count is "+count);
+				  if(HttpClientUtils.badClientCount==clientUrl.size()||HttpClientUtils.badChannelCount==1)
+				  {
+				     HttpClientUtils.badChannelCount=0;
+				     HttpClientUtils.badClientCount=0;
+				  	logger.error("we finish this analyze because the bad 404 or bad 502 download");
+					System.out.println("we finish this analyze because the bad 404 or bad 502 download");
+				/*	if(failtimes==0){
+						failTaskId=taskId;
+						failtimes++;
+					}  //第一次失败的时候把taskid存在对应failtaskid
+					else{//第二次失败的时候跳到后面的循环 如果和上一次保存的failtaskid一致则增加失败次数 如果和id不同则重置为0 重新设置新的taskid值
+						if(failTaskId.equals(taskId))
+							failtimes++;
+						else{
+							failtimes=0;
+						    failTaskId=taskId;
+						    failtimes++;
 						}
-						break;
-		        }
-			  }
+						if(failtimes>=3){//当失败的次数超过限制 则放弃该任务重新做下一个任务
+						     apkinfo =  getInfoByRedis.getInfo();
+							logger.error("the bad apkinfo from the task is "+apkinfo.get(0));
+							System.out.println("the bad apkinfo from the task we delete  is "+apkinfo.get(0));
+							failtimes=0;
+						}
+					}*/
+					 new DealException().sendWrongAnswerBy404(taskId);
+					Thread.sleep(3000);
+					 count=0;
+				     List<String> deleteList = new ArrayList<String>();
+				     deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
+				      break;
+				  }			  
+				  else
+				  {
+					  if(count<=clientUrl.size()+1&&count>=2){
+						  logger.info("finish download task");
+						  System.out.println("finish download task");
+						   count=0;
+						   HttpClientUtils.badClientCount=0;
+						   HttpClientUtils.badChannelCount=0;
+									response.setCharacterEncoding("UTF-8");
+									PrintWriter out = response.getWriter();
+									out.print("下载成功");
+									out.flush();
+									out.close();  
+									new AnalysisUtil().dealTheApk(0,taskId,dirPath);
+							break;
+			            }
+				  }
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		}
+	}
 	}
 	}
 	public void init() throws ServletException {

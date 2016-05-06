@@ -19,14 +19,14 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-
+import org.apache.log4j.Logger;
 public class HttpClientUtils 
-
 {
 public static  String taskId;
-public static boolean isBad = false;
-public static final int THREAD_POOL_SIZE = 2;
-
+public static int badClientCount;
+public static int badChannelCount;
+public static final int THREAD_POOL_SIZE = 5;
+private static Logger logger = Logger.getLogger(HttpClientUtils.class);  
 	public interface HttpClientDownLoadProgress {
 		public void onProgress(int progress);
 	}
@@ -47,10 +47,10 @@ public static final int THREAD_POOL_SIZE = 2;
 	}
 
 
-	public void download(final String url, final String filePath) {
+	public void download(final String url, final String filePath,final String type) {
 		downloadExcutorService.execute(new Runnable() {
 			public void run() {
-				httpDownloadFile(url, filePath, null, null);
+				httpDownloadFile(url, filePath, null, null,type);
 
 			}
 		});
@@ -58,14 +58,14 @@ public static final int THREAD_POOL_SIZE = 2;
 
 
 public void  download(final String url, final String filePath,
-			final HttpClientDownLoadProgress progress) {
+			final HttpClientDownLoadProgress progress,final String type) {
 		downloadExcutorService.execute(new Runnable() {
 			public void run() {
-				httpDownloadFile(url, filePath, progress, null);
+				httpDownloadFile(url, filePath, progress, null,type);
 			}
 		});
 	}
-	private void httpDownloadFile(String url, String filePath,HttpClientDownLoadProgress progress, Map<String, String> headMap) {
+	public  void httpDownloadFile(String url, String filePath,HttpClientDownLoadProgress progress, Map<String, String> headMap,String type) {
 		    CloseableHttpClient httpclient = HttpClients.createDefault();
 		try {
 			HttpGet httpGet = new HttpGet(url);
@@ -73,11 +73,18 @@ public void  download(final String url, final String filePath,
 			CloseableHttpResponse response1 = httpclient.execute(httpGet);
 			try {
 				System.out.println(response1.getStatusLine());
-				if(response1.getStatusLine().getStatusCode()==404)
+				if(response1.getStatusLine().getStatusCode()!=200)
 				{
-					isBad = true;
-					System.out.println("we will finish this task");
-					//new DealException().sendWrongAnswerBy404(taskId);
+					if(type.equals("channelapk")){
+						badChannelCount++;
+						    logger.error("there are "+response1.getStatusLine().getStatusCode()+" errors in the channel url");
+							System.out.println("there are  "+response1.getStatusLine().getStatusCode()+" errors in the channel url");
+					}
+					else{
+						badClientCount++;
+						logger.error("there are  "+response1.getStatusLine().getStatusCode()+" errors in the client url");
+						System.out.println("there are  "+response1.getStatusLine().getStatusCode()+" errors in the client url");
+					}
 				}
 				else
 				{

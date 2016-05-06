@@ -71,7 +71,7 @@ public class GetConfigure {
 	public  GetConfigure(){
 		  Properties pros = new Properties();
 			try {
-				    pros.load(GetConfigure.class.getResourceAsStream("/info.properties"));
+				    pros.load(GetConfigure.class.getResourceAsStream("/infopc.properties"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

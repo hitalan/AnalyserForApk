@@ -13,13 +13,12 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.hit.util.HttpClientUtils.HttpClientDownLoadProgress;
 import org.json.JSONObject;
-
 import com.google.gson.Gson;
 
 
 //输出的结果类型有：   1 高度疑似二次打包应用 2.二次打包应用 3.渠道信息不同但代码相同的正版应用 4.纯正版应用  5.钓鱼应用 6.盗版应用,7正版的不相关应用 8 正版的渠道信息不同的不相关应用 9同一签名的该公司正版应用
 public class AnalysisUtil {
-private static Logger logger = Logger.getLogger(Main.class);  
+private static Logger logger = Logger.getLogger(AnalysisUtil.class);  
 GetConfigure getConfigure=new GetConfigure();
  private static String packageName,versionCode,versionName,dexHashName,dexHashCode,apkHashName,apkHashCode,analysisReport;
  private  List<String> processList = new ArrayList<String>();
@@ -81,6 +80,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     	  deleteList = getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
     	  deleteList.clear();//清空
     	  logger.info("finish the analyze task");
+    	  System.out.println("finish the analyze task");
 	      JSONObject json = new JSONObject();
 	      GetConfigure getConfigure = new GetConfigure();
  	      json.put("agentId", getConfigure.getName());
@@ -91,15 +91,19 @@ public  void dealTheApk(int type,String taskId,String dirPath){
  	      SendResult sendResult=new SendResult();
  	      sendResult.send(json.toString());
  	      logger.info("finish the send result task the result is"+ json.toString());
+          System.out.println("finish the send result task the result is"+ json.toString());
        }
     }
     public static int  analysis(List<String> processList,int type){
-    	 logger.debug("白名单信息");
+    	 logger.info("白名单信息");
+    	  System.out.println("白名单信息");
          String apkName = processList.get(0);
-         logger.debug("the apkName is "+apkName);
+         logger.info("the apkName is "+apkName);
+         System.out.println("the apkName is "+apkName);
          String apkNameList[] = apkName.split(" ");
          int length = apkNameList.length;
-         logger.debug("the length is "+length);
+        logger.info("the length is "+length);
+         System.out.println("the length is "+length);
          ApkInfo  []apkInfoList = new ApkInfo[length+1];
          String hashCodeList[] = processList.get(6).split(",");
          String clientSignatureList[] = processList.get(1).split(" ");
@@ -133,23 +137,31 @@ public  void dealTheApk(int type,String taskId,String dirPath){
          String packageList[] = processList.get(2).split("package: ");
        
          for (int i = 0;i<length ; i++) {
-        	logger.debug("the client apk name is "+apkNameList[i]);
-        	logger.debug("the apk hash is "+apkInfoList[i].getApkHashCode());
+         	logger.info("the client apk name is "+apkNameList[i]);
+        	 System.out.println("the client apk name is "+apkNameList[i]);
+        	logger.info("the apk hash is "+apkInfoList[i].getApkHashCode());
+        	 System.out.println("the apk hash is "+apkInfoList[i].getApkHashCode());
          	packageName = packageList[i+1].substring(5,packageList[i+1].indexOf("versionCode"));
-         	logger.debug("the packageName is "+packageName);
-         	logger.debug("the apk signature is "+apkInfoList[i].getSignaTure());
+         	logger.info("the packageName is "+packageName);
+         	 System.out.println("the packageName is "+packageName);
+         	logger.info("the apk signature is "+apkInfoList[i].getSignaTure());
+         	 System.out.println("the apk signature is "+apkInfoList[i].getSignaTure());
             apkInfoList[i].setPackageName(packageName);
             versionCode =  packageList[i+1].substring(packageList[i+1].indexOf("versionCode")+12,packageList[i+1].indexOf("versionName"));
-            logger.debug("the apk versionCode is "+versionCode);
+            logger.info("the apk versionCode is "+versionCode);
+             System.out.println("the apk versionCode is "+versionCode);
             apkInfoList[i].setVersionCode(versionCode);
             versionName=packageList[i+1].substring(packageList[i+1].indexOf("versionName")+12);
-            logger.debug("the apkVersionName is "+versionName);
+           logger.info("the apkVersionName is "+versionName);
+            System.out.println("the apkVersionName is "+versionName);
             apkInfoList[i].setVersionName(versionName);
             apkInfoList[i].setApkType("clientApk");
-            logger.debug("the apk dex hash is "+apkInfoList[i].getDexHashCode());
+            logger.info("the apk dex hash is "+apkInfoList[i].getDexHashCode());
+            System.out.println("the apk dex hash is "+apkInfoList[i].getDexHashCode());
          }
          
-         logger.debug( "带检测apk信息");
+         logger.info( "带检测apk信息");
+         System.out.println( "带检测apk信息");
          String channelHash = processList.get(7);
     	 dexHashCode = channelHash.substring(channelHash.indexOf(" ")+1,channelHash.indexOf(","));
     	 apkHashCode=channelHash.substring(channelHash.lastIndexOf(" ")+1);
@@ -159,22 +171,29 @@ public  void dealTheApk(int type,String taskId,String dirPath){
  	     apkInfoList[length].setApkHashCode(apkHashCode);
  	     apkInfoList[length].setSignaTure(channelSignature);;
          String channelName = processList.get(3);
-         logger.debug("the channel apk is "+channelName);
-         logger.debug("the apk hash code is "+apkHashCode);
+         logger.info("the channel apk is "+channelName);
+         System.out.println("the channel apk is "+channelName);
+         logger.info("the apk hash code is "+apkHashCode);
+         System.out.println("the apk hash code is "+apkHashCode);
           apkInfoList[length].setApkName(channelName);
           String channelpackageList = processList.get(5);
           packageName = channelpackageList.substring(14,channelpackageList.indexOf("versionCode"));
-          logger.debug("the apk package name is "+packageName);
-          logger.debug("the apk signature is "+apkInfoList[length].getSignaTure());
+          logger.info("the apk package name is "+packageName);
+          System.out.println("the apk package name is "+packageName);
+          logger.info("the apk signature is "+apkInfoList[length].getSignaTure());
+          System.out.println("the apk signature is "+apkInfoList[length].getSignaTure());
           apkInfoList[length].setPackageName(packageName);
           versionCode =  channelpackageList.substring(channelpackageList.indexOf("versionCode")+12,channelpackageList.indexOf("versionName"));
-          logger.debug("the versionCode is "+versionCode);
+          logger.info("the versionCode is "+versionCode);
+          System.out.println("the versionCode is "+versionCode);
           apkInfoList[length].setVersionCode(versionCode);
           versionName=channelpackageList.substring(channelpackageList.indexOf("versionName")+12);
-          logger.debug("the versionName is "+versionName);
+          logger.info("the versionName is "+versionName);
+          System.out.println("the versionName is "+versionName);
           apkInfoList[length].setVersionName(versionName);
-          logger.debug("the apk dex hash is "+dexHashCode);
-     	 apkInfoList[length].setApkType("channelApk");
+          logger.info("the apk dex hash is "+dexHashCode);
+          System.out.println("the apk dex hash is "+dexHashCode);
+          apkInfoList[length].setApkType("channelApk");
      	 int status = -1;
      for(int i = 0;i<length;i++){
      	if(apkInfoList[length].getApkHashCode().equals(apkInfoList[i].getApkHashCode()))
@@ -244,45 +263,55 @@ public  void dealTheApk(int type,String taskId,String dirPath){
      	 }
      	 if(status==-1)
      	 {
-     		  logger.info("没有与之相同的包名，需要进行包名不同情况下的相似度分析");
+     	     logger.info("没有与之相同的包名，需要进行包名不同情况下的相似度分析");
+     		 System.out.println("没有与之相同的包名，需要进行包名不同情况下的相似度分析");
      	      packageName  = apkInfoList[length].getPackageName().substring(1, apkInfoList[length].getPackageName().lastIndexOf("'"));  
      	 }
      	 else if(status==0){
      		 logger.info("纯正版应用");
+     		 System.out.println("纯正版应用");
      		analysisReport = "纯正版应用";
      	 }
 
      	 else if(status==1){
-     		 logger.info("版本相同的其他渠道正版应用");
+     	    logger.info("版本相同的其他渠道正版应用");
+     		 System.out.println("版本相同的其他渠道正版应用");
      		 analysisReport = "版本相同的其他渠道正版应用";
      	 }
 
      	 else if(status==2){
      		 logger.info("版本不同的正版应用");
-     	    analysisReport = "版本不同的正版应用";
+     		 System.out.println("版本不同的正版应用");
+     		 analysisReport = "版本不同的正版应用";
      	 }
      	 else if(status==3){
      		 logger.info("签名信息不同的正版应用");
-     	     analysisReport = "签名信息不同的正版应用";
+     		 System.out.println("签名信息不同的正版应用");
+     		 analysisReport = "签名信息不同的正版应用";
      	 }
      	 else if(status==4){
      		 logger.info("同公司旗下不相关应用");
-     	     analysisReport = "同公司旗下不相关应用";
+     		 System.out.println("同公司旗下不相关应用");
+     		 analysisReport = "同公司旗下不相关应用";
      	 }
      	 else if(status==5){
-     		 logger.info("不相关应用");
-     	     analysisReport = "不相关应用";
+     	     logger.info("不相关应用");
+     		 System.out.println("不相关应用");
+     		 analysisReport = "不相关应用";
      	 }
      	 else if(status==6){
      		 logger.info("二次打包应用");
+     		 System.out.println("二次打包应用");
      		 analysisReport="二次打包应用";
      	 }
      	 else if(status==7){
      		 logger.info("二次打包应用");
+     		 System.out.println("二次打包应用");
      		 analysisReport="二次打包应用";
      	 }
      	 else if(status==8){
      		 logger.info("高度疑似二次打包应用");
+     		 System.out.println("高度疑似二次打包应用");
      		 analysisReport="高度疑似二次打包应用";
      	 }
      	 return status;
@@ -290,11 +319,12 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     
       public  void dealDifferentPackage(String packageName,String taskId) throws UnsupportedEncodingException{
           List<String> makeDirList = new ArrayList<String>();
-          makeDirList = getShellEcho(makeDirList,"makeDir.sh  0 "+ getConfigure.getAnalyzerPath()+" "+dirPath);  
+          makeDirList = getShellEcho(makeDirList,"makeDir.sh  1 "+ getConfigure.getAnalyzerPath()+" "+dirPath);  
     	   String url = getConfigure.getWhiteListUrl()+packageName;
                  String result =  HttpUtil.requestByGetMethod(url);
                  logger.info("we get the whitelist result of the diffrent package after we second post"+result);
-    	      	Gson gson = new Gson();
+                 System.out.println("we get the whitelist result of the diffrent package after we second post"+result);
+                 Gson gson = new Gson();
     	        try {
 					result = URLDecoder.decode(result, "UTF-8");
 				} catch (UnsupportedEncodingException e) {
@@ -304,7 +334,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     			List<HashMap<String,String>> hashList = info.getClientsApp();
     		if(!hashList.isEmpty())
     			{
-    			List<String> clientUrl = new ArrayList<String>();
+    			final List<String> clientUrl = new ArrayList<String>();
     			for(HashMap hashmap : hashList){
     				Iterator iter = hashmap.entrySet().iterator();
     				while (iter.hasNext()) {
@@ -315,7 +345,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     			    }
     			    }
     			    }
-    			 logger.debug("clientUrl.size() is " + clientUrl.size());
+    			 logger.info("clientUrl.size() is " + clientUrl.size());
     			String [] clientUrls = new String[clientUrl.size()];
     			for(int i = 0;i<clientUrl.size();i++){
     				clientUrls[i] = clientUrl.get(i);
@@ -326,21 +356,39 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     				HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/secondclient"+i+".apk",new HttpClientDownLoadProgress() {
     					public void onProgress(int progress) {
     						if(progress==100){
-    							 logger.debug("download client progress = " + progress);	
+    							logger.info("download client progress = " + progress);
+    							 System.out.println();
     							count++;
-    							 logger.debug("the count is "+count);
+    							// logger.info("the count is "+count);
     						}    
     					}
-    				});
+    				},"clientapk");
     			}
-    			while(count<=clientUrl.size()){
-    				 logger.debug("the other count is"+count);
-    				if(count==clientUrl.size()){
-    					 logger.info("we already download the new apk from our second post");
-    					count = 0;
-    		   			dealTheApk(1,taskId,dirPath);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
-    		   			break;
-    				}
+    		  while(count<=clientUrl.size()){
+  				try {
+					Thread.sleep(1000);
+				    if(HttpClientUtils.badClientCount==clientUrl.size())
+	    			  {
+	    				  dealTheApk(2,taskId,dirPath);//搜索后发现提供的相关的包名为空，进行下面的操作。
+	    				  HttpClientUtils.badClientCount=0;  
+	    				  count=0;
+	    		  		 break;
+	    			  }
+	    			  else
+	    			  {	  
+	    				if(count<=clientUrl.size()&&count>=1){
+	    					 logger.info("we already download the new apk from our second post");
+	    					 System.out.println("we already download the new apk from our second post");
+	    					 count = 0;
+	    					 HttpClientUtils.badClientCount=0;  
+	    		   			dealTheApk(1,taskId,dirPath);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
+	    		   			break;
+	    				}
+	    			}
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
     			}
     			}
     		else{
@@ -351,7 +399,8 @@ public  void dealTheApk(int type,String taskId,String dirPath){
       Process process = null;
       try {
       	String shellPath =getConfigure.getShellPath();
-      	 logger.debug("the shellpath is "+shellPath);
+      	 //logger.info("the shellpath is "+shellPath);
+      	 System.out.println("the shellpath is "+shellPath);
           process = Runtime.getRuntime().exec("sh " +shellPath+sh);
           BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
           String line = "";
@@ -364,7 +413,8 @@ public  void dealTheApk(int type,String taskId,String dirPath){
           e.printStackTrace();
       }
     for (String line :list) {
-    	 logger.debug("the shell result is "+line);
+    	 logger.info("the shell result is "+line);
+    	 System.out.println("the shell result is "+line);
       }
      return list;
       }
