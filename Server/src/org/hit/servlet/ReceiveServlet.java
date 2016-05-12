@@ -34,7 +34,7 @@ public class ReceiveServlet extends HttpServlet{
 	public void destroy() {
 		super.destroy(); 
 	}
-	public static int count;
+	public  int count;
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
     doPost(request,response);
@@ -119,7 +119,26 @@ public class ReceiveServlet extends HttpServlet{
 			  }
 		}
 		,"channelapk");
+		int emptyClientUrl = 0;
 		for(int i = 0;i<clientUrl.size();i++){
+			if(clientUrls[i].equals(""))
+			{
+				emptyClientUrl++;
+				logger.error("there are empty url in the clienturls");
+				if(emptyClientUrl==clientUrl.size()){
+					new DealException().sendWrongAnswerByEmptyUrl(taskId);
+					try {
+							Thread.sleep(3000);
+					} catch (InterruptedException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+					}
+				   count=0;
+			       List<String> deleteList = new ArrayList<String>();
+					 deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
+				}
+			}
+				else{
 			HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/client"+i+".apk",new HttpClientDownLoadProgress() {
 				public void onProgress(int progress) {
 				//System.out.println("the badClientCount is "+HttpClientUtils.badClientCount);
@@ -130,13 +149,14 @@ public class ReceiveServlet extends HttpServlet{
 					}    
 				}
 			},"clientapk");
+			}
 		}
 	while(count<=clientUrl.size()+1)
 		{
 			try {
 				Thread.sleep(1000);
 				System.out.println("the count is "+count);
-				  if(HttpClientUtils.badClientCount==clientUrl.size()||HttpClientUtils.badChannelCount==1)
+				  if(HttpClientUtils.badClientCount==clientUrl.size()||HttpClientUtils.badChannelCount==1/*||emptyClientUrl==clientUrl.size()*/)
 				  {
 				     HttpClientUtils.badChannelCount=0;
 				     HttpClientUtils.badClientCount=0;
@@ -173,6 +193,7 @@ public class ReceiveServlet extends HttpServlet{
 					  if(count<=clientUrl.size()+1&&count>=2){
 						  logger.info("finish download task");
 						  System.out.println("finish download task");
+							Thread.sleep(1000);
 						   count=0;
 						   HttpClientUtils.badClientCount=0;
 						   HttpClientUtils.badChannelCount=0;

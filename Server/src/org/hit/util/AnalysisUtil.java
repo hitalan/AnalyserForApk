@@ -25,7 +25,7 @@ GetConfigure getConfigure=new GetConfigure();
  private  List<String> similarityList = new ArrayList<String>();
  private  List<String> deleteList = new ArrayList<String>();
  private static int result;
- private static int count;
+ private  int count;
  public  String dirPath;
  public  String getDirPath() {
 	return dirPath;
@@ -352,7 +352,16 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     			}
     			String urlhost =getConfigure.getDownloadUrl();
     			String clientpath =getConfigure.getDownloadSecondClientPath();
+    			int emptyClientUrl = 0;
     			for(int i = 0;i<clientUrl.size();i++){
+    				if(clientUrls[i].equals(""))
+    				{
+    					emptyClientUrl++;
+    					logger.error("there are empty urls in the client url list ");
+    				}
+
+    				else
+    				{
     				HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/secondclient"+i+".apk",new HttpClientDownLoadProgress() {
     					public void onProgress(int progress) {
     						if(progress==100){
@@ -363,15 +372,16 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     						}    
     					}
     				},"clientapk");
+    				}
     			}
     		  while(count<=clientUrl.size()){
   				try {
 					Thread.sleep(1000);
-				    if(HttpClientUtils.badClientCount==clientUrl.size())
+				    if(HttpClientUtils.badClientCount==clientUrl.size()||emptyClientUrl==clientUrl.size())
 	    			  {
-	    				  dealTheApk(2,taskId,dirPath);//搜索后发现提供的相关的包名为空，进行下面的操作。
+	    				  dealTheApk(2,taskId,dirPath);//搜索后发现提供的下载链接全部失败或者全部为空进行下面的操作。
 	    				  HttpClientUtils.badClientCount=0;  
-	    				  count=0;
+	    				//  count=0;
 	    		  		 break;
 	    			  }
 	    			  else
@@ -379,7 +389,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
 	    				if(count<=clientUrl.size()&&count>=1){
 	    					 logger.info("we already download the new apk from our second post");
 	    					 System.out.println("we already download the new apk from our second post");
-	    					 count = 0;
+	    					// count = 0;
 	    					 HttpClientUtils.badClientCount=0;  
 	    		   			dealTheApk(1,taskId,dirPath);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
 	    		   			break;
