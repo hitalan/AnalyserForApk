@@ -20,12 +20,15 @@ import com.google.gson.Gson;
 public class AnalysisUtil {
 private static Logger logger = Logger.getLogger(AnalysisUtil.class);  
 GetConfigure getConfigure=new GetConfigure();
- private static String packageName,versionCode,versionName,dexHashName,dexHashCode,apkHashName,apkHashCode,analysisReport;
+ private   String packageName,versionCode,versionName,dexHashName,dexHashCode,apkHashName,apkHashCode,analysisReport;
  private  List<String> processList = new ArrayList<String>();
  private  List<String> similarityList = new ArrayList<String>();
  private  List<String> deleteList = new ArrayList<String>();
- private static int result;
+ private  List<String> copyBadAppList = new ArrayList<String>();
+ private  int result;
  private  int count;
+ private int length;
+ private ApkInfo  []apkInfoList;
  public  String dirPath;
  public  String getDirPath() {
 	return dirPath;
@@ -41,12 +44,15 @@ public  void dealTheApk(int type,String taskId,String dirPath){
        result = analysis(processList,type);
        }
        
-       if(type==1){
+       else  if(type==1){
     	   processList.clear();//当计算新请求的包名版本号等一系列信息的时候需要将client和channel的信息进行清空 重新得到新的second目录下的元素信息
            processList = getShellEcho(processList,"info.sh "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
            result = analysis(processList,type);  
        }
-       
+       else{
+    	   
+    	   System.out.println("do no info analyze");
+       }
        if(result==-1&&type==0)
        {
            try {
@@ -76,7 +82,20 @@ public  void dealTheApk(int type,String taskId,String dirPath){
        }
        if (isFinish)
        {
-    	  processList.clear(); //清空
+    	   String channelPackageName = apkInfoList[length].getPackageName();
+    	   String badType = null;
+    	   if(result==6||result==7||result==8)
+    		   badType = "0";
+    	   else if (result==9)
+    		   badType = "1";
+    	   else if(result==10)
+    		    badType ="2";
+    	   if(badType!=null)
+    	   {
+    	   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+badType+" "+channelPackageName+" "+taskId);
+    	   copyBadAppList .clear();//清空
+    	   processList.clear(); //清空
+    	   }
     	  deleteList = getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
     	  deleteList.clear();//清空
     	  logger.info("finish the analyze task");
@@ -94,17 +113,19 @@ public  void dealTheApk(int type,String taskId,String dirPath){
           System.out.println("finish the send result task the result is"+ json.toString());
        }
     }
-    public static int  analysis(List<String> processList,int type){
+    public  int  analysis(List<String> processList,int type){
     	 logger.info("白名单信息");
     	  System.out.println("白名单信息");
          String apkName = processList.get(0);
          logger.info("the apkName is "+apkName);
          System.out.println("the apkName is "+apkName);
          String apkNameList[] = apkName.split(" ");
-         int length = apkNameList.length;
+         //int 
+         length = apkNameList.length;
         logger.info("the length is "+length);
          System.out.println("the length is "+length);
-         ApkInfo  []apkInfoList = new ApkInfo[length+1];
+         //ApkInfo  []
+         apkInfoList = new ApkInfo[length+1];
          String hashCodeList[] = processList.get(6).split(",");
          String clientSignatureList[] = processList.get(1).split(" ");
          for(int i = 1;i<length*2;i++){ //apk and dex
@@ -200,7 +221,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
      	{
      		if(type==1)
      			status=5;
-     			else;
+     		else
      		status=0;
      		break;
      	}
@@ -321,7 +342,7 @@ public  void dealTheApk(int type,String taskId,String dirPath){
           List<String> makeDirList = new ArrayList<String>();
           makeDirList = getShellEcho(makeDirList,"makeDir.sh  1 "+ getConfigure.getAnalyzerPath()+" "+dirPath);  
     	   String url = getConfigure.getWhiteListUrl()+packageName;
-                 String result =  HttpUtil.requestByGetMethod(url);
+                 String result =   HttpUtil.requestByGetMethod(url);
                  logger.info("we get the whitelist result of the diffrent package after we second post"+result);
                  System.out.println("we get the whitelist result of the diffrent package after we second post"+result);
                  Gson gson = new Gson();
