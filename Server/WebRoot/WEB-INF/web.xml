@@ -34,4 +34,14 @@
     <servlet-name>TaskServlet</servlet-name>
     <url-pattern>/taskDoing</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>badTaskReDo</display-name>
+    <servlet-name>badTaskReDo</servlet-name>
+    <servlet-class>org.hit.servlet.BadTaskReDoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>badTaskReDo</servlet-name>
+    <url-pattern>/badTaskReDo</url-pattern>
+  </servlet-mapping>
 </web-app>

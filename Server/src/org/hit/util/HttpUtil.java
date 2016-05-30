@@ -141,7 +141,7 @@ public class HttpUtil {
 	  
 		private static final String APPLICATION_JSON = "application/json";
 		private static final String CONTENT_TYPE_TEXT_JSON = "text/json";
-		public static void httpPostWithJSON(String url, String json) throws Exception {
+		public static String httpPostWithJSON(String url, String json) throws Exception {
 	        // 将JSON进行UTF-8编码,以便传输中文
 	        String encoderJson = URLEncoder.encode(json, "UTF-8");
 	        CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -151,6 +151,24 @@ public class HttpUtil {
 	        se.setContentType(CONTENT_TYPE_TEXT_JSON);
 	        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON));
 	        httpPost.setEntity(se);
-	        httpClient.execute(httpPost);
-	    }
+	        CloseableHttpResponse response  =  httpClient.execute(httpPost);
+	        int code = response.getStatusLine().getStatusCode();
+	        HttpEntity entity = response.getEntity();
+	        String responseContent = getRespString(entity)+" and the responsecode is"+code;
+	        return responseContent;
+		}
+		
+		private static String getRespString(HttpEntity entity) throws Exception {
+			if (entity == null) {
+				return null;
+			}
+			InputStream is = entity.getContent();
+			StringBuffer strBuf = new StringBuffer();
+			byte[] buffer = new byte[4096];
+			int r = 0;
+			while ((r = is.read(buffer)) > 0) {
+				strBuf.append(new String(buffer, 0, r, "UTF-8"));
+			}
+			return strBuf.toString();
+		}
 }

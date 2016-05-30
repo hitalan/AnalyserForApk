@@ -16,6 +16,7 @@ public class DownLoadUtil {
 	private static Logger logger = Logger.getLogger(ReceiveServlet.class);
 	private int count;
 	private boolean isBad;
+	private int whileTime;
 	public boolean download(List<Object> apkinfo){		
 		Gson gson = new Gson();
 		GetConfigure getConfigure=new GetConfigure();
@@ -70,8 +71,10 @@ public class DownLoadUtil {
 		System.out.println("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
 		String channelUrlInfo = channelUrl;
 		String channelFileName = "channel.apk";
-		SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");//设置日期格式
-        String dirPath = 	df.format(new Date());
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");//设置日期格式
+        String time = 	df.format(new Date());
+		String dirPath = taskId; //以taskId命名任务的文件夹
+		logger.info("the folder we make in the engine is"+time +"the folder name is"+taskId);
         List<String> makeDirList = new ArrayList<String>();
         makeDirList =new AnalysisUtil().getShellEcho(makeDirList,"makeDir.sh  0  "+getConfigure.getAnalyzerPath()+" "+dirPath);
         HttpClientUtils.taskId=taskId;
@@ -120,8 +123,10 @@ public class DownLoadUtil {
 		{
 			try {
 				Thread.sleep(1000);
+				whileTime++;
 				System.out.println("the count is "+count);
-				logger.info("the count in while is" +count);
+				System.out.println("the whileTimes is "+whileTime);
+		    	//	logger.info("the count in while is" +count);
 				  if(HttpClientUtils.badClientCount==clientUrl.size()||HttpClientUtils.badChannelCount==1/*||emptyClientUrl==clientUrl.size()*/)
 				  {
 				     HttpClientUtils.badChannelCount=0;
@@ -148,6 +153,14 @@ public class DownLoadUtil {
 								new AnalysisUtil().dealTheApk(0,taskId,dirPath);
 							break;
 			            }
+					  else if(whileTime>=100){
+							 new DealException().sendWrongAnswerByTimeout(taskId);
+							 Thread.sleep(3000);
+							  List<String> deleteList = new ArrayList<String>();
+							  deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
+							 isBad = true;
+							 break;
+					  }
 				  }
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();

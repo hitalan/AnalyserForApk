@@ -33,4 +33,17 @@ public class DealException {
 		  System.out.println(json.toString());
 		  logger.error("the result we send is "+json.toString());
 		}
+	public  void sendWrongAnswerByTimeout(String taskId){
+		   JSONObject json = new JSONObject();
+		   GetConfigure getConfigure = new GetConfigure();
+		   json.put("agentId", getConfigure.getName());
+		  json.put("subtaskId",taskId);
+		   json.put("status", 0);
+		   json.put("result","-1" );
+		   json.put("analysisReport","download time out");
+		  SendResult sendResult=new SendResult();
+		  sendResult.send(json.toString());
+		  System.out.println(json.toString());
+		  logger.error("the result we send is "+json.toString());
+		}
 }

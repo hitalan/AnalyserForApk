@@ -35,6 +35,7 @@ public class TaskServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		// System.out.println("the task still remain for "+ShellUtil.getShellEcho(list, "checkTaskNum.sh "+getConfigure.getDownloadChannelPath()).get(0));
 		response.getWriter().append("Served at: ").append(request.getContextPath()+"the task is remain "+ShellUtil.getShellEcho(list, "checkTaskNum.sh "+getConfigure.getDownloadChannelPath()).get(0)+" tasks");
+        list.clear();
 	}
 
 	/**
