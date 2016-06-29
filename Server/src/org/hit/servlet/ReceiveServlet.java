@@ -61,7 +61,7 @@ public class ReceiveServlet extends HttpServlet{
 		if(new DownLoadUtil().download(apkinfo))
 		result= "download failed";
 		else
-		result = "download sucess"; 
+		result = "download success"; 
     	response.setCharacterEncoding("UTF-8");
  		PrintWriter out = response.getWriter();
 		out.print(result);

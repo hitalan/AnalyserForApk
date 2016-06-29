@@ -16,3 +16,5 @@ do
     cd ../dex2jar-2.0
 done
 rm -r ./$1
+rm *.jar
+rm *.zip

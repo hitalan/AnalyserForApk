@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -108,6 +109,7 @@ public class HttpUtil {
 	  public static String requestByGetMethod(String urlString){
 	        CloseableHttpClient httpClient =  HttpClients.createDefault();
 	        String result = "";
+	        int statuCode = 0;
 	        try {
 	            HttpGet get = new HttpGet(urlString);
 	            System.out.println("执行get请求:...."+get.getURI());
@@ -117,6 +119,7 @@ public class HttpUtil {
 	                //response实体
 	                HttpEntity entity = httpResponse.getEntity();
 	                if (null != entity){
+	                	int  line =  httpResponse.getStatusLine().getStatusCode();
 	                    System.out.println("响应状态码:"+ httpResponse.getStatusLine());
 	                     result = EntityUtils.toString(entity);
 	                     System.out.println("响应内容为"+result);
@@ -127,7 +130,9 @@ public class HttpUtil {
 	            }
 	        }
 	        catch (Exception e) {
-	            e.printStackTrace();
+	        	System.out.println("异常被捕捉到了");
+	        	result =  "bad get due to the server statuscode is  "+statuCode;
+	           // e.printStackTrace();
 	        }
 	        finally{
 	            try{
@@ -143,12 +148,13 @@ public class HttpUtil {
 		private static final String CONTENT_TYPE_TEXT_JSON = "text/json";
 		public static String httpPostWithJSON(String url, String json) throws Exception {
 	        // 将JSON进行UTF-8编码,以便传输中文
-	        String encoderJson = URLEncoder.encode(json, "UTF-8");
+	        //String encoderJson = URLEncoder.encode(json, "UTF-8");
 	        CloseableHttpClient httpClient = HttpClients.createDefault();
 	        HttpPost httpPost = new HttpPost(url);
 	        httpPost.addHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON);
-	        StringEntity se = new StringEntity(encoderJson);
+	        StringEntity se = new StringEntity(json);
 	        se.setContentType(CONTENT_TYPE_TEXT_JSON);
+	        se.setContentType(APPLICATION_JSON);
 	        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, APPLICATION_JSON));
 	        httpPost.setEntity(se);
 	        CloseableHttpResponse response  =  httpClient.execute(httpPost);

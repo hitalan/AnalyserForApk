@@ -5,6 +5,9 @@ import java.util.Properties;
 public class GetConfigure {
 	
 	private String url;
+	private String ad_receive_port;
+	private String ad_receive_path;
+	private String ad_url;
 	private String name;
 	private String port;
 	private String count;
@@ -76,6 +79,9 @@ public class GetConfigure {
 				e.printStackTrace();
 			}
 			url=pros.getProperty("url");
+			ad_url = pros.getProperty("ad_url");
+			ad_receive_port = pros.getProperty("ad_receive_port");
+			ad_receive_path = pros.getProperty("ad_receive_path");
 			name=pros.getProperty("name");
 			port=pros.getProperty("port");
 			count=pros.getProperty("count");
@@ -236,4 +242,28 @@ public class GetConfigure {
 		return redis_result;
 	}
 	public String getProxy(){return proxy;}
+
+	public String getAd_url() {
+		return ad_url;
+	}
+
+	public void setAd_url(String ad_url) {
+		this.ad_url = ad_url;
+	}
+
+	public String getAd_receive_port() {
+		return ad_receive_port;
+	}
+
+	public void setAd_receive_port(String ad_receive_port) {
+		this.ad_receive_port = ad_receive_port;
+	}
+
+	public String getAd_receive_path() {
+		return ad_receive_path;
+	}
+
+	public void setAd_receive_path(String ad_receive_path) {
+		this.ad_receive_path = ad_receive_path;
+	}
 }

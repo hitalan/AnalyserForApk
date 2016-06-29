@@ -17,6 +17,7 @@ public class DownLoadUtil {
 	private int count;
 	private boolean isBad;
 	private int whileTime;
+	Counter counter = new Counter();
 	public boolean download(List<Object> apkinfo){		
 		Gson gson = new Gson();
 		GetConfigure getConfigure=new GetConfigure();
@@ -58,26 +59,33 @@ public class DownLoadUtil {
 		System.out.println("clientUrl.size() is " + clientUrl.size());
 		String [] clientUrls = new String[clientUrl.size()];
 		boolean isClientUrlEmptyTrue =  false;
+		int emptyClientUrl = 0;
 		for(int i = 0;i<clientUrl.size();i++){
 			clientUrls[i] = clientUrl.get(i);
 			if(clientUrls[i].equals(""))
-				 isClientUrlEmptyTrue =  true;
+			{
+				emptyClientUrl++;
+				logger.error("there are empty url in the clienturls");
+				if(emptyClientUrl==clientUrl.size()){
+					 isClientUrlEmptyTrue =  true;
+				}
+			}
 		}
 		if(channelUrl.equals("")||isClientUrlEmptyTrue){
-			 new DealException().	sendWrongAnswerByEmptyUrl(taskId);
+			 DealException.sendFailInfo(taskId, "clientapk or channelapk url is empty");
 			 isBad = true;
 		}
-		else{
+		else
+		{
 		System.out.println("the taskId is "+taskId+" the channelUrl "+channelUrl+" the url is "+clientUrl.get(0));
 		String channelUrlInfo = channelUrl;
 		String channelFileName = "channel.apk";
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");//设置日期格式
         String time = 	df.format(new Date());
-		String dirPath = taskId; //以taskId命名任务的文件夹
+        String dirPath = taskId;
 		logger.info("the folder we make in the engine is"+time +"the folder name is"+taskId);
         List<String> makeDirList = new ArrayList<String>();
         makeDirList =new AnalysisUtil().getShellEcho(makeDirList,"makeDir.sh  0  "+getConfigure.getAnalyzerPath()+" "+dirPath);
-        HttpClientUtils.taskId=taskId;
 		HttpClientUtils.getInstance().download(urlhost+channelUrlInfo, channelpath+dirPath+"/channel.apk",new HttpClientDownLoadProgress() { 
 			  public void onProgress(int progress) 
 			  {
@@ -89,75 +97,63 @@ public class DownLoadUtil {
 				  }
 			  }
 		}
-		,"channelapk");
-		int emptyClientUrl = 0;
-		for(int i = 0;i<clientUrl.size();i++){
-			if(clientUrls[i].equals(""))
-			{
-				emptyClientUrl++;
-				logger.error("there are empty url in the clienturls");
-				if(emptyClientUrl==clientUrl.size()){
-					new DealException().sendWrongAnswerByEmptyUrl(taskId);
-					try {
-							Thread.sleep(3000);
-					} catch (InterruptedException e) {
-							e.printStackTrace();
-					}
-			       List<String> deleteList = new ArrayList<String>();
-					 deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
-				}
-			}
-				else{
-			HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/client"+i+".apk",new HttpClientDownLoadProgress() {
-				public void onProgress(int progress) {
-					if(progress==100){
-						System.out.println("download client progress = " + progress);
-						logger.info("download client progress = " + progress);	
-						count++;
-					}    
-				}
-			},"clientapk");
-			}
+		,"channelapk",counter);
+		if(counter.getBadChannelCount()==1){
+			
+			
 		}
-	while(count<=clientUrl.size()+1)
-		{
+		else{
+			for(int i = 0;i<clientUrl.size();i++){
+				if(clientUrls[i].equals(""))
+				{
+
+				}
+				else{
+					HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/client"+i+".apk",new HttpClientDownLoadProgress() {
+						public void onProgress(int progress) {
+							if	(progress==100){
+								System.out.println("download client progress = " + progress);
+								logger.info("download client progress = " + progress);	
+								count++;
+							}    
+						}
+					},"clientapk",counter);
+				}
+		}	
+		}
+		while(count<=clientUrl.size()+1)
+			{
 			try {
-				Thread.sleep(1000);
-				whileTime++;
-				System.out.println("the count is "+count);
-				System.out.println("the whileTimes is "+whileTime);
-		    	//	logger.info("the count in while is" +count);
-				  if(HttpClientUtils.badClientCount==clientUrl.size()||HttpClientUtils.badChannelCount==1/*||emptyClientUrl==clientUrl.size()*/)
+					Thread.sleep(1000);
+					whileTime++;
+					System.out.println("the subtaskid is "+taskId+" the count is "+count);
+					System.out.println("the subtaskid is "+taskId+" whileTimes is "+whileTime);
+				  if(counter.getBadClientCount()==clientUrl.size()||counter.getBadChannelCount()==1)
 				  {
-				     HttpClientUtils.badChannelCount=0;
-				     HttpClientUtils.badClientCount=0;
 				  	logger.error("we finish this analyze because the bad 404 or bad 502 download");
 					System.out.println("we finish this analyze because the bad 404 or bad 502 download");
-					 new DealException().sendWrongAnswerBy404(taskId);
-					Thread.sleep(3000);
-				    // count=0;
-				     List<String> deleteList = new ArrayList<String>();
-				     deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
+					 DealException.sendFailInfo(taskId, "404 or 502 for download the apk");
                      isBad = true;
 				     break;
 				  }			  
 				  else
 				  {
-					  if(count<=clientUrl.size()+1&&count>=2){
+					  if(count==clientUrl.size()+1-counter.getBadClientCount()){
 						  logger.info("finish download task");
 						  System.out.println("finish download task");
 							Thread.sleep(2000);
-						   HttpClientUtils.badClientCount=0;
-						   HttpClientUtils.badChannelCount=0;
 						   isBad = false;
-								new AnalysisUtil().dealTheApk(0,taskId,dirPath);
+						   try
+						   {
+								new AnalysisUtil().dealTheApk(0,taskId,dirPath,channelUrlInfo);
+						   }catch(Exception e){
+							   System.out.println("there are bad apk xml error happened when they are analyzed");
+							   logger.error("there are bad apk xml error happened when they are analyzed and the taskId is "+taskId );
+						   }
 							break;
 			            }
-					  else if(whileTime>=100){
-							 new DealException().sendWrongAnswerByTimeout(taskId);
-							 Thread.sleep(3000);
-							  List<String> deleteList = new ArrayList<String>();
-							  deleteList = new AnalysisUtil().getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+"  0  "+dirPath);
+					  else if(whileTime>=60){
+							 DealException.sendFailInfo(taskId, "download time out ");
 							 isBad = true;
 							 break;
 					  }
@@ -167,6 +163,8 @@ public class DownLoadUtil {
 			}
 		}
 	}
+	
         return isBad;
 	}
+	
 }

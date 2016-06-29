@@ -1,0 +1,7 @@
+Elements:
+	 IDENTICAL:	21535
+	 SIMILAR: 	32
+	 NEW:		50
+	 DELETED:	4
+	 SKIPPED:	0
+similarity 99.737832%

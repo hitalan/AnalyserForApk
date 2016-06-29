@@ -25,9 +25,6 @@ public class ShellUtil {
     } catch (IOException e) {
         e.printStackTrace();
     }
-  for (String line :list) {
-  	 logger.info("the task remain  "+line);
-    }
    return list;
     }
 }

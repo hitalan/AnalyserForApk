@@ -30,13 +30,15 @@ public class BadTaskReDoUtil {
 			    System.out.println("the folder name is "+temp);
 			    logger.error("the undo fail folder name is "+temp);
     		} 
-	   		int remain;
+	   		int remain,index;
 	   		for (int i = 0; i<list.size()-1;i++)  //默认当前最新的一个正常的分析任务不必执行这个操作
 	   		{
 		    remain = list.size() -  i;
 		   System.out.println("we still remain bad analyzer task for"+remain);
 		   logger.error("we still remain bad analyzer task for "+remain);
-			new AnalysisUtil().dealTheApk(0,list.get(i),list.get(i));
+		   index =  list.get(i).indexOf("app");
+	    	//	new AnalysisUtil().dealTheApk(0,list.get(i).substring(0, index),list.get(i),list.get(i).substring(index+1));//抽取出taskId和channelUrlInfo
+		   new AnalysisUtil().dealTheApk(0,list.get(i),list.get(i),null);//抽取出taskId和channelUrlInfo
 			try {
 				Thread.sleep(100000);
 			} catch (InterruptedException e) {

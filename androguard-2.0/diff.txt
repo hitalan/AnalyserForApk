@@ -1,0 +1,744 @@
+<androguard.core.bytecodes.dvm.DalvikVMFormat object at 0x7f9e375d6790> <androguard.core.analysis.analysis.VMAnalysis object at 0x7f9e2c9d1d90> <androguard.core.bytecodes.dvm.DalvikVMFormat object at 0x7f9e37fefc90> <androguard.core.analysis.analysis.VMAnalysis object at 0x7f9e09466e50>
+Elements:
+	 IDENTICAL:	21535
+	 SIMILAR: 	41
+	 NEW:		6
+	 DELETED:	38
+	 SKIPPED:	0
+[ ('Lcom/tencent/mtt/external/b/a/a;', 'a', '(I)V') ] <-> [ ('Lcom/tencent/mtt/browser/security/f;', 'b', '(B)V') ]
+b-BB@0xa2 a-BB@0x7c
+Added Elements(0)
+Deleted Elements(1)
+	0x7c 0 const-string v1, 'http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_download&channel=100029'
+
+b-BB@0xbc a-BB@0x9a
+Added Elements(1)
+	0xca 3 const-string v0, ''
+Deleted Elements(2)
+	0xa4 2 const-string v2, 'http://dianhua.qq.com/cgi-bin/cloudgrptemplate?t=dianhuaben_download&channel=100029'
+	0xac 4 const-string v2, 'com.tencent.pb.apk'
+
+Elements:
+	 IDENTICAL:	6
+	 SIMILAR: 	2
+	 NEW:		6
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df6325510> 0x96 0x9c
+	NEW 0x96 const-string v0, 'http://qqwx.qq.com/s?aid=index&g_f=493'
+	NEW 0x9a goto -27
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df63257d0> 0xe4 0xfc
+	NEW 0xe4 packed-switch-payload -1: 2b 3 25 28
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df6325110> 0x44 0x4c
+	NEW 0x44 const/4 v0, 0
+	NEW 0x46 packed-switch v4, +4f (0xe4)
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df6325550> 0x9c 0xa2
+	NEW 0x9c const-string v0, 'http://qqwx.qq.com/s?aid=index&g_f=470'
+	NEW 0xa0 goto -2a
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df63254d0> 0x90 0x96
+	NEW 0x90 const-string v0, 'http://qqwx.qq.com/s?aid=index&g_f=492'
+	NEW 0x94 goto -24
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df6325150> 0x4c 0x58
+	NEW 0x4c invoke-static v0, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+	NEW 0x52 move-result v1
+	NEW 0x54 if-nez v1, -9
+
+
+[ ('Lcom/tencent/mtt/browser/file/v;', 'b', '(Landroid/os/Bundle;)Ljava/util/ArrayList;') ] <-> [ ('Lcom/tencent/mtt/browser/file/v;', 'b', '(Landroid/os/Bundle;)Ljava/util/ArrayList;') ]
+b-BB@0x132 b-BB@0x132
+Added Elements(1)
+	0x140 3 const-string v5, ''
+Deleted Elements(1)
+	0x140 3 const-string v5, '/storage/sdcard0/baidu/ime/noti/msgTime.txt'
+
+Elements:
+	 IDENTICAL:	20
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/external/rqd/a$b;', 'getCrashExtraMessage', '(Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I J)Ljava/lang/String;') ] <-> [ ('Lcom/tencent/mtt/external/rqd/a$b;', 'getCrashExtraMessage', '(Z Ljava/lang/String; Ljava/lang/String; Ljava/lang/String; I J)Ljava/lang/String;') ]
+getCrashExtraMessage-BB@0xa8 getCrashExtraMessage-BB@0xa8
+Added Elements(1)
+	0xd0 9 const-string v2, ''
+Deleted Elements(1)
+	0xd0 9 const-string v2, 'nativeCrash.txt'
+
+Elements:
+	 IDENTICAL:	44
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/base/account/a/f;', 'k', '(Lcom/tencent/mtt/base/account/a/k;)Landroid/content/ContentValues;') ] <-> [ ('Lcom/tencent/mtt/base/account/a/f;', 'k', '(Lcom/tencent/mtt/base/account/a/k;)Landroid/content/ContentValues;') ]
+k-BB@0x13c k-BB@0x13c
+Added Elements(1)
+	0x164 9 const/4 v4, 0
+Deleted Elements(1)
+	0x164 9 iget v4, v5, Lcom/tencent/mtt/base/account/a/k;->r I
+
+Elements:
+	 IDENTICAL:	20
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/account/r;', 'b', '(Ljava/lang/String;)Z') ] <-> [ ('Lcom/tencent/mtt/browser/account/r;', 'b', '(Ljava/lang/String;)Z') ]
+b-BB@0x14 b-BB@0x24
+Added Elements(1)
+	0x14 0 const-string v0, ''
+Deleted Elements(1)
+	0x24 0 const-string v0, 'gm.cs0309.imtt.qq.com'
+
+Elements:
+	 IDENTICAL:	18
+	 SIMILAR: 	5
+	 NEW:		1
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9dfdc12c10> 0x24 0x34
+	NEW 0x24 const-string v0, ''
+	NEW 0x28 invoke-virtual v0, v7, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+	NEW 0x2e move-result v0
+	NEW 0x30 if-nez v0, +22
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/j;', 'aj', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 aj-BB@0x0
+Added Elements(1)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+Deleted Elements(1)
+	0x4 1 const-string v1, 'key_block_adv_toaster'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/common/utils/FileUtils;', 'getTesSdcardShareDir', '()Ljava/io/File;') ] <-> [ ('Lcom/tencent/common/utils/FileUtils;', 'getTesSdcardShareDir', '()Ljava/io/File;') ]
+getTesSdcardShareDir-BB@0x18 getTesSdcardShareDir-BB@0x18
+Added Elements(1)
+	0x42 10 const-string v2, 'QQBrowser/.tbs'
+Deleted Elements(1)
+	0x42 10 const-string v2, '.tbs'
+
+Elements:
+	 IDENTICAL:	6
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/addressbar/o;', 'a', '(Z Ljava/lang/String; B Lcom/tencent/mtt/browser/r/v; Ljava/lang/String;)V') ] <-> [ ('Lcom/tencent/mtt/browser/addressbar/o;', 'a', '(Z Ljava/lang/String; B Lcom/tencent/mtt/browser/r/v; Ljava/lang/String;)V') ]
+a-BB@0x0 a-BB@0x0
+Added Elements(1)
+	0x14 6 goto +c
+Deleted Elements(1)
+	0x14 6 if-lt v4, v0, +d
+
+Elements:
+	 IDENTICAL:	27
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'j', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 j-BB@0x0
+Added Elements(2)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+	0x8 2 const/4 v2, 1
+Deleted Elements(2)
+	0x4 1 const-string v1, 'key_is_new_version_bycheck'
+	0x8 2 const/4 v2, 0
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 k-BB@0x0
+Added Elements(1)
+	0x8 2 const/4 v2, 1
+Deleted Elements(1)
+	0x8 2 const/4 v2, 0
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/a/c/a;', 'a', '(Lcom/tencent/mtt/browser/a/b/d; Z)V') ] <-> [ ('Lcom/tencent/mtt/browser/a/c/a;', 'a', '(Lcom/tencent/mtt/browser/a/b/d; Z)V') ]
+a-BB@0xc a-BB@0xc
+Added Elements(1)
+	0x1c 4 goto +d
+Deleted Elements(3)
+	0x1c 4 iget-object v0, v3, Lcom/tencent/mtt/browser/a/c/a;->b Lcom/tencent/mtt/browser/a/c/a$b;
+	0x20 5 iget v0, v0, Lcom/tencent/mtt/browser/a/c/a$b;->f I
+	0x24 6 if-ne v0, v2, +8
+
+Elements:
+	 IDENTICAL:	7
+	 SIMILAR: 	1
+	 NEW:		1
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9dfe4d7610> 0x1e 0x2a
+	NEW 0x1e iget-object v0, v3, Lcom/tencent/mtt/browser/a/c/a;->b Lcom/tencent/mtt/browser/a/c/a$b;
+	NEW 0x22 iget v0, v0, Lcom/tencent/mtt/browser/a/c/a$b;->f I
+	NEW 0x26 if-ne v0, v2, +8
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/c;', 'b', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 b-BB@0x0
+Added Elements(1)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+Deleted Elements(1)
+	0x4 1 const-string v1, 'push_global'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/desktop/FrequentVisitActvity;', 'getAppIDByUrl', '(Ljava/lang/String;)I') ] <-> [ ('Lcom/tencent/mtt/browser/desktop/FrequentVisitActvity;', 'getAppIDByUrl', '(Ljava/lang/String;)I') ]
+getAppIDByUrl-BB@0xa8 getAppIDByUrl-BB@0xa8
+Added Elements(1)
+	0xa8 0 const-string v2, ''
+Deleted Elements(1)
+	0xa8 0 const-string v2, 'http://game.html5.qq.com'
+
+Elements:
+	 IDENTICAL:	30
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/a/c/a;', 'a', '(Landroid/content/Context; Z Z Z I Z Ljava/lang/String; I Lcom/tencent/mtt/browser/a/b/d; Ljava/lang/String; Lcom/tencent/mtt/browser/a/b/e$c;)V') ] <-> [ ('Lcom/tencent/mtt/browser/a/c/a;', 'a', '(Landroid/content/Context; Z Z Z I Z Ljava/lang/String; I Lcom/tencent/mtt/browser/a/b/d; Ljava/lang/String; Lcom/tencent/mtt/browser/a/b/e$c;)V') ]
+a-BB@0xd0 a-BB@0xca
+Added Elements(0)
+Deleted Elements(1)
+	0xca 0 iput-boolean v1, v2, Lcom/tencent/mtt/browser/a/c/a$b;->i Z
+
+Elements:
+	 IDENTICAL:	20
+	 SIMILAR: 	1
+	 NEW:		1
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9dfe4bed90> 0xca 0xd0
+	NEW 0xca iput-boolean v1, v2, Lcom/tencent/mtt/browser/a/c/a$b;->i Z
+	NEW 0xce goto +4e
+
+
+[ ('Lcom/tencent/mtt/browser/video/g/a;', 'request', '(Ljava/lang/Object;)V') ] <-> [ ('Lcom/tencent/mtt/browser/video/g/a;', 'request', '(Ljava/lang/Object;)V') ]
+request-BB@0x1f6 request-BB@0x204
+Added Elements(1)
+	0x2e0 53 goto +7
+Deleted Elements(1)
+	0x2ee 53 if-ne v0, v8, +8
+
+Elements:
+	 IDENTICAL:	27
+	 SIMILAR: 	1
+	 NEW:		1
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df3e8ee50> 0x10a 0x10c
+	NEW 0x10a goto +43
+
+
+[ ('Lcom/tencent/mtt/browser/file/b;', 'h', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/file/b;', 'h', '()V') ]
+Elements:
+	 IDENTICAL:	4
+	 SIMILAR: 	0
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/a;', 'onClick', '(Landroid/view/View;)V') ] <-> [ ('Lcom/tencent/mtt/browser/setting/a;', 'onClick', '(Landroid/view/View;)V') ]
+onClick-BB@0x22c onClick-BB@0x22c
+Added Elements(1)
+	0x22c 0 const-string v0, 'http://m.coolapk.com/u/460607'
+Deleted Elements(1)
+	0x22c 0 const-string v0, 'http://pms.mb.qq.com/index?aid=act13&cid=qbdownload'
+
+Elements:
+	 IDENTICAL:	23
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/push/b/m;', 'g', '()Ljava/lang/String;') ] <-> [ ('Lcom/tencent/mtt/browser/push/b/m;', 'g', '()Ljava/lang/String;') ]
+g-BB@0x0 g-BB@0x0
+Added Elements(1)
+	0x4 1 const-string v0, '/sdcard/QQBrowser/tmp.html'
+Deleted Elements(1)
+	0x4 1 const-string v0, '/sdcard/tmp.html'
+
+Elements:
+	 IDENTICAL:	11
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/a/c/i;', 'a', '(Lcom/tencent/mtt/browser/a/b/d;)V') ] <-> [ ('Lcom/tencent/mtt/browser/a/c/i;', 'a', '(Lcom/tencent/mtt/browser/a/b/d;)V') ]
+a-BB@0x60 a-BB@0x58
+Added Elements(0)
+Deleted Elements(1)
+	0x58 0 invoke-direct v5, Lcom/tencent/mtt/browser/a/c/i;->p()V
+
+Elements:
+	 IDENTICAL:	8
+	 SIMILAR: 	1
+	 NEW:		1
+	 DELETED:	0
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9dfe1c3710> 0x58 0x60
+	NEW 0x58 invoke-direct v5, Lcom/tencent/mtt/browser/a/c/i;->p()V
+	NEW 0x5e goto +2a
+
+
+[ ('Lcom/tencent/smtt/export/internal/utils/JniUtil;', 'stopTracing', '(Ljava/lang/String;)V') ] <-> [ ('Lcom/tencent/smtt/export/internal/utils/JniUtil;', 'stopTracing', '(Ljava/lang/String;)V') ]
+stopTracing-BB@0xc stopTracing-BB@0xc
+Added Elements(1)
+	0xc 0 const-string v2, '/sdcard/QQBrowser/tracing.data'
+Deleted Elements(1)
+	0xc 0 const-string v2, '/sdcard/tracing.data'
+
+Elements:
+	 IDENTICAL:	4
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'k', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 k-BB@0x0
+Added Elements(2)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+	0x8 2 const/4 v2, 1
+Deleted Elements(2)
+	0x4 1 const-string v1, 'key_is_new_core'
+	0x8 2 const/4 v2, 0
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/boot/browser/a;', 'd', '()I') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 d-BB@0x0
+Added Elements(2)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+	0x8 2 const/4 v2, 1
+Deleted Elements(2)
+	0x4 1 const-string v1, 'splash'
+	0x8 2 const/4 v2, -1
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/base/utils/x;', 'a', '(Landroid/app/Activity;)V') ] <-> [ ('Lcom/tencent/mtt/base/utils/x;', 'a', '(Landroid/app/Activity;)V') ]
+a-BB@0x5a a-BB@0x5a
+Added Elements(1)
+	0x64 2 const-string v6, 'http://127.0.0.1/mh?from=juggled&version=6.1&buildid=1735&channel='
+Deleted Elements(1)
+	0x64 2 const-string v6, 'http://mdc.html5.qq.com/mh?from=juggled&version=6.1&buildid=1735&channel='
+
+a-BB@0x16 a-BB@0x16
+Added Elements(1)
+	0x1a 1 const-string v0, 'http://127.0.0.1/mh?from=juggled'
+Deleted Elements(1)
+	0x1a 1 const-string v0, 'http://mdc.html5.qq.com/mh?from=juggled'
+
+Elements:
+	 IDENTICAL:	10
+	 SIMILAR: 	2
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/j;', 'ak', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'ak', '()Z') ]
+ak-BB@0x0 ak-BB@0x0
+Added Elements(1)
+	0x0 0 const/4 v0, 0
+Deleted Elements(1)
+	0x0 0 const/4 v0, 1
+
+Elements:
+	 IDENTICAL:	3
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'bu', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 bu-BB@0x0
+Added Elements(1)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+Deleted Elements(1)
+	0x4 1 const-string v1, 'key_autoupdate_author'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/a/c/b;', '<init>', '(Lcom/tencent/mtt/browser/a/b/e; B Landroid/content/Context; Lcom/tencent/mtt/base/functionwindow/k;)V') ] <-> [ ('Lcom/tencent/mtt/browser/a/c/b;', '<init>', '(Lcom/tencent/mtt/browser/a/b/e; B Landroid/content/Context; Lcom/tencent/mtt/base/functionwindow/k;)V') ]
+<init>-BB@0x1fa <init>-BB@0x1fa
+Added Elements(0)
+Deleted Elements(10)
+	0x210 5 iget-object v2, v10, Lcom/tencent/mtt/browser/a/c/b;->d Lcom/tencent/mtt/base/functionwindow/i$b;
+	0x214 6 iput-object v1, v2, Lcom/tencent/mtt/base/functionwindow/i$b;->D Landroid/view/View;
+	0x218 7 iget-object v1, v10, Lcom/tencent/mtt/browser/a/c/b;->d Lcom/tencent/mtt/base/functionwindow/i$b;
+	0x21c 8 iput-byte v8, v1, Lcom/tencent/mtt/base/functionwindow/i$b;->c B
+	0x224 10 const v2, 2131494462 # [1.8612433070043486e+38]
+	0x22a 11 invoke-static v2, Lcom/tencent/mtt/base/g/e;->k(I)Ljava/lang/String;
+	0x230 12 move-result-object v2
+	0x242 17 new-instance v2, Lcom/tencent/mtt/browser/a/c/b$8;
+	0x246 18 invoke-direct v2, v10, Lcom/tencent/mtt/browser/a/c/b$8;-><init>(Lcom/tencent/mtt/browser/a/c/b;)V
+	0x24c 19 iput-object v2, v1, Lcom/tencent/mtt/base/functionwindow/i$b;->u Landroid/view/View$OnClickListener;
+
+Elements:
+	 IDENTICAL:	11
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/file/b;', 'd', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/file/b;', 'd', '()V') ]
+Elements:
+	 IDENTICAL:	6
+	 SIMILAR: 	0
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/base/account/a/f;', 'g', '(Ljava/lang/String;)I') ] <-> [ ('Lcom/tencent/mtt/base/account/a/f;', 'g', '(Ljava/lang/String;)I') ]
+g-BB@0xc6 g-BB@0xc6
+Added Elements(1)
+	0xc6 0 const-string v1, ''
+Deleted Elements(1)
+	0xc6 0 const-string v1, 'game.html5.qq.com'
+
+g-BB@0xd6 g-BB@0xd6
+Added Elements(1)
+	0xd6 0 const-string v1, ''
+Deleted Elements(1)
+	0xd6 0 const-string v1, 'http://game.html5.qq.com'
+
+Elements:
+	 IDENTICAL:	15
+	 SIMILAR: 	2
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/base/utils/w;', 'az', '()Ljava/io/File;') ] <-> [ ('Lcom/tencent/mtt/base/utils/w;', 'az', '()Ljava/io/File;') ]
+az-BB@0x0 az-BB@0x0
+Added Elements(1)
+	0x32 12 const-string v2, 'QQBrowser/.tbs'
+Deleted Elements(1)
+	0x32 12 const-string v2, '.tbs'
+
+Elements:
+	 IDENTICAL:	3
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/push/b/a;', 'a', '(I Ljava/lang/Object; [B)Z') ] <-> [ ('Lcom/tencent/mtt/browser/push/b/a;', 'a', '(I Ljava/lang/Object; [B)Z') ]
+a-BB@0x1e8 a-BB@0x1ea
+Added Elements(1)
+	0x1ec 1 goto +a
+Deleted Elements(1)
+	0x1ee 1 if-ne v11, v0, +b
+
+a-BB@0x1b8 a-BB@0x1b8
+Added Elements(1)
+	0x1bc 1 goto +16
+Deleted Elements(1)
+	0x1bc 1 if-ne v11, v0, +17
+
+Elements:
+	 IDENTICAL:	49
+	 SIMILAR: 	2
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'dL', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 dL-BB@0x0
+Added Elements(2)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+	0x8 2 const/4 v2, 1
+Deleted Elements(2)
+	0x4 1 const-string v1, 'key_exit_clear_history'
+	0x8 2 const/4 v2, 0
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/update/a/h;', '<init>', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/update/a/h;', '<init>', '()V') ]
+<init>-BB@0x0 <init>-BB@0x0
+Added Elements(3)
+	0x36 14 const-string v1, ''
+	0x70 28 const-string v1, ''
+	0xaa 42 const-string v1, ''
+Deleted Elements(3)
+	0x36 14 const-string v1, '/android_r1.qar'
+	0x70 28 const-string v1, '/android_r2.qar'
+	0xaa 42 const-string v1, '/r2.apk'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/desktop/FrequentVisitActvity;', '<clinit>', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/desktop/FrequentVisitActvity;', '<clinit>', '()V') ]
+<clinit>-BB@0x0 <clinit>-BB@0x0
+Added Elements(2)
+	0x46 20 const-string v2, ''
+	0xea 64 const-string v2, ''
+Deleted Elements(2)
+	0x46 20 const-string v2, 'http://game.html5.qq.com/?ch=000500'
+	0xea 64 const-string v2, 'http://game.html5.qq.com/?ch=000500'
+
+Elements:
+	 IDENTICAL:	1
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'cQ', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 cQ-BB@0x0
+Added Elements(2)
+	0x0 0 iget-object v0, v3, Lcom/tencent/mtt/browser/setting/c/j;->c Landroid/content/SharedPreferences;
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+Deleted Elements(3)
+	0x0 0 invoke-direct v3, Lcom/tencent/mtt/browser/setting/c/d;->eQ()Landroid/content/SharedPreferences;
+	0x6 1 move-result-object v0
+	0x8 2 const-string v1, 'key_notification_show'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/video/g/f;', 'a', '(I B)Z') ] <-> [ ('Lcom/tencent/mtt/browser/video/g/f;', 'a', '(I B)Z') ]
+a-BB@0x40 a-BB@0x40
+Added Elements(1)
+	0x54 4 const-string v2, ''
+Deleted Elements(1)
+	0x54 4 const-string v2, 'http://upgrade.m.tv.sohu.com/channels/hdv/common/SohuTV_common_1262_QB.apk'
+
+Elements:
+	 IDENTICAL:	15
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/d;', 'i', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 i-BB@0x0
+Added Elements(2)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+	0x8 2 const/4 v2, 1
+Deleted Elements(2)
+	0x4 1 const-string v1, 'key_is_new_version'
+	0x8 2 const/4 v2, 0
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/c/j;', 'i', '()Z') ] <-> [ ('Lcom/tencent/mtt/browser/setting/c/j;', 'k', '()Z') ]
+k-BB@0x0 i-BB@0x0
+Added Elements(1)
+	0x4 1 const-string v1, 'setting_key_gesture_move_page'
+Deleted Elements(1)
+	0x4 1 const-string v1, 'setting_key_show_frequent_visit'
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/homepage/HomeWorkspaceBase;', '<clinit>', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/homepage/HomeWorkspaceBase;', '<clinit>', '()V') ]
+Elements:
+	 IDENTICAL:	8
+	 SIMILAR: 	0
+	 NEW:		1
+	 DELETED:	1
+	 SKIPPED:	0
+<androguard.core.analysis.analysis.DVMBasicBlock object at 0x7f9df9d52310> 0x40 0x42
+	NEW 0x40 const/4 v0, 4
+
+
+[ ('Lcom/tencent/mtt/browser/security/f;', 'b', '(B)V') ] <-> [ ('Lcom/tencent/mtt/browser/security/f;', 'b', '(B)V') ]
+b-BB@0xbc b-BB@0xbc
+Added Elements(1)
+	0xca 3 const-string v0, ''
+Deleted Elements(1)
+	0xca 3 const-string v0, 'com.tencent.qqpimsecure.apk'
+
+Elements:
+	 IDENTICAL:	13
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/setting/a;', 'd', '()V') ] <-> [ ('Lcom/tencent/mtt/browser/setting/a;', 'd', '()V') ]
+d-BB@0x3a8 d-BB@0x3a8
+Added Elements(0)
+Deleted Elements(8)
+	0x40a 22 invoke-virtual v0, v1, Lcom/tencent/mtt/browser/setting/a/c;->a(Z)V
+	0x410 23 iget-object v0, v9, Lcom/tencent/mtt/browser/setting/a;->d Lcom/tencent/mtt/browser/setting/a/c;
+	0x414 24 const v1, 2131493273 # [1.861002149154161e+38]
+	0x41a 25 invoke-static v1, Lcom/tencent/mtt/base/g/e;->k(I)Ljava/lang/String;
+	0x420 26 move-result-object v1
+	0x422 27 invoke-virtual v0, v1, Lcom/tencent/mtt/browser/setting/a/c;->a(Ljava/lang/String;)V
+	0x428 28 iget-object v0, v9, Lcom/tencent/mtt/browser/setting/a;->n Lcom/tencent/mtt/uifw2/base/ui/widget/QBLinearLayout;
+	0x42c 29 iget-object v1, v9, Lcom/tencent/mtt/browser/setting/a;->d Lcom/tencent/mtt/browser/setting/a/c;
+
+Elements:
+	 IDENTICAL:	26
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+[ ('Lcom/tencent/mtt/browser/update/a/g;', 'a', '(Ljava/util/zip/ZipFile; Ljava/util/zip/ZipEntry;)V') ] <-> [ ('Lcom/tencent/mtt/browser/update/a/g;', 'a', '(Ljava/util/zip/ZipFile; Ljava/util/zip/ZipEntry;)V') ]
+a-BB@0x8 a-BB@0x8
+Added Elements(1)
+	0x18 4 const-string v2, ''
+Deleted Elements(1)
+	0x18 4 const-string v2, 'md5.txt'
+
+Elements:
+	 IDENTICAL:	11
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+NEW METHODS
+	Lcom/tencent/mtt/browser/setting/c/d; dL ()Z 10
+	Lcom/tencent/mtt/browser/multiwindow/a/f$1; onClick (Landroid/view/View;)V 17
+	Lcom/tencent/mtt/browser/setting/l; b (Landroid/view/ViewGroup;)V 127
+	Lcom/tencent/mtt/browser/setting/p; a ()V 2404
+	Lcom/tencent/mtt/base/stat/r; c ()Ljava/lang/String; 646
+	Lcom/tencent/mtt/browser/setting/c/j; aj ()Z 10
+DELETED METHODS
+	LMTT/HotWordInfo; readFrom (Lcom/qq/taf/jce/JceInputStream;)V 49
+	LMTT/HotWordInfo; writeTo (Lcom/qq/taf/jce/JceOutputStream;)V 49
+	Lcom/tencent/midas/plugin/APApkFileParser; isSignaturesSame ([Landroid/content/pm/Signature; [Landroid/content/pm/Signature;)Z 46
+	Lcom/tencent/mm/sdk/openapi/WXApiImplComm; validateAppSignature (Landroid/content/Context; [Landroid/content/pm/Signature; Z)Z 67
+	Lcom/tencent/mm/sdk/openapi/WXApiImplComm; validateAppSignatureForPackage (Landroid/content/Context; Ljava/lang/String; Z)Z 31
+	Lcom/tencent/mm/sdk/openapi/WXApiImplV10; checkSumConsistent ([B [B)Z 46
+	Lcom/tencent/mtt/base/account/a/f; V ()Z 50
+	Lcom/tencent/mtt/base/account/a/f; f ()V 19
+	Lcom/tencent/mtt/base/stat/r; c ()Ljava/lang/String; 646
+	Lcom/tencent/mtt/base/utils/b; c (Landroid/content/Context;)Z 102
+	Lcom/tencent/mtt/base/utils/x; a (Ljava/lang/StringBuffer;)Z 79
+	Lcom/tencent/mtt/boot/browser/splash/a; a ()Z 18
+	Lcom/tencent/mtt/browser/a/a/b; a (LMTT/GPGameSimpleInfo; [B Z Z I)V 362
+	Lcom/tencent/mtt/browser/a/b/e$6; run ()V 40
+	Lcom/tencent/mtt/browser/a/c/a/d; h ()V 384
+	Lcom/tencent/mtt/browser/a/c/a; b (Lcom/tencent/mtt/browser/a/b/d; Z)V 102
+	Lcom/tencent/mtt/browser/a/c/i; a (I)V 266
+	Lcom/tencent/mtt/browser/account/h; o ()Z 59
+	Lcom/tencent/mtt/browser/f/d$a; run ()V 156
+	Lcom/tencent/mtt/browser/f/d$b; run ()V 35
+	Lcom/tencent/mtt/browser/f/d; j ()V 35
+	Lcom/tencent/mtt/browser/homepage/a/a/o; e ()Z 154
+	Lcom/tencent/mtt/browser/multiwindow/a/f$1; onClick (Landroid/view/View;)V 45
+	Lcom/tencent/mtt/browser/push/service/j; g ()V 167
+	Lcom/tencent/mtt/browser/r/ac; h ()Z 20
+	Lcom/tencent/mtt/browser/r/v$10; run ()V 38
+	Lcom/tencent/mtt/browser/security/c; a (Lcom/tencent/mtt/browser/security/c$b; I Ljava/lang/String; Ljava/lang/String;)V 21
+	Lcom/tencent/mtt/browser/security/c; c ()V 35
+	Lcom/tencent/mtt/browser/security/c; f ()V 13
+	Lcom/tencent/mtt/browser/setting/b/l; load ()V 120
+	Lcom/tencent/mtt/browser/setting/l; b (Landroid/view/ViewGroup;)V 162
+	Lcom/tencent/mtt/browser/setting/p; a ()V 2524
+	Lcom/tencent/mtt/browser/setting/w; c ()V 130
+	Lcom/tencent/mtt/browser/x5/b/b; C ()V 251
+	Lcom/tencent/mtt/browser/x5/b/b; u ()V 17
+	Lcom/tencent/mtt/external/a/a$e; handleMessage (Landroid/os/Message;)V 868
+	Lcom/tencent/mtt/external/a/a; a (I Ljava/lang/Byte;)V 186
+	Lcom/tencent/mtt/external/a/a; d (Ljava/lang/Byte;)V 57

@@ -1,88 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="80730" android:versionName="7.3" package="com.qiyi.video" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest android:installLocation="0" android:versionCode="611735" android:versionName="6.1.3.1735" package="com.tencent.mtt" xmlns:android="http://schemas.android.com/apk/res/android">
 	
 
-	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23">
-</uses-sdk>
+	<permission android:name="com.tencent.mtt.broadcast" android:protectionLevel="0x00000002">
+</permission>
 	
 
-	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true">
-</supports-screens>
-	
-
-	<uses-permission android:name="android.permission.INTERNET">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.READ_PHONE_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.GET_TASKS">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.RECORD_AUDIO">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
+	<uses-permission android:name="com.tencent.mtt.broadcast">
 </uses-permission>
 	
 
@@ -90,11 +14,35 @@
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.WRITE_SETTINGS">
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.REORDER_TASKS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.INTERNET">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_PHONE_STATE">
 </uses-permission>
 	
 
@@ -102,91 +50,35 @@
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.DISABLE_KEYGUARD">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.qiyi.video.permission.MIPUSH_RECEIVE">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.xiaomi.permission.AUTH_SERVICE">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.READ_SMS">
-</uses-permission>
-	
-
 	<uses-permission android:name="android.permission.CAMERA">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS">
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.GET_ACCOUNTS">
+	<uses-permission android:name="android.permission.FLASHLIGHT">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS">
+	<uses-permission android:name="android.permission.GET_TASKS">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS">
+	<uses-permission android:name="android.permission.GET_PACKAGE_SIZE">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.CALL_PHONE">
+	<uses-permission android:name="android.permission.RESTART_PACKAGES">
 </uses-permission>
 	
 
-	<uses-permission android:name="android.permission.SEND_SMS">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.RECEIVE_SMS">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.BLUETOOTH">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.CHANGE_CONFIGURATION">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.READ_LOGS">
-</uses-permission>
-	
-
-	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS">
-</uses-permission>
-	
-
-	<uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS">
+	<uses-permission android:name="android.permission.READ_CONTACTS">
 </uses-permission>
 	
 
@@ -194,23 +86,263 @@
 </uses-permission>
 	
 
+	<uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.google.android.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.nd.android.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.nd.android.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lge.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.fede.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adw.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adwfreak.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="org.adw.launcher_donut.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.tencent.qqlauncher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.mylauncher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.huawei.launcher2.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.huawei.launcher3.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="net.qihoo.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.dianxinos.dxhome.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.dianxinos.dxhome.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
 	<uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS">
 </uses-permission>
 	
 
-	<permission android:name="com.qiyi.video.permission.MIPUSH_RECEIVE" android:protectionLevel="0x00000003">
-</permission>
+	<uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.ztemt.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.ztemt.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lenovo.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.launcher3.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.moxiu.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.moxiu.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.iLoong.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.iLoong.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.qihoo360.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="telecom.mdesk.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="telecom.mdesk.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.RECORD_AUDIO">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BROADCAST_STICKY">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SEND_SMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.tencent.tmsecurelite.permission.ACCESS_SERVICE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE">
+</uses-permission>
+	
+
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="16">
+</uses-sdk>
 	
 
 	<uses-feature android:name="android.hardware.camera">
 </uses-feature>
 	
 
-	<uses-feature android:name="android.hardware.camera.autofocus">
+	<uses-feature android:glEsVersion="0x00020000">
 </uses-feature>
 	
 
-	<uses-feature android:name="android.hardware.camera.front" android:required="false">
+	<uses-permission android:name="android.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false">
 </uses-feature>
 	
 
@@ -218,98 +350,142 @@
 </uses-feature>
 	
 
-	<uses-permission android:name="android.permission.READ_CONTACTS">
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
 </uses-permission>
 	
 
-	<application android:allowBackup="false" android:icon="@7F02062F" android:label="@7F080004" android:name="com.qiyi.video.VideoApplication" android:theme="@7F0C0067" android:uiOptions="0x00000001">
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.EXPAND_STATUS_BAR">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.alarm.permission.SET_ALARM">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.ContactWidget.permission.READ_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.android.ContactWidget.permission.WRITE_SETTINGS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
+</uses-permission>
+	
+
+	<uses-permission android:name="android.permission.SET_WALLPAPER">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lenovo.launcher.permission.BADGE_READ">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.lenovo.launcher.permission.BADGE_WRITE">
+</uses-permission>
+	
+
+	<uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE">
+</uses-permission>
+	
+
+	<permission android:description="@7F0C09C1" android:label="@7F0C09C0" android:name="com.tencent.mtt.permission.SDK" android:protectionLevel="0x00000000">
+</permission>
+	
+
+	<supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:smallScreens="true">
+</supports-screens>
+	
+
+	<application android:allowBackup="false" android:allowClearUserData="true" android:debuggable="false" android:icon="@7F02001E" android:label="@7F0C000A" android:largeHeap="true" android:manageSpaceActivity="com.tencent.mtt.browser.setting.managespace.ManageSpaceActivity" android:name="com.tencent.mtt.MttApplication">
 		
 
-		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="AZLOzsfT3ih6ZERYeY9QLyII">
+		<meta-data android:name="com.tencent.rdm.uuid" android:value="bb2b1447-71f3-44a2-8fff-c8b1288b24be">
 </meta-data>
 		
 
-		<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@7F080C3E">
-</meta-data>
+		<uses-library android:name="com.sec.android.app.multiwindow" android:required="false">
+</uses-library>
 		
 
 		<meta-data android:name="com.sec.android.support.multiwindow" android:value="true">
 </meta-data>
 		
 
-		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:resource="@7F0701FC">
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_W" android:value="632.0dip">
 </meta-data>
 		
 
-		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:resource="@7F0701FB">
+		<meta-data android:name="com.sec.android.multiwindow.DEFAULT_SIZE_H" android:value="598.0dip">
 </meta-data>
 		
 
-		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:resource="@7F0701FE">
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_W" android:value="632.0dip">
 </meta-data>
 		
 
-		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:resource="@7F0701FD">
+		<meta-data android:name="com.sec.android.multiwindow.MINIMUM_SIZE_H" android:value="598.0dip">
 </meta-data>
 		
 
-		<meta-data android:name="com.sec.android.multiwindow.STYLE" android:value="fixedRatio">
+		<meta-data android:name="APPKEY_DENGTA" android:value="0M300HCVM70A7LSZ">
 </meta-data>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.DuboActivity" android:screenOrientation="1" android:theme="@7F0C0090">
+		<activity android:configChanges="0x400006E4" android:excludeFromRecents="true" android:exported="true" android:name="com.tencent.mtt.base.functionwindow.MttFunctionActivity" android:screenOrientation="3" android:theme="@7F0F0016" android:windowSoftInputMode="0x00000022">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.GpsActivity" android:screenOrientation="1" android:theme="@android:01030010">
+		<activity android:configChanges="0x400004E4" android:excludeFromRecents="true" android:name="com.tencent.mtt.base.functionwindow.MttFunctionActivityForPad" android:theme="@7F0F0018" android:windowSoftInputMode="0x00000022">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.plugin.views.PluginBaseActivity" android:screenOrientation="1" android:theme="@android:01030006">
+		<activity android:configChanges="0x400004E4" android:excludeFromRecents="true" android:hardwareAccelerated="@7F0A0000" android:name="com.tencent.mtt.external.novel.inhost.NovelContentActivity" android:screenOrientation="1" android:theme="@7F0F0016" android:windowSoftInputMode="0x00000022">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.plugin.views.PluginActivity" android:screenOrientation="1" android:theme="@android:01030010">
+		<activity android:configChanges="0x400004E4" android:excludeFromRecents="true" android:name="com.tencent.mtt.external.novel.inhost.NovelContentActivityTransparentBg" android:screenOrientation="1" android:theme="@7F0F0018" android:windowSoftInputMode="0x00000022">
 </activity>
 		
 
-		<service android:exported="false" android:name="org.qiyi.android.plugin.ipc.PluginBootHelpService">
-</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.TopActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.TopicActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.ProgramActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.AdActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.qisheng.activitys.QishengMainActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.PhoneMessageNewActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.pps.ChannelListActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<receiver android:exported="false" android:name="org.qiyi.android.commonphonepad.pushmessage.JoinActionAlarmReceiver">
-</receiver>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="com.qiyi.video.WelcomeActivity" android:screenOrientation="1" android:theme="@7F0C002B">
+		<activity android:alwaysRetainTaskState="true" android:label="@7F0C000A" android:name="com.tencent.mtt.SplashActivity" android:theme="@7F0F0006" android:windowSoftInputMode="0x00000022">
 			
 
 			<intent-filter>
@@ -323,113 +499,7 @@
 </category>
 				
 
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<data android:mimeType="qyvideo/*" android:scheme="file">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x400024B4" android:exported="true" android:label="@7F080004" android:launchMode="2" android:name="org.qiyi.android.video.MainActivity" android:screenOrientation="1" android:theme="@7F0C006F" android:windowSoftInputMode="0x00000020">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="org.qiyi.android.video.MAIN">
-</action>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:host="self">
-</data>
-				
-
-				<data android:host="com.qiyi.video">
-</data>
-				
-
-				<data android:scheme="video">
-</data>
-				
-
-				<data android:scheme="qiyimobile">
-</data>
-				
-
-				<data android:pathPattern=".*\.madeindexpage">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x400004B4" android:excludeFromRecents="true" android:exported="true" android:launchMode="1" android:name="com.iqiyi.video.search.PhoneSearchActivity" android:screenOrientation="1" android:taskAffinity="com.iqiyi.video.search" android:theme="@android:01030010" android:windowSoftInputMode="0x00000024">
-</activity>
-		
-
-		<activity android:launchMode="3" android:name="com.iqiyi.video.search.PhoneSearchSettingActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:exported="true" android:name="org.qiyi.android.video.activitys.CategoryDetailActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="2" android:name="org.qiyi.android.video.activitys.PhoneSettingNewActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.DiscoverServiceManagerActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:exported="true" android:launchMode="1" android:name="org.qiyi.android.video.ui.account.PhoneAccountActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.phone.account">
-</action>
-				
-
-				<action android:name="android.intent.action.qiyivideo.phone.fortk.account.com.qiyi.video">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
+				<category android:name="android.intent.category.MULTIWINDOW_LAUNCHER">
 </category>
 				
 
@@ -439,10 +509,426 @@
 		</activity>
 		
 
-		<activity android:configChanges="0x400000B4" android:launchMode="2" android:name="org.qiyi.android.commonphonepad.activity.ActivityRecommendFavor" android:screenOrientation="0" android:windowSoftInputMode="0x00000020">
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x400006E4" android:hardwareAccelerated="false" android:label="@7F0C000A" android:launchMode="2" android:name="com.tencent.mtt.MainActivity" android:screenOrientation="1" android:theme="@7F0F0017" android:windowSoftInputMode="0x00000022">
 			
 
 			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="about">
+</data>
+				
+
+				<data android:scheme="javascript">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.VIEW_IN_CURRENT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.VIEW_IN_VALID_WND">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.VIEW_FROM_MY_VIDEO">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="multipart/related">
+</data>
+				
+
+				<data android:mimeType="text/html">
+</data>
+				
+
+				<data android:mimeType="application/xhtml+xml">
+</data>
+				
+
+				<data android:mimeType="application/vnd.wap.xhtml+xml">
+</data>
+				
+
+				<data android:mimeType="application/rss+xml">
+</data>
+				
+
+				<data android:mimeType="application/atom+xml">
+</data>
+				
+
+				<data android:mimeType="application/xml">
+</data>
+				
+
+				<data android:mimeType="text/xml">
+</data>
+				
+
+				<data android:mimeType="application/x-bittorrent">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="*" android:scheme="file">
+</data>
+				
+
+				<data android:pathPattern=".*\.torrent">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.qbx.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+				<data android:scheme="tencent">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.qbx5.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+				<data android:scheme="tencent">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.UPDATE">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SHOWVIDEODOWNLOAD">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SHOWDOWNLOAD">
+</action>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.REFRESH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SEARCH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.WEB_SEARCH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SHOWFILEDIR">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.DONOTHING">
+</action>
 				
 
 				<category android:name="android.intent.category.DEFAULT">
@@ -455,13 +941,93 @@
 		</activity>
 		
 
-		<activity android:configChanges="0x000004A0" android:launchMode="0" android:name="org.iqiyi.video.activity.PlayerActivity" android:screenOrientation="4" android:stateNotNeeded="false" android:theme="@7F0C007C">
+		<activity android:configChanges="0x000000B0" android:exported="false" android:name="com.tencent.mtt.external.bd.BlockActivity" android:screenOrientation="-1" android:theme="@7F0F001A">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="android.intent.action.qiyivideo.player">
+				<action android:name="com.tencent.QQBrowser.action.BDTIPS">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x400006E4" android:label="@7F0C0332" android:name="com.tencent.mtt.browser.plugin.jar.PluginStubActivity" android:screenOrientation="-1" android:theme="@7F0F001D">
+</activity>
+		
+
+		<activity android:configChanges="0x000000B0" android:label="@7F0C0332" android:launchMode="2" android:name="com.tencent.mtt.browser.plugin.jar.PluginStubDialogActivity" android:screenOrientation="-1" android:theme="@7F0F0048">
+</activity>
+		
+
+		<activity android:name="com.tencent.mtt.base.ui.notification.DialogActivity" android:taskAffinity="com.tencent.mtt.base.ui.notification.DialogActivity" android:theme="@7F0F0015">
+</activity>
+		
+
+		<activity android:name="com.tencent.mtt.browser.qbbar.JumpActivity" android:noHistory="true" android:taskAffinity="com.tencent.mtt.browser.qbbar.JumpActivity" android:theme="@7F0F0015">
+</activity>
+		
+
+		<activity android:configChanges="0x000000B0" android:label="@7F0C0332" android:launchMode="2" android:name="com.tencent.mtt.browser.plugin.jar.PluginStubPlayer" android:process=":.plugin" android:screenOrientation="-1" android:theme="@7F0F001D">
+</activity>
+		
+
+		<provider android:authorities="mtt_bookmarks" android:exported="true" android:name="com.tencent.mtt.browser.bookmark.engine.BookmarkProvider">
+</provider>
+		
+
+		<provider android:authorities="qb_settings" android:exported="false" android:name="com.tencent.mtt.browser.setting.multiproc.QBSettingsProvider">
+</provider>
+		
+
+		<provider android:authorities="mtt_qqmarket" android:exported="false" android:name="com.tencent.mtt.external.market.inhost.QQMarketContentProvider">
+</provider>
+		
+
+		<provider android:authorities="mtt.weiyun.offline" android:exported="false" android:name="com.tencent.mtt.browser.file.weiyun.offline.WeiyunOfflineContentProvider">
+</provider>
+		
+
+		<activity android:name="com.tencent.mtt.browser.setting.managespace.ManageSpaceActivity">
+</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C000F" android:launchMode="2" android:name="com.tencent.mtt.external.yiya.inhost.YiyaWidgetActivity" android:screenOrientation="-1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.external.voiceA" android:theme="@7F0F000A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.WIDGET">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C000F" android:launchMode="2" android:name="com.tencent.mtt.external.yiya.inhost.YiyaAsistantActivity" android:screenOrientation="-1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.external.voiceB" android:theme="@7F0F000A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.ASISTANT">
 </action>
 				
 
@@ -475,8 +1041,84 @@
 			<intent-filter>
 				
 
-				<action android:name="android.intent.action.qiyivideo.player">
+				<action android:name="com.tencent.QQBrowser.action.VOICEINPUT">
 </action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:icon="@7F02001C" android:launchMode="2" android:name="com.tencent.mtt.browser.addressbar.SearchActivity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.browser.search" android:theme="@7F0F000B">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SEARCHINPUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:allowTaskReparenting="false" android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:configChanges="0x000000A0" android:icon="@7F02001A" android:label="@7F0C000D" android:launchMode="2" android:name="com.tencent.mtt.external.qrcode.inhost.CaptureActivity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.external.qrcode" android:theme="@7F0F0009" android:windowSoftInputMode="0x00000003">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.zxing.SCAN">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:allowTaskReparenting="false" android:configChanges="0x000000A0" android:icon="@7F02001A" android:label="@7F0C000D" android:name="com.tencent.mtt.external.qrcode.inhost.AddressResultActivity" android:screenOrientation="1" android:taskAffinity="com.tencent.mtt.external.qrcode" android:theme="@7F0F0009" android:windowSoftInputMode="0x00000022">
+</activity>
+		
+
+		<activity android:allowTaskReparenting="false" android:configChanges="0x000000A0" android:icon="@7F02001A" android:label="@7F0C000D" android:name="com.tencent.mtt.external.qrcode.inhost.NormalResultActivity" android:screenOrientation="1" android:taskAffinity="com.tencent.mtt.external.qrcode" android:theme="@7F0F0009" android:windowSoftInputMode="0x00000022">
+</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:configChanges="0x400006E4" android:excludeFromRecents="true" android:exported="true" android:launchMode="2" android:name="com.tencent.mtt.wxapi.WXEntryActivity" android:taskAffinity="com.tencent.mtt.wx" android:theme="@7F0F001A">
+</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x000006A0" android:exported="false" android:icon="@7F02042D" android:label="@7F0C06F0" android:launchMode="3" android:name="com.tencent.mtt.browser.video.VideoActivity" android:process=":VideoService" android:taskAffinity="com.tencent.mtt.video.thrdcall" android:theme="@7F0F0008">
+</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x000006A0" android:exported="false" android:icon="@7F02042D" android:label="@7F0C06F0" android:launchMode="2" android:name="com.tencent.mtt.browser.video.H5VideoFullscreenActivity" android:screenOrientation="0" android:theme="@7F0F001A">
+</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="true" android:excludeFromRecents="true" android:icon="@7F02042D" android:label="@7F0C06F0" android:name="com.tencent.mtt.browser.video.H5VideoThrdcallActivity" android:noHistory="true" android:process=":VideoService" android:taskAffinity="com.tencent.mtt.video.thrdcall" android:theme="@7F0F0007">
+			
+
+			<intent-filter>
 				
 
 				<action android:name="android.intent.action.VIEW">
@@ -491,90 +1133,16 @@
 </category>
 				
 
-				<data android:host="self">
+				<data android:scheme="file">
 </data>
 				
 
-				<data android:scheme="qiyimobile">
+				<data android:scheme="content">
 </data>
 				
 
-				<data android:scheme="qiyinb">
+				<data android:scheme="http">
 </data>
-				
-
-				<data android:scheme="video">
-</data>
-				
-
-				<data android:pathPattern=".*\.made">
-</data>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:mimeType="video/*" android:scheme="pps_upload">
-</data>
-				
-
-				<data android:mimeType="video/*" android:scheme="pps_scanfile_pad">
-</data>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:scheme="ppsplay">
-</data>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
 				
 
 				<data android:mimeType="video/*">
@@ -597,18 +1165,6 @@
 </data>
 				
 
-				<data android:mimeType="audio/x-pn-realaudio">
-</data>
-				
-
-				<data android:mimeType="video/x-ms-asf">
-</data>
-				
-
-				<data android:mimeType="video/quicktime">
-</data>
-				
-
 				<data android:mimeType="application/mpeg*">
 </data>
 				
@@ -622,82 +1178,6 @@
 				
 
 				<data android:mimeType="application/vnd.3gp*">
-</data>
-				
-
-				<data android:mimeType="application/vnd.dvb*">
-</data>
-				
-
-				<data android:mimeType="application/vnd.dolby*">
-</data>
-				
-
-				<data android:mimeType="application/octet-stream">
-</data>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.LAUNCHER">
-</category>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:mimeType="video/*" android:scheme="http">
-</data>
-				
-
-				<data android:mimeType="video/*" android:scheme="rtsp">
-</data>
-				
-
-				<data android:mimeType="video/*" android:scheme="file">
-</data>
-				
-
-				<data android:mimeType="video/*" android:scheme="content">
-</data>
-				
-
-				<data android:mimeType="video/*" android:scheme="mms">
-</data>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:pathPattern=".*\.qsv" android:scheme="file">
 </data>
 				
 
@@ -731,127 +1211,7 @@
 </data>
 				
 
-				<data android:scheme="https">
-</data>
-				
-
-				<data android:scheme="ftp">
-</data>
-				
-
 				<data android:host="*">
-</data>
-				
-
-				<data android:pathPattern=".*\.mov">
-</data>
-				
-
-				<data android:pathPattern=".*\.3gp">
-</data>
-				
-
-				<data android:pathPattern=".*\.m4a">
-</data>
-				
-
-				<data android:pathPattern=".*\.3g2">
-</data>
-				
-
-				<data android:pathPattern=".*\.mj2">
-</data>
-				
-
-				<data android:pathPattern=".*\.wmv">
-</data>
-				
-
-				<data android:pathPattern=".*\.ts">
-</data>
-				
-
-				<data android:pathPattern=".*\.f4v">
-</data>
-				
-
-				<data android:pathPattern=".*\.mpeg">
-</data>
-				
-
-				<data android:pathPattern=".*\.mpe">
-</data>
-				
-
-				<data android:pathPattern=".*\.m1v">
-</data>
-				
-
-				<data android:pathPattern=".*\.mp2">
-</data>
-				
-
-				<data android:pathPattern=".*\.mp3">
-</data>
-				
-
-				<data android:pathPattern=".*\.mod">
-</data>
-				
-
-				<data android:pathPattern=".*\.wma">
-</data>
-				
-
-				<data android:pathPattern=".*\.rm">
-</data>
-				
-
-				<data android:pathPattern=".*\.rmvb">
-</data>
-				
-
-				<data android:pathPattern=".*\.vob">
-</data>
-				
-
-				<data android:pathPattern=".*\.ogg">
-</data>
-				
-
-				<data android:pathPattern=".*\.divx">
-</data>
-				
-
-				<data android:pathPattern=".*\.qt">
-</data>
-				
-
-				<data android:pathPattern=".*\.mpg">
-</data>
-				
-
-				<data android:pathPattern=".*\.pfv">
-</data>
-				
-
-				<data android:pathPattern=".*\.flv">
-</data>
-				
-
-				<data android:pathPattern=".*\.mkv">
-</data>
-				
-
-				<data android:pathPattern=".*\.avi">
-</data>
-				
-
-				<data android:pathPattern=".*\.asf">
-</data>
-				
-
-				<data android:pathPattern=".*\.m4v">
 </data>
 				
 
@@ -859,41 +1219,1709 @@
 </data>
 				
 
+				<data android:pathPattern=".*\.MP4">
+</data>
+				
+
+				<data android:pathPattern=".*\.mkv">
+</data>
+				
+
+				<data android:pathPattern=".*\.MKV">
+</data>
+				
+
+				<data android:pathPattern=".*\.avi">
+</data>
+				
+
+				<data android:pathPattern=".*\.AVI">
+</data>
+				
+
+				<data android:pathPattern=".*\.asf">
+</data>
+				
+
+				<data android:pathPattern=".*\.ASF">
+</data>
+				
+
+				<data android:pathPattern=".*\.f4v">
+</data>
+				
+
+				<data android:pathPattern=".*\.F4V">
+</data>
+				
+
+				<data android:pathPattern=".*\.flv">
+</data>
+				
+
+				<data android:pathPattern=".*\.FLV">
+</data>
+				
+
+				<data android:pathPattern=".*\.mpeg">
+</data>
+				
+
+				<data android:pathPattern=".*\.MPEG">
+</data>
+				
+
+				<data android:pathPattern=".*\.mpg">
+</data>
+				
+
+				<data android:pathPattern=".*\.MPG">
+</data>
+				
+
+				<data android:pathPattern=".*\.mov">
+</data>
+				
+
+				<data android:pathPattern=".*\.MOV">
+</data>
+				
+
+				<data android:pathPattern=".*\.m3u8">
+</data>
+				
+
+				<data android:pathPattern=".*\.M3U8">
+</data>
+				
+
+				<data android:pathPattern=".*\.rm">
+</data>
+				
+
+				<data android:pathPattern=".*\.RM">
+</data>
+				
+
+				<data android:pathPattern=".*\.rmvb">
+</data>
+				
+
+				<data android:pathPattern=".*\.RMVB">
+</data>
+				
+
+				<data android:pathPattern=".*\.ts">
+</data>
+				
+
+				<data android:pathPattern=".*\.TS">
+</data>
+				
+
+				<data android:pathPattern=".*\.webm">
+</data>
+				
+
+				<data android:pathPattern=".*\.WEBM">
+</data>
+				
+
+				<data android:pathPattern=".*\.wmv">
+</data>
+				
+
+				<data android:pathPattern=".*\.WMV">
+</data>
+				
+
+				<data android:pathPattern=".*\.3gp">
+</data>
+				
+
+				<data android:pathPattern=".*\.3GP">
+</data>
+				
+
+				<data android:pathPattern=".*\.3gpp">
+</data>
+				
+
+				<data android:pathPattern=".*\.3GPP">
+</data>
+				
+
+				<data android:pathPattern=".*\.ogv">
+</data>
+				
+
+				<data android:pathPattern=".*\.OGV">
+</data>
+				
+
 			</intent-filter>
 			
 
 		</activity>
 		
 
-		<activity android:configChanges="0x000004E0" android:launchMode="2" android:name="org.iqiyi.video.ad.ui.ADActivity" android:screenOrientation="1" android:stateNotNeeded="false" android:theme="@android:01030010">
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="false" android:excludeFromRecents="true" android:icon="@7F02001E" android:label="@7F0C06F0" android:name="com.tencent.mtt.browser.video.H5VideoThrdcallActivityAlias" android:noHistory="true" android:process=":VideoService" android:targetActivity="com.tencent.mtt.browser.video.H5VideoThrdcallActivity" android:theme="@7F0F0007">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:scheme="content">
+</data>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:mimeType="video/*">
+</data>
+				
+
+				<data android:mimeType="application/mp4">
+</data>
+				
+
+				<data android:mimeType="*/rmvb">
+</data>
+				
+
+				<data android:mimeType="*/avi">
+</data>
+				
+
+				<data android:mimeType="*/mkv">
+</data>
+				
+
+				<data android:mimeType="application/mpeg*">
+</data>
+				
+
+				<data android:mimeType="application/vnd.rn-realmedia*">
+</data>
+				
+
+				<data android:mimeType="application/3gpp*">
+</data>
+				
+
+				<data android:mimeType="application/vnd.3gp*">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:scheme="content">
+</data>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:host="*">
+</data>
+				
+
+				<data android:pathPattern=".*\.mp4">
+</data>
+				
+
+				<data android:pathPattern=".*\.MP4">
+</data>
+				
+
+				<data android:pathPattern=".*\.mkv">
+</data>
+				
+
+				<data android:pathPattern=".*\.MKV">
+</data>
+				
+
+				<data android:pathPattern=".*\.avi">
+</data>
+				
+
+				<data android:pathPattern=".*\.AVI">
+</data>
+				
+
+				<data android:pathPattern=".*\.asf">
+</data>
+				
+
+				<data android:pathPattern=".*\.ASF">
+</data>
+				
+
+				<data android:pathPattern=".*\.f4v">
+</data>
+				
+
+				<data android:pathPattern=".*\.F4V">
+</data>
+				
+
+				<data android:pathPattern=".*\.flv">
+</data>
+				
+
+				<data android:pathPattern=".*\.FLV">
+</data>
+				
+
+				<data android:pathPattern=".*\.mpeg">
+</data>
+				
+
+				<data android:pathPattern=".*\.MPEG">
+</data>
+				
+
+				<data android:pathPattern=".*\.mpg">
+</data>
+				
+
+				<data android:pathPattern=".*\.MPG">
+</data>
+				
+
+				<data android:pathPattern=".*\.mov">
+</data>
+				
+
+				<data android:pathPattern=".*\.MOV">
+</data>
+				
+
+				<data android:pathPattern=".*\.m3u8">
+</data>
+				
+
+				<data android:pathPattern=".*\.M3U8">
+</data>
+				
+
+				<data android:pathPattern=".*\.rm">
+</data>
+				
+
+				<data android:pathPattern=".*\.RM">
+</data>
+				
+
+				<data android:pathPattern=".*\.rmvb">
+</data>
+				
+
+				<data android:pathPattern=".*\.RMVB">
+</data>
+				
+
+				<data android:pathPattern=".*\.ts">
+</data>
+				
+
+				<data android:pathPattern=".*\.TS">
+</data>
+				
+
+				<data android:pathPattern=".*\.webm">
+</data>
+				
+
+				<data android:pathPattern=".*\.WEBM">
+</data>
+				
+
+				<data android:pathPattern=".*\.wmv">
+</data>
+				
+
+				<data android:pathPattern=".*\.WMV">
+</data>
+				
+
+				<data android:pathPattern=".*\.3gp">
+</data>
+				
+
+				<data android:pathPattern=".*\.3GP">
+</data>
+				
+
+				<data android:pathPattern=".*\.3gpp">
+</data>
+				
+
+				<data android:pathPattern=".*\.3GPP">
+</data>
+				
+
+				<data android:pathPattern=".*\.ogv">
+</data>
+				
+
+				<data android:pathPattern=".*\.OGV">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:screenOrientation="2" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.sdk.document">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivityAlias" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.sdk.document">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="mtt/txt">
+</data>
+				
+
+				<data android:mimeType="mtt/epub">
+</data>
+				
+
+				<data android:mimeType="mtt/pdf">
+</data>
+				
+
+				<data android:mimeType="mtt/doc">
+</data>
+				
+
+				<data android:mimeType="mtt/xls">
+</data>
+				
+
+				<data android:mimeType="mtt/ppt">
+</data>
+				
+
+				<data android:mimeType="mtt/docx">
+</data>
+				
+
+				<data android:mimeType="mtt/xlsx">
+</data>
+				
+
+				<data android:mimeType="mtt/pptx">
+</data>
+				
+
+				<data android:mimeType="mtt/chm">
+</data>
+				
+
+				<data android:mimeType="mtt/zip">
+</data>
+				
+
+				<data android:mimeType="mtt/rar">
+</data>
+				
+
+				<data android:mimeType="mtt/7z">
+</data>
+				
+
+				<data android:mimeType="mtt/mp3">
+</data>
+				
+
+				<data android:mimeType="mtt/ogg">
+</data>
+				
+
+				<data android:mimeType="mtt/ape">
+</data>
+				
+
+				<data android:mimeType="mtt/m4a">
+</data>
+				
+
+				<data android:mimeType="mtt/wav">
+</data>
+				
+
+				<data android:mimeType="mtt/amr">
+</data>
+				
+
+				<data android:mimeType="mtt/wma">
+</data>
+				
+
+				<data android:mimeType="mtt/midi">
+</data>
+				
+
+				<data android:mimeType="mtt/ra">
+</data>
+				
+
+				<data android:mimeType="mtt/mpga">
+</data>
+				
+
+				<data android:mimeType="mtt/flac">
+</data>
+				
+
+				<data android:mimeType="mtt/ini">
+</data>
+				
+
+				<data android:mimeType="mtt/log">
+</data>
+				
+
+				<data android:mimeType="mtt/bat">
+</data>
+				
+
+				<data android:mimeType="mtt/php">
+</data>
+				
+
+				<data android:mimeType="mtt/js">
+</data>
+				
+
+				<data android:mimeType="mtt/lrc">
+</data>
+				
+
+				<data android:mimeType="mtt/html">
+</data>
+				
+
+				<data android:mimeType="mtt/htm">
+</data>
+				
+
+				<data android:mimeType="mtt/mht">
+</data>
+				
+
+				<data android:mimeType="mtt/xml">
+</data>
+				
+
+				<data android:mimeType="mtt/mp4">
+</data>
+				
+
+				<data android:mimeType="mtt/mkv">
+</data>
+				
+
+				<data android:mimeType="mtt/avi">
+</data>
+				
+
+				<data android:mimeType="mtt/asf">
+</data>
+				
+
+				<data android:mimeType="mtt/f4v">
+</data>
+				
+
+				<data android:mimeType="mtt/flv">
+</data>
+				
+
+				<data android:mimeType="mtt/mpeg">
+</data>
+				
+
+				<data android:mimeType="mtt/mpg">
+</data>
+				
+
+				<data android:mimeType="mtt/mov">
+</data>
+				
+
+				<data android:mimeType="mtt/m3u8">
+</data>
+				
+
+				<data android:mimeType="mtt/rm">
+</data>
+				
+
+				<data android:mimeType="mtt/rmvb">
+</data>
+				
+
+				<data android:mimeType="mtt/ts">
+</data>
+				
+
+				<data android:mimeType="mtt/webm">
+</data>
+				
+
+				<data android:mimeType="mtt/wmv">
+</data>
+				
+
+				<data android:mimeType="mtt/3gp">
+</data>
+				
+
+				<data android:mimeType="mtt/3gpp">
+</data>
+				
+
+				<data android:mimeType="mtt/ogv">
+</data>
+				
+
+				<data android:mimeType="mtt/vdat">
+</data>
+				
+
+				<data android:mimeType="mtt/gz">
+</data>
+				
+
+				<data android:mimeType="mtt/tar">
+</data>
+				
+
+				<data android:mimeType="mtt/bz2">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="false" android:icon="@7F02006E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallDocumentReaderActivityAlias" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="*/1">
+</data>
+				
+
+				<data android:mimeType="*/apk.1">
+</data>
+				
+
+				<data android:mimeType="application/msword">
+</data>
+				
+
+				<data android:mimeType="application/vnd.ms-powerpoint">
+</data>
+				
+
+				<data android:mimeType="application/vnd.ms-excel">
+</data>
+				
+
+				<data android:mimeType="application/pdf">
+</data>
+				
+
+				<data android:mimeType="application/epub+zip">
+</data>
+				
+
+				<data android:mimeType="application/x-chm">
+</data>
+				
+
+				<data android:mimeType="text/plain">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="*" android:mimeType="*/*" android:scheme="file">
+</data>
+				
+
+				<data android:pathPattern=".*\1">
+</data>
+				
+
+				<data android:pathPattern=".*\apk.1">
+</data>
+				
+
+				<data android:pathPattern=".*\.epub">
+</data>
+				
+
+				<data android:pathPattern=".*\.doc">
+</data>
+				
+
+				<data android:pathPattern=".*\.docx">
+</data>
+				
+
+				<data android:pathPattern=".*\.pdf">
+</data>
+				
+
+				<data android:pathPattern=".*\.ppt">
+</data>
+				
+
+				<data android:pathPattern=".*\.pptx">
+</data>
+				
+
+				<data android:pathPattern=".*\.xls">
+</data>
+				
+
+				<data android:pathPattern=".*\.xlsx">
+</data>
+				
+
+				<data android:pathPattern=".*\.chm">
+</data>
+				
+
+				<data android:pathPattern=".*\.CHM">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="true" android:icon="@7F02001E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallDocumentReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="*/1">
+</data>
+				
+
+				<data android:mimeType="*/apk.1">
+</data>
+				
+
+				<data android:mimeType="application/msword">
+</data>
+				
+
+				<data android:mimeType="application/vnd.ms-powerpoint">
+</data>
+				
+
+				<data android:mimeType="application/vnd.ms-excel">
+</data>
+				
+
+				<data android:mimeType="application/pdf">
+</data>
+				
+
+				<data android:mimeType="application/epub+zip">
+</data>
+				
+
+				<data android:mimeType="application/x-chm">
+</data>
+				
+
+				<data android:mimeType="text/plain">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+</data>
+				
+
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="*" android:mimeType="*/*" android:scheme="file">
+</data>
+				
+
+				<data android:pathPattern=".*\1">
+</data>
+				
+
+				<data android:pathPattern=".*\apk.1">
+</data>
+				
+
+				<data android:pathPattern=".*\.epub">
+</data>
+				
+
+				<data android:pathPattern=".*\.doc">
+</data>
+				
+
+				<data android:pathPattern=".*\.docx">
+</data>
+				
+
+				<data android:pathPattern=".*\.pdf">
+</data>
+				
+
+				<data android:pathPattern=".*\.ppt">
+</data>
+				
+
+				<data android:pathPattern=".*\.pptx">
+</data>
+				
+
+				<data android:pathPattern=".*\.xls">
+</data>
+				
+
+				<data android:pathPattern=".*\.xlsx">
+</data>
+				
+
+				<data android:pathPattern=".*\.chm">
+</data>
+				
+
+				<data android:pathPattern=".*\.CHM">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0905" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallMusicReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="audio/mpeg">
+</data>
+				
+
+				<data android:mimeType="audio/mp4">
+</data>
+				
+
+				<data android:mimeType="audio/x-wav">
+</data>
+				
+
+				<data android:mimeType="audio/flac">
+</data>
+				
+
+				<data android:mimeType="audio/x-flac">
+</data>
+				
+
+				<data android:mimeType="audio/x-ape">
+</data>
+				
+
+				<data android:mimeType="application/flac">
+</data>
+				
+
+				<data android:mimeType="application/x-flac">
+</data>
+				
+
+				<data android:mimeType="audio/x-ms-wma">
+</data>
+				
+
+				<data android:mimeType="audio/amr">
+</data>
+				
+
+				<data android:mimeType="audio/aac">
+</data>
+				
+
+				<data android:mimeType="audio/AMR">
+</data>
+				
+
+				<data android:mimeType="audio/mid">
+</data>
+				
+
+				<data android:mimeType="audio/midi">
+</data>
+				
+
+				<data android:mimeType="audio/ogg">
+</data>
+				
+
+				<data android:mimeType="audio/x-realaudio">
+</data>
+				
+
+				<data android:mimeType="audio/x-pn-realaudio">
+</data>
+				
+
+				<data android:mimeType="audio/3gpp">
+</data>
+				
+
+				<data android:mimeType="*/mp3">
+</data>
+				
+
+				<data android:mimeType="application/ogg">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="*" android:mimeType="*/*" android:scheme="file">
+</data>
+				
+
+				<data android:pathPattern=".*\.wav">
+</data>
+				
+
+				<data android:pathPattern=".*\.WAV">
+</data>
+				
+
+				<data android:pathPattern=".*\.mp3">
+</data>
+				
+
+				<data android:pathPattern=".*\.MP3">
+</data>
+				
+
+				<data android:pathPattern=".*\.m4a">
+</data>
+				
+
+				<data android:pathPattern=".*\.M4A">
+</data>
+				
+
+				<data android:pathPattern=".*\.flac">
+</data>
+				
+
+				<data android:pathPattern=".*\.FLAC">
+</data>
+				
+
+				<data android:pathPattern=".*\.wma">
+</data>
+				
+
+				<data android:pathPattern=".*\.WMA">
+</data>
+				
+
+				<data android:pathPattern=".*\.ogg">
+</data>
+				
+
+				<data android:pathPattern=".*\.OGG">
+</data>
+				
+
+				<data android:pathPattern=".*\.amr">
+</data>
+				
+
+				<data android:pathPattern=".*\.AMR">
+</data>
+				
+
+				<data android:pathPattern=".*\.mpga">
+</data>
+				
+
+				<data android:pathPattern=".*\.MPGA">
+</data>
+				
+
+				<data android:pathPattern=".*\.aac">
+</data>
+				
+
+				<data android:pathPattern=".*\.AAC">
+</data>
+				
+
+				<data android:pathPattern=".*\.mid">
+</data>
+				
+
+				<data android:pathPattern=".*\.MID">
+</data>
+				
+
+				<data android:pathPattern=".*\.ra">
+</data>
+				
+
+				<data android:pathPattern=".*\.RA">
+</data>
+				
+
+				<data android:pathPattern=".*\.ape">
+</data>
+				
+
+				<data android:pathPattern=".*\.APE">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0906" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallZipReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:mimeType="application/zip">
+</data>
+				
+
+				<data android:mimeType="application/rar">
+</data>
+				
+
+				<data android:mimeType="application/x-rar-compressed">
+</data>
+				
+
+				<data android:mimeType="application/x-7z-compressed">
+</data>
+				
+
+				<data android:mimeType="application/7z">
+</data>
+				
+
+				<data android:mimeType="application/x-gzip">
+</data>
+				
+
+				<data android:mimeType="application/x-bzip2">
+</data>
+				
+
+				<data android:mimeType="application/x-gtar">
+</data>
+				
+
+				<data android:mimeType="application/x-tar">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:host="*" android:mimeType="*/*" android:scheme="file">
+</data>
+				
+
+				<data android:pathPattern=".*\.zip">
+</data>
+				
+
+				<data android:pathPattern=".*\.rar">
+</data>
+				
+
+				<data android:pathPattern=".*\.ra">
+</data>
+				
+
+				<data android:pathPattern=".*\.RA">
+</data>
+				
+
+				<data android:pathPattern=".*\.7z">
+</data>
+				
+
+				<data android:pathPattern=".*\.tar.gz">
+</data>
+				
+
+				<data android:pathPattern=".*\.gz">
+</data>
+				
+
+				<data android:pathPattern=".*\.tar">
+</data>
+				
+
+				<data android:pathPattern=".*\.bz2">
+</data>
+				
+
+				<data android:pathPattern=".*\.tar.bz2">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity-alias>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x400006E4" android:icon="@7F0200CC" android:label="X5Game" android:launchMode="2" android:name="com.tencent.mtt.external.gameplayer.X5GamePlayerActivity" android:process=":X5Game" android:screenOrientation="2" android:taskAffinity="com.tencent.mtt.external.x5gameplayer" android:theme="@7F0F0017" android:windowSoftInputMode="0x00000022">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="x5gameplayer">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="x5gameplayer">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.SHOW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:configChanges="0x400006E4" android:exported="false" android:name="com.tencent.mtt.external.gameplayer.X5GamePlayerBridgeActivity" android:screenOrientation="2" android:taskAffinity="com.tencent.mtt.external.x5gameplayer" android:theme="@android:01030010" android:windowSoftInputMode="0x00000022">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.SHARE">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.PAY">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.LOGIN">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.x5gameplayer.action.NEED_RELOGIN">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:excludeFromRecents="true" android:exported="false" android:name="com.tencent.mtt.base.utils.ApkInstallJumpActivity" android:taskAffinity="com.tencent.mtt.ApkInstallJumpActivity" android:theme="@7F0F001A">
 </activity>
 		
 
-		<activity android:configChanges="0x000004E0" android:launchMode="2" android:name="org.iqiyi.video.outside.OutSiteActivity" android:screenOrientation="1" android:stateNotNeeded="false" android:theme="@7F0C0079">
+		<activity android:configChanges="0x400006E4" android:exported="false" android:name="com.tencent.mtt.MultiProcessBridgeActivity" android:screenOrientation="3" android:theme="@android:01030010" android:windowSoftInputMode="0x00000022">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.action.MULTIPROCESS_ACTION">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:name="com.tencent.mtt.boot.function.IntentDispatcherActivity" android:taskAffinity="com.tencent.mtt.boot.function.IntentDispatcherActivity" android:theme="@7F0F001A">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.VIEW_IN_FUNC_WND">
+</action>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.INTENT_PASSTHROUGH">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+				<data android:scheme="mttlightapp">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="http">
+</data>
+				
+
+				<data android:scheme="https">
+</data>
+				
+
+				<data android:scheme="file">
+</data>
+				
+
+				<data android:scheme="mttbrowser">
+</data>
+				
+
+				<data android:scheme="tencent">
+</data>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.qbx.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.qbx5.action.SHORTCUT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:scheme="qb">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:allowTaskReparenting="false" android:configChanges="0x000004B0" android:excludeFromRecents="true" android:name="com.tencent.mtt.boot.function.FuncLoadingActivity" android:screenOrientation="-1" android:taskAffinity="com.tencent.mtt.boot.function.FuncLoadinActivity" android:theme="@android:01030010">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:exported="true" android:launchMode="1" android:name="org.qiyi.android.video.activitys.AccountUIActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
+		<activity android:configChanges="0x000000B0" android:icon="@7F020301" android:label="@7F0C085B" android:name="com.tencent.mtt.browser.share.FastSpreadEntryActivity" android:screenOrientation="-1" android:theme="@7F0F001D">
+			
 
-		<activity android:configChanges="0x000000A0" android:exported="true" android:launchMode="3" android:name="com.qiyi.video.wxapi.WXEntryActivity" android:screenOrientation="1" android:theme="@7F0C007D">
-</activity>
-		
+			<intent-filter>
+				
 
-		<activity android:exported="true" android:name="com.qiyi.video.apshare.ShareEntryActivity" android:screenOrientation="1" android:theme="@7F0C007D">
-</activity>
+				<action android:name="android.intent.action.SEND">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="file/*">
+</data>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+				<data android:mimeType="video/*">
+</data>
+				
+
+				<data android:mimeType="audio/*">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
 		
 
 		<activity android:launchMode="2" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
-</activity>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
+				
+
+				<data android:scheme="tencent100446242">
+</data>
+				
+
+			</intent-filter>
+			
+
+		</activity>
 		
 
 		<activity android:configChanges="0x000004A0" android:name="com.tencent.connect.common.AssistActivity" android:theme="@android:01030010">
 </activity>
 		
 
-		<activity android:launchMode="2" android:name="org.qiyi.android.plugin.share.CustomAuthActivity">
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:icon="@7F02001B" android:label="@7F0C000E" android:launchMode="2" android:name="com.tencent.mtt.browser.desktop.FrequentVisitActvity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.browser.desktop" android:theme="@7F0F000C">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.VIEW">
+</action>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.frequentvisit">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+			</intent-filter>
+			
+
+		</activity>
+		
+
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:icon="@7F020017" android:label="@7F0C001A" android:launchMode="2" android:name="com.tencent.mtt.browser.desktop.BaiduActivity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.browser.search" android:theme="@7F0F000D">
 			
 
 			<intent-filter>
@@ -907,43 +2935,91 @@
 </category>
 				
 
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:scheme="tencent206978">
-</data>
-				
-
 			</intent-filter>
 			
 
 		</activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.RouterActivity" android:screenOrientation="1" android:theme="@android:01030006">
+		<activity android:configChanges="0x000004A0" android:name="com.tencent.midas.proxyactivity.APMidasPayProxyActivity" android:screenOrientation="1" android:theme="@android:01030010">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.RouterDetailActivity" android:screenOrientation="1" android:theme="@android:01030006">
+		<activity android:excludeFromRecents="true" android:exported="true" android:name="com.tencent.midas.wx.APMidasWXPayActivity" android:taskAffinity="com.tencent.mtt.midas" android:theme="@android:01030010">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.RouterBindSuccessActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.WebADActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x00000080" android:name="com.xiaomi.account.openauth.AuthorizeActivity" android:windowSoftInputMode="0x00000002">
+		<activity android:configChanges="0x000004A0" android:excludeFromRecents="true" android:icon="@7F02001E" android:label="@7F0C0010" android:name="com.tencent.mtt.browser.file.FileManagerActivity" android:theme="@7F0F001A">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="com.xiaomi.account.openauth.action.AUTH">
+				<action android:name="android.intent.action.GET_CONTENT">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<category android:name="android.intent.category.OPENABLE">
+</category>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+				<data android:mimeType="file/*">
+</data>
+				
+
+				<data android:mimeType="video/*">
+</data>
+				
+
+				<data android:mimeType="audio/*">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.PICK">
+</action>
+				
+
+				<category android:name="android.intent.category.DEFAULT">
+</category>
+				
+
+				<data android:mimeType="image/*">
+</data>
+				
+
+				<data android:mimeType="file/*">
+</data>
+				
+
+				<data android:mimeType="video/*">
+</data>
+				
+
+				<data android:mimeType="audio/*">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.intent.action.RINGTONE_PICKER">
 </action>
 				
 
@@ -957,49 +3033,33 @@
 		</activity>
 		
 
-		<activity android:configChanges="0x00000080" android:name="org.qiyi.android.locale.AreaModeChangeDialogActivity" android:theme="@7F0C000E" android:windowSoftInputMode="0x00000002">
+		<activity android:excludeFromRecents="true" android:name="com.tencent.mtt.browser.share.InstallRetActivity" android:process=":service" android:theme="@android:01030010">
 </activity>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.StarInfoActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<service android:exported="true" android:name="org.qiyi.android.commonphonepad.pushmessage.PushMessageService">
+		<service android:exported="false" android:label="@7F0C000B" android:name="com.tencent.mtt.browser.push.service.PushRemoteService" android:process=":service">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="com.qiyi.video.DownloadService">
+				<action android:name="com.tencent.mtt.service.ACTION_DEFAULT">
 </action>
 				
 
-				<action android:name="com.qiyi.video.action.updateApp.retry">
+				<action android:name="com.tencent.mtt.service.ACTION_HEARTBEAT">
 </action>
 				
 
-				<action android:name="com.qiyi.push.action.LOGIN">
+				<action android:name="com.tencent.mtt.service.ACTION_NETWORKCHG">
 </action>
 				
 
-				<action android:name="com.qiyi.push.action.MESSAGE">
+				<action android:name="com.tencent.mtt.service.ACTION_PUSH_ACTIVATED_BY_SDK">
 </action>
 				
 
-				<action android:name="com.qiyi.push.action.RESPONSE">
-</action>
-				
-
-				<action android:name="com.qiyi.push.action.switcher">
-</action>
-				
-
-				<action android:name="com.qiyi.video.action.download.newApp">
-</action>
-				
-
-				<action android:name="org.qiyi.android.commonphonepad.pushmessage.JoinActionAlarmReceiver">
+				<action android:name="com.tencent.mtt.service.ACTION_PUSH_ACTIVATED_BY_DAEMON">
 </action>
 				
 
@@ -1009,13 +3069,13 @@
 		</service>
 		
 
-		<service android:exported="false" android:name="org.qiyi.android.commonphonepad.qyad.DownloadAppService" android:process=":DownloadingAppService">
+		<service android:exported="false" android:label="@7F0C000B" android:name="com.tencent.mtt.browser.push.service.ScreenshotMonitorService" android:process=":service">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="org.qiyi.android.commonphonepad.qyad.DownloadAppService">
+				<action android:name="com.tencent.mtt.service.ACTION_SCREENSHOT_MONITOR">
 </action>
 				
 
@@ -1025,995 +3085,25 @@
 		</service>
 		
 
-		<service android:enabled="true" android:name="com.xiaomi.push.service.XMPushService" android:process=":pushservice">
-</service>
-		
-
-		<service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler">
-</service>
-		
-
-		<service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService">
-</service>
-		
-
-		<receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.corejar.deliver.heartbeat.HeartBeatReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
-
-				<action android:name="com.qiyi.startapp">
-</action>
-				
-
-				<action android:name="com.qiyi.heartbeat.alarm.action">
-</action>
-				
-
-				<action android:name="com.qiyi.heartbeat.getstrategy.action">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:exported="false" android:name="com.xiaomi.push.service.receivers.PingReceiver" android:process=":pushservice">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.xiaomi.push.PING_TIMER">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:exported="true" android:name="org.qiyi.android.commonphonepad.pushmessage.xiaomi.XiaoMiPushMessageReceive">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE">
-</action>
-				
-
-				<action android:name="com.xiaomi.mipush.ERROR">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.baidu.PushMsgBroadCastReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="org.qiyi.android.video.pushmessage.PUSH_MSG">
-</action>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:enabled="true" android:exported="true" android:name="org.qiyi.android.commonphonepad.receiver.StartPlayActivityReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.mp4player">
-</action>
-				
-
-				<data android:scheme="video">
-</data>
-				
-
-				<data android:scheme="intent">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.receiver.StartWelcomeActivityReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.welcomeactivity">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.receiver.StartPlayerFromWeixinReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.startplayerfromhtmlweixin">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.receiver.StartPlayerFromThirdEntranceReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.startplayerfromThirdEntrance">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<service android:name="org.qiyi.android.corejar.qimo.QimoService">
-</service>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.receiver.QiMoBordcast">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.receiver.AddPackageBroadcast">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.PACKAGE_ADDED">
-</action>
-				
-
-				<data android:scheme="package">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.locale.LocaleChangeReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.LOCALE_CHANGED">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<meta-data android:name="BaiduMobAd_EXCEPTION_LOG" android:value="true">
-</meta-data>
-		
-
-		<meta-data android:name="BaiduMobAd_SEND_STRATEGY" android:value="APP_START">
-</meta-data>
-		
-
-		<meta-data android:name="BaiduMobAd_ONLY_WIFI" android:value="true">
-</meta-data>
-		
-
-		<meta-data android:name="BaiduMobAd_CELL_LOCATION" android:value="false">
-</meta-data>
-		
-
-		<meta-data android:name="BaiduMobAd_GPS_LOCATION" android:value="false">
-</meta-data>
-		
-
-		<meta-data android:name="BaiduMobAd_WIFI_LOCATION" android:value="false">
-</meta-data>
-		
-
-		<meta-data android:name="91SMARTUPDATE_CHANNEL" android:value="153">
-</meta-data>
-		
-
-		<activity android:exported="true" android:launchMode="1" android:name="com.qiyi.video.wxapi.WXPayEntryActivity" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000000E0" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="3">
-</activity>
-		
-
-		<activity android:configChanges="0x000000E0" android:exported="false" android:name="com.alipay.sdk.auth.AuthActivity" android:screenOrientation="3">
-</activity>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.QYPushMsgBootReceiver">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.baidu.PushMessageReceiver">
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.push.service.ScreenshotMonitorReceiver" android:process=":service">
 </receiver>
 		
 
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.baidu.BDPushMessageReceiver">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="com.baidu.android.pushservice.action.MESSAGE">
-</action>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.RECEIVE">
-</action>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.notification.CLICK">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="com.baidu.android.pushservice.PushServiceReceiver" android:process=":bdservice_v1">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.notification.SHOW">
-</action>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.media.CLICK">
-</action>
-				
-
-				<action android:name="android.intent.action.MEDIA_MOUNTED">
-</action>
-				
-
-				<action android:name="android.intent.action.USER_PRESENT">
-</action>
-				
-
-				<action android:name="android.intent.action.ACTION_POWER_CONNECTED">
-</action>
-				
-
-				<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="com.baidu.android.pushservice.RegistrationReceiver" android:process=":bdservice_v1">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.METHOD">
-</action>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.BIND_SYNC">
-</action>
-				
-
-			</intent-filter>
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.PACKAGE_REMOVED">
-</action>
-				
-
-				<data android:scheme="package">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<service android:exported="true" android:name="com.baidu.android.pushservice.PushService" android:process=":bdservice_v1">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:exported="true" android:name="com.baidu.android.pushservice.CommandService">
-</service>
-		
-
-		<meta-data android:name="api_key" android:value="vmHynnwGbO1iUyhP6OqBca0G">
-</meta-data>
-		
-
-		<meta-data android:name="pps_api_key" android:value="pyGXczxDiih6v3zIM2D6KjoK">
-</meta-data>
-		
-
-		<activity android:name="org.qiyi.android.plugin.appstore.GameInstallPopWindow" android:screenOrientation="1" android:theme="@android:0103000B">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="0" android:name="org.qiyi.android.video.activitys.ShareAPKActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="0" android:name="org.qiyi.android.video.activitys.ShareAPKMainActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.activitys.PhonePlayRecordActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.record">
-</action>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:host="self">
-</data>
-				
-
-				<data android:scheme="qiyimobile">
-</data>
-				
-
-				<data android:pathPattern=".*\.made.record">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.activitys.PhoneCollectActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.qiyivideo.collect">
-</action>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:host="self">
-</data>
-				
-
-				<data android:scheme="qiyimobile">
-</data>
-				
-
-				<data android:pathPattern=".*\.made.collect">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.activitys.pps.PhoneGoldActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.pps.GoldWebViewActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:name="org.qiyi.android.video.activitys.pps.DarkIconJumpActivity" android:theme="@android:01030010">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.action.darkicon">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:name="org.qiyi.android.video.ppq.activitys.DarkIconJump2PPQActivity" android:theme="@android:01030010">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.action.darkicon.ppq">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:name="org.qiyi.android.share.SharePanelActivity" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.activitys.PhoneFeedbackNewActivity" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.activitys.PhoneDailyNewsActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.ugc.activitys.UgcFeedFragmentActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:name="org.qiyi.android.video.ugc.activitys.UgcOtherTabActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.ugc.activitys.UgcFriendshipFragmentActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:launchMode="1" android:name="org.qiyi.android.video.ugc.activitys.UgcVideoFragmentActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<service android:enabled="true" android:name="com.baidu.location.f" android:process=":baiduLocation">
-</service>
-		
-
-		<service android:exported="true" android:name="com.iqiyi.video.download.QiyiDownloadCenterService" android:process=":downloader">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="com.iqiyi.video.download.IQiyiDownloadCenter.com.qiyi.video.baseline">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="0" android:name="org.qiyi.android.video.activitys.GuessLikeNewActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.VideoSquareActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000004E0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.BillboardActivity" android:screenOrientation="4" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.FrameJumpActivity" android:screenOrientation="1" android:theme="@android:01030055">
-			
-
-			<intent-filter>
-				
-
-				<data android:host="com.qiyi.video" android:scheme="iqiyi-phone">
-</data>
-				
-
-				<data android:pathPattern=".*res*">
-</data>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="0" android:name="org.qiyi.android.video.activitys.ToCheckMoreActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000004E0" android:launchMode="0" android:name="org.qiyi.android.video.activitys.SecondPageActivity" android:screenOrientation="1" android:theme="@android:01030010">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.common.second.page">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.CommentsListActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.ui.account.PhoneModifyNickNameActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.qiyi.QYPushMessageReceiver">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="com.iqiyi.sdk.android.pushservice.action.MESSAGE">
-</action>
-				
-
-				<action android:name="com.iqiyi.sdk.android.pushservice.action.RECEIVE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:name="com.iqiyi.sdk.android.pushservice.PushServiceReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<service android:exported="true" android:label="iQiyiGlobalPushService" android:name="com.iqiyi.sdk.android.pushservice.PushService" android:process=".iqiyipushserviceGlobal">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.iqiyi.sdk.android.pushservice.PushService">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<receiver android:name="org.qiyi.android.commonphonepad.pushmessage.qiyi.QYPushMsgBroadCastReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="org.qiyi.android.video.pushmessage.ACTION_PUSH_CHANGE">
-</action>
-				
-
-				<action android:name="org.qiyi.android.video.pushmessage.ACTION_AD_DOWNLOAD">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<activity android:configChanges="0x000004E0" android:launchMode="1" android:name="org.qiyi.android.video.activitys.CommonWebViewActivity" android:screenOrientation="4" android:theme="@android:01030010">
-			
-
-			<intent-filter>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<action android:name="com.qiyi.video.CommonWebView">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.scan.ScanActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000003">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.scan.PhoneConfirmLoginBackActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000003">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.scan.PhoneScanBackActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000003">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="com.iqiyi.sso.sdk.ui.ShowAccountListActivity" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:name="com.iqiyi.sso.sdk.ui.SleepyAccountAuthenticatorActivity">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.accounts.AccountAuthenticator">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:exported="true" android:name="com.iqiyi.sso.sdk.ui.UidActivity">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.iqiyi.sso">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<service android:exported="true" android:name="com.iqiyi.sso.sdk.service.SleepyAccountsService">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.accounts.AccountAuthenticator">
-</action>
-				
-
-			</intent-filter>
-			
-
-			<meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@7F050001">
-</meta-data>
-			
-
-		</service>
-		
-
-		<activity android:configChanges="0x400000B4" android:name="org.qiyi.android.video.ugc.activitys.UgcMyTabActivity" android:screenOrientation="1" android:theme="@android:01030006" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="android.a.test.VideoPlayTestActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<service android:name="org.qiyi.android.corejar.deliver.service.PPSDeliverService">
-</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:exported="true" android:launchMode="2" android:name="org.qiyi.android.video.ppq.activitys.CloudActivity" android:screenOrientation="1" android:theme="@android:01030010">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="notification_action">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<receiver android:name="org.qiyi.android.video.ppq.activitys.ui.upload.UploadVideoNotificationReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="notification_action">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<activity android:configChanges="0x400000B4" android:exported="true" android:launchMode="1" android:name="org.qiyi.android.video.ppq.activitys.AlbumActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:exported="true" android:launchMode="1" android:name="org.qiyi.android.video.ppq.activitys.PPQHomeActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000013">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:exported="true" android:name="org.qiyi.android.video.ppq.activitys.ShareActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:name="org.qiyi.android.video.ugc.activitys.ReportCommentActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:configChanges="0x400000B4" android:name="org.qiyi.android.video.ppq.activitys.PreviewActivity" android:screenOrientation="1" android:theme="@android:01030010" android:windowSoftInputMode="0x00000003">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ppq.activitys.SecondShareActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
-
-		<service android:enabled="true" android:name="com.iqiyi.video.upload.ppq.service.UploadService" android:process=":upload_service">
-			
-
-			<intent-filter android:priority="1000">
-				
-
-				<action android:name="com.iqiyi.video.upload.ppq.service.IUploadService">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:exported="false" android:name="org.qiyi.pluginlibrary.install.PluginInstallerService" android:process=":pluginInstaller">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.installed.service.INSTALL">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<receiver android:exported="true" android:name="org.qiyi.pluginlibrary.proxy.BroadcastReceiverProxy">
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.push.service.ClipboardMonitorReceiver" android:process=":service">
 </receiver>
 		
 
-		<receiver android:name="org.qiyi.android.plugin.service.PluginRetryReceiver">
+		<receiver android:exported="false" android:name="com.tencent.mtt.sdk.NotificationBroadcastReceiver">
+</receiver>
+		
+
+		<receiver android:name="com.tencent.mtt.browser.push.service.ConnectivityReceiver" android:process=":service">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="action_get_and_install_plugin">
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
 </action>
 				
 
@@ -2023,499 +3113,425 @@
 		</receiver>
 		
 
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy" android:process=":plugin" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy1" android:process=":plugin1" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy2" android:process=":plugin2" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy3" android:process=":plugin3" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy4" android:process=":plugin4" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy5" android:process=":plugin5" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy6" android:process=":plugin6" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy7" android:process=":plugin7" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy8" android:process=":plugin8" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxy9" android:process=":plugin9" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent" android:process=":plugin" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent1" android:process=":plugin1" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent2" android:process=":plugin2" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent3" android:process=":plugin3" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent4" android:process=":plugin4" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent5" android:process=":plugin5" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent6" android:process=":plugin6" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent7" android:process=":plugin7" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent8" android:process=":plugin8" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<activity android:configChanges="0x000001B0" android:name="org.qiyi.pluginlibrary.component.InstrActivityProxyTranslucent9" android:process=":plugin9" android:screenOrientation="1" android:theme="@android:0103000F">
-</activity>
-		
-
-		<service android:name="org.qiyi.pluginnew.service.ServiceProxyNew" android:process=":plugin">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy1" android:process=":plugin1">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy2" android:process=":plugin2">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy3" android:process=":plugin3">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy4" android:process=":plugin4">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy5" android:process=":plugin5">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy6" android:process=":plugin6">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy7" android:process=":plugin7">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy8" android:process=":plugin8">
-</service>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.component.ServiceProxy9" android:process=":plugin9">
-</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService" android:process=":plugin">
+		<receiver android:exported="true" android:name="com.tencent.mtt.browser.push.service.PushStatReceiver" android:process=":service">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="com.qiyi.video.plugin.ipc">
+				<action android:name="com.tencent.mtt.ACTION_NF_CANCELLED">
 </action>
 				
 
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService1" android:process=":plugin1">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService2" android:process=":plugin2">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService3" android:process=":plugin3">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.PluginIPCConnectionRestorationService">
-</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService4" android:process=":plugin4">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService5" android:process=":plugin5">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService6" android:process=":plugin6">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService7" android:process=":plugin7">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService8" android:process=":plugin8">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<service android:name="org.qiyi.android.plugin.ipc.IPCService9" android:process=":plugin9">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.qiyi.video.plugin.ipc">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<activity android:launchMode="2" android:name="org.qiyi.android.plugin.activity.PluginTransferActivity" android:screenOrientation="1" android:theme="@7F0C007D">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:host="com.qiyi.video">
-</data>
-				
-
-				<data android:scheme="qiyiplug">
-</data>
-				
-
-				<data android:pathPattern=".*\.plugintransferpage">
+				<data android:scheme="qb">
 </data>
 				
 
 			</intent-filter>
 			
 
-		</activity>
-		
+			<intent-filter>
+				
 
-// Temporary declare this activity in case of plugin invoking plugin through
-// QiYi client
+				<action android:name="com.tencent.mtt.ACTION_NF_CLICKED">
+</action>
+				
 
-
-		<activity android:name="org.qiyi.android.plugin.activity.PluginTransferActivityNew" android:screenOrientation="1" android:theme="@7F0C007D">
-</activity>
-		
-
-		<service android:name="org.qiyi.pluginlibrary.pm.CMPackageManagerService">
-</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.music.MusicTopListActivity" android:screenOrientation="1" android:theme="@7F0C0079">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="2" android:name="org.qiyi.android.video.music.MusicTopMainActivity" android:screenOrientation="1" android:theme="@7F0C0079">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.SpecialPlayListActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="android.a.test.DebugInfoActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<service android:name="org.qiyi.basecore.filedownload.FileDownloadRemoteService" android:process=":file_download_remote_service">
-</service>
-		
-
-		<service android:name="org.qiyi.android.video.download.FileDownloadNotificationService">
-</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.pay.PayBaseActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.pay.PhonePayActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.pay.activitys.PayCouponActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.pay.activitys.PayCouponListActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.pay.activitys.PayCouponExchangeActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.pay.QDPayActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="2" android:name="org.qiyi.android.video.ui.phone.download.PhoneDownloadActivity" android:screenOrientation="1" android:theme="@android:01030006">
+			</intent-filter>
 			
 
 			<intent-filter>
 				
 
-				<action android:name="android.intent.action.VIEW">
+				<action android:name="com.tencent.mtt.ACTION_ACTIVATE_PUSH_BY_SDK">
 </action>
 				
 
-				<category android:name="android.intent.category.DEFAULT">
-</category>
+			</intent-filter>
+			
+
+			<intent-filter>
 				
 
-				<data android:host="self">
-</data>
+				<action android:name="android.intent.action.ACTION_SHUTDOWN">
+</action>
 				
 
-				<data android:host="com.qiyi.video">
-</data>
+			</intent-filter>
+			
+
+			<intent-filter>
 				
 
-				<data android:scheme="qiyimobile">
-</data>
+				<action android:name="android.intent.action.REBOOT">
+</action>
 				
 
-				<data android:pathPattern=".*\.downloadpage">
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:name="com.tencent.mtt.browser.notification.weather.ResidentNotificationReceiver" android:process=":service">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.ResidentNotification">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.show">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.start">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.stop">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.restart">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="false" android:name="com.tencent.mtt.external.floatwindow.FloatWindowReceiver" android:process=":service">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.floatwindow.SHOW">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.floatwindow.HIDE">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.floatwindow.UPDATE">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.keepreading.ON">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.keepreading.OFF">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.security.SafetyNotiReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.danger.show">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.shop.show">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.download">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<receiver android:exported="true" android:name="com.tencent.mtt.browser.desktop.FrequentVisitReceiver">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.qlauncher.action.ACTION_INQUIRY_QQBrowser_SHORTCUT">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</receiver>
+		
+
+		<service android:exported="false" android:label="@7F0C000C" android:name="com.tencent.mtt.BrowserService">
+</service>
+		
+
+		<service android:exported="false" android:name="com.tencent.mtt.external.market.inhost.QQMarketService" android:process=":service">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.qqmarket.engine.pushcmd">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.qqmarket.updateusage">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</service>
+		
+
+		<service android:name="com.qvod.player.core.p2p.service.P2PService" android:process=":qvodservice">
+</service>
+		
+
+		<service android:exported="true" android:name="com.tencent.mtt.sdk.BrowserSdkService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_INSTALL_X5">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_BIND_X5">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_BIND_FILE_READER">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_DOWNLOAD">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_ACTIVE_PUSH">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_DAEMON_ACTIVE_PUSH">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_TBS_TIPS">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.reader.ACTION_SDK_CLIENT">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_PLUGIN_SERV">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.ACTION_WUP">
+</action>
+				
+
+				<data android:scheme="sdkservicekey">
 </data>
 				
 
 			</intent-filter>
 			
 
-		</activity>
+		</service>
 		
 
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ui.phone.download.PhoneDownloadEpisodeActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<service android:exported="true" android:name="com.tencent.mtt.browser.video.service.H5VideoService" android:process=":VideoService">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.smtt.export.wonderplayer.ACTION_DEFAULT">
+</action>
+				
+
+				<data android:scheme="x5sdkvideo">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.mtt.video.ACTION_REGIST_SDK_CLIENT">
+</action>
+				
+
+				<data android:scheme="x5sdkvideo">
+</data>
+				
+
+			</intent-filter>
+			
+
+			<intent-filter>
+				
+
+				<action android:name="com.tencent.smtt.export.wonderplayer.ACTION_DEFAULT">
+</action>
+				
+
+			</intent-filter>
+			
+
+		</service>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.ui.phone.download.LocalVideosActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<service android:enabled="true" android:name="com.tencent.mtt.external.reader.music.MusicNotificationService">
+</service>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.ui.phone.download.DownloadWebViewActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<service android:enabled="true" android:name="com.tencent.mtt.browser.plugin.QBPluginSessionService">
+</service>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="android.a.test.DownloadDebugActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<meta-data android:name="xunlei_api_key" android:value="4041515337441f1a678dd4c365d5f913-20140214-144844-02-0001">
+</meta-data>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="android.a.test.PhoneSdInfoActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<receiver android:label="@7F0C0B74" android:name="com.tencent.mtt.widget.androidwidget.QBAppWidgetProviderB" android:process=":service">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.widget.b.update">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.widget.active">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.widget.hotword_refresh">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F060001">
+</meta-data>
+			
+
+		</receiver>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="android.debug.DebugLaunchTimesActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
+		<receiver android:label="@7F0C0B73" android:name="com.tencent.mtt.widget.androidwidget.QBAppWidgetProviderA" android:process=":service">
+			
+
+			<intent-filter>
+				
+
+				<action android:name="android.appwidget.action.APPWIDGET_UPDATE">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.widget.a.update">
+</action>
+				
+
+				<action android:name="com.tencent.mtt.widget.active">
+</action>
+				
+
+			</intent-filter>
+			
+
+			<meta-data android:name="android.appwidget.provider" android:resource="@7F060000">
+</meta-data>
+			
+
+		</receiver>
 		
 
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.ui.phone.download.transfer.USBTransferActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.ui.phone.download.DownloadMoviesActivity" android:screenOrientation="1" android:theme="@android:01030006">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.qimo.DlanActivity" android:screenOrientation="1" android:theme="@7F0C0079">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.iqiyi.video.episodeui.OutterEpisodeActivity" android:screenOrientation="1" android:theme="@7F0C0079">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.iqiyi.video.download.OutterDownloadActivity" android:screenOrientation="1" android:theme="@7F0C0079">
-</activity>
-		
-
-		<provider android:authorities="com.qiyi.video" android:exported="false" android:multiprocess="true" android:name="org.qiyi.android.corejar.database.QiyiContentProvider">
+		<provider android:authorities="com.tencent.mtt.qlauncher.external.provider" android:exported="true" android:multiprocess="false" android:name="com.tencent.qlauncher.external.sdk.QlauncherExtProvider">
 </provider>
 		
 
-		<provider android:authorities="com.qiyi.video.deliver" android:exported="false" android:multiprocess="true" android:name="org.qiyi.android.corejar.deliver.db.DeliverContentProvider">
+		<provider android:authorities="com.tencent.downloadprovider.QBDownloadProvider" android:exported="true" android:name="com.tencent.downloadprovider.QBDownloadProvider">
 </provider>
 		
 
-		<activity android:label="@7F080AE0" android:launchMode="2" android:name="org.qiyi.android.video.activitys.IResearchTestActivity" android:screenOrientation="1">
-</activity>
+		<service android:name="com.tencent.downloadprovider.QBDownloadService">
+</service>
 		
 
-		<activity android:name="org.qiyi.android.video.activitys.IResearchTestListActivity" android:theme="@7F0C0000">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ugc.activitys.UgcMySubscriptionActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.ugc.activitys.UgcVSpaceActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.PhoneMyDevicesActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:name="org.qiyi.android.video.activitys.VipCardActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<service android:label="@7F080C34" android:name="org.qiyi.android.plugin.appstore.autoinstall.AccessibilityDispatcher" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+		<service android:label="@7F0C0BE8" android:name="com.tencent.mtt.browser.accessibility.QBAccessibiltyService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
 			
 
 			<intent-filter>
@@ -2528,134 +3544,39 @@
 			</intent-filter>
 			
 
-			<meta-data android:name="android.accessibilityservice" android:resource="@7F050002">
+			<meta-data android:name="android.accessibilityservice" android:resource="@7F060002">
 </meta-data>
 			
 
 		</service>
 		
 
-		<receiver android:enabled="false" android:name="org.qiyi.android.corejar.pingback.PingbackReceiver">
+		<activity android:configChanges="0x000000A0" android:exported="true" android:launchMode="1" android:name="com.tencent.midas.qq.APMidasQQWalletActivity" android:theme="@android:01030010">
 			
 
 			<intent-filter>
 				
 
-				<action android:name="android.intent.action.BOOT_COMPLETED">
+				<action android:name="android.intent.action.VIEW">
 </action>
 				
 
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="org.qiyi.android.video.activitys.PhoneMySkinActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:name="com.qiyi.video.pages.category.CategoryManagerActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<service android:exported="true" android:name="com.baidu.sapi2.share.ShareService">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="baidu.intent.action.account.SHARE_SERVICE">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</service>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.controllerlayer.baidusapi.BaiduPassBindActivity" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000000A0" android:launchMode="1" android:name="org.qiyi.android.video.controllerlayer.baidusapi.BaiduLoginActivity" android:screenOrientation="1">
-</activity>
-		
-
-		<activity android:configChanges="0x000005B0" android:label="@7F080004" android:name="com.facebook.FacebookActivity" android:theme="@android:01030010">
-</activity>
-		
-
-		<provider android:authorities="com.facebook.app.FacebookContentProvider278177172356658" android:exported="true" android:name="com.facebook.FacebookContentProvider">
-</provider>
-		
-
-		<activity android:name="org.iqiyi.video.livechat.LiveChatReportActivity" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-		<activity android:name="org.iqiyi.video.livechat.ChatTestActivity" android:theme="@android:01030010" android:windowSoftInputMode="0x00000020">
-</activity>
-		
-
-ChatTestActivity
-
-
-		<activity android:label="@7F080004" android:name="org.qiyi.android.commonphonepad.debug.DebugPushMessageActivity" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:label="下半屏测2" android:name="com.iqiyi.qyplayercardview.ReflectionActivity">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.MAIN">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:configChanges="0x000004E0" android:name="com.iqiyi.qyplayercardextra.activity.PPFeedActivity" android:theme="@7F0C007A">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.MAIN">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<service android:enabled="true" android:exported="false" android:label="@7F080004" android:name="org.iqiyi.video.plugin.PretendService">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.service.action.com.qiyi.video.pluginservice">
-</action>
+				<category android:name="android.intent.category.BROWSABLE">
+</category>
 				
 
 				<category android:name="android.intent.category.DEFAULT">
 </category>
 				
 
+				<data android:scheme="qwallet100446242">
+</data>
+				
+
 			</intent-filter>
 			
 
-		</service>
+		</activity>
 		
 
 	</application>

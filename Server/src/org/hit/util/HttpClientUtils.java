@@ -23,50 +23,43 @@ import org.apache.log4j.Logger;
 public class HttpClientUtils 
 {
 public static  String taskId;
-public static int badClientCount;
-public static int badChannelCount;
-public static final int THREAD_POOL_SIZE = 5;
+public  int badClientCount;
+public  int badChannelCount;
+public static final int THREAD_POOL_SIZE = 10;
 private static Logger logger = Logger.getLogger(HttpClientUtils.class);  
 	public interface HttpClientDownLoadProgress {
 		public void onProgress(int progress);
 	}
-
 	private static HttpClientUtils httpClientDownload;
-
 	private ExecutorService downloadExcutorService;
-
 	private HttpClientUtils() {
 		downloadExcutorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 	}
-
 	public static HttpClientUtils getInstance() {
 		if (httpClientDownload == null) {
 			httpClientDownload = new HttpClientUtils();
 		}
 		return httpClientDownload;
 	}
-
-
-	public void download(final String url, final String filePath,final String type) {
+	public void download( final String url, final String filePath,final String type,final Counter counter) {
 		downloadExcutorService.execute(new Runnable() {
 			public void run() {
-				httpDownloadFile(url, filePath, null, null,type);
-
+				httpDownloadFile(url, filePath, null, null,type,counter);
 			}
 		});
 	}
-
-
 public void  download(final String url, final String filePath,
-			final HttpClientDownLoadProgress progress,final String type) {
+			final HttpClientDownLoadProgress progress,final String type,final Counter counter) {
 		downloadExcutorService.execute(new Runnable() {
 			public void run() {
-				httpDownloadFile(url, filePath, progress, null,type);
+				httpDownloadFile(url, filePath, progress, null,type,counter);
 			}
 		});
 	}
-	public  void httpDownloadFile(String url, String filePath,HttpClientDownLoadProgress progress, Map<String, String> headMap,String type) {
+	public  void httpDownloadFile(String url, String filePath,HttpClientDownLoadProgress progress, Map<String, String> headMap,String type,Counter counter) {
 		    CloseableHttpClient httpclient = HttpClients.createDefault();
+			badChannelCount  = counter.getBadChannelCount();
+			badClientCount = counter.getBadClientCount();
 		try {
 			HttpGet httpGet = new HttpGet(url);
 			setGetHead(httpGet, headMap);
@@ -76,12 +69,14 @@ public void  download(final String url, final String filePath,
 				if(response1.getStatusLine().getStatusCode()!=200)
 				{
 					if(type.equals("channelapk")){
-						badChannelCount++;
+							badChannelCount++;
+							counter.setBadChannelCount(badChannelCount);
 						    logger.error("there are "+response1.getStatusLine().getStatusCode()+" errors in the channel url");
 							System.out.println("there are  "+response1.getStatusLine().getStatusCode()+" errors in the channel url");
 					}
 					else{
 						badClientCount++;
+						counter.setBadClientCount(badClientCount);
 						logger.error("there are  "+response1.getStatusLine().getStatusCode()+" errors in the client url");
 						System.out.println("there are  "+response1.getStatusLine().getStatusCode()+" errors in the client url");
 					}
@@ -93,7 +88,7 @@ public void  download(final String url, final String filePath,
 				InputStream is = httpEntity.getContent();
 				// 根据InputStream 下载文件
 				ByteArrayOutputStream output = new ByteArrayOutputStream();
-				byte[] buffer = new byte[4096];
+				byte[] buffer = new byte[8192];
 				int r = 0;
 				long totalRead = 0;
 				while ((r = is.read(buffer)) > 0) {
@@ -115,7 +110,8 @@ public void  download(final String url, final String filePath,
 				response1.close();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			System.out.println("stop the download due to the exception");
 		} finally {
 			try {
 				httpclient.close();
@@ -162,8 +158,6 @@ public void  download(final String url, final String filePath,
 	public String httpPost(String url, Map<String, String> paramsMap) {
 		return httpPost(url, paramsMap, null);
 	}
-
-
 	public String httpPost(String url, Map<String, String> paramsMap,
 			Map<String, String> headMap) {
 		String responseContent = null;
@@ -225,57 +219,6 @@ public void  download(final String url, final String filePath,
 			}
 		}
 	}
-
-
-	/*public String uploadFileImpl(String serverUrl, String localFilePath,
-			String serverFieldName, Map<String, String> params)
-			throws Exception {
-		String respStr = null;
-		CloseableHttpClient httpclient = HttpClients.createDefault();
-		try {
-			HttpPost httppost = new HttpPost(serverUrl);
-			FileBody binFileBody = new FileBody(new File(localFilePath));
-
-			MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder
-					.create();
-			// add the file params
-			multipartEntityBuilder.addPart(serverFieldName, binFileBody);
-			// 设置上传的其他参数
-			setUploadParams(multipartEntityBuilder, params);
-
-			HttpEntity reqEntity = multipartEntityBuilder.build();
-			httppost.setEntity(reqEntity);
-
-			CloseableHttpResponse response = httpclient.execute(httppost);
-			try {
-				System.out.println(response.getStatusLine());
-				HttpEntity resEntity = response.getEntity();
-				respStr = getRespString(resEntity);
-				EntityUtils.consume(resEntity);
-			} finally {
-				response.close();
-			}
-		} finally {
-			httpclient.close();
-		}
-		System.out.println("resp=" + respStr);
-		return respStr;
-	}
-
-
-	
-	 private void setUploadParams(MultipartEntityBuilder multipartEntityBuilder,
-			Map<String, String> params) {
-		if (params != null && params.size() > 0) {
-			Set<String> keys = params.keySet();
-			for (String key : keys) {
-				multipartEntityBuilder
-						.addPart(key, new StringBody(params.get(key),
-								ContentType.TEXT_PLAIN));
-			}
-		}
-	}*/
-
 
 private String getRespString(HttpEntity entity) throws Exception {
 		if (entity == null) {

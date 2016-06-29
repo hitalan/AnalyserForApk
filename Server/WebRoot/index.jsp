@@ -11,6 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my analyzer JSP page version is 20160530. <br>
+    This is my analyzer  version is 20160629 improve the ability of delete unused folder and the download exception   <br>
   </body>
 </html>

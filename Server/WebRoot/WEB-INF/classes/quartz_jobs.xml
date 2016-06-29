@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<quartz>
+ <job>
+　　 <job-detail>
+  　　<name>test</name>
+  　　<group>DEFAULT</group>
+  　　<description>doAnalyzerJobhere</description>
+  　　<job-class>org.hit.quartz.QuzrtzJob</job-class>
+ 　　</job-detail>
+　　 <trigger>
+             <cron>
+                  <name>testTrigger</name>
+                  <group>DEFAULT</group>
+                  <job-name>test</job-name>
+                 <job-group>DEFALUT</job-group>
+          <cron-expression>0/30  * * * * ?</cron-expression>   
+       <!--  <cron-expression>0 0/1 * * * ?</cron-expression>-->
+             </cron>
+       </trigger>
+ </job>
+ 
+  <job>
+　　 <job-detail>
+  　　<name>redoTask</name>
+  　　<group>DEFAULT</group>
+  　　<description>doBadAnalyzerJobhere</description>
+  　　<job-class>org.hit.quartz.BadAnalyzerJob</job-class>
+ 　　</job-detail>
+　　 <trigger>
+             <cron>
+                  <name>redoTrigger</name>
+                  <group>DEFAULT</group>
+                  <job-name>redoTask</job-name>
+                 <job-group>DEFALUT</job-group>
+                <cron-expression>0 0/20 * * * ?</cron-expression>
+             </cron>
+       </trigger>
+ </job>
+
+ <job>
+　　 <job-detail>
+  　　<name>sendHeart</name>
+  　　<group>DEFAULT</group>
+  　　<description>sendHeart</description>
+  　　<job-class>org.hit.quartz.SendHeartJob</job-class>
+ 　　</job-detail>
+　　 <trigger>
+             <cron>
+                  <name>sendHeartTrigger</name>
+                  <group>DEFAULT</group>
+                  <job-name>sendHeart</job-name>
+                 <job-group>DEFALUT</job-group>
+              <!--   <cron-expression>0/30 * * * * ?</cron-expression>-->
+                  <cron-expression>0 0/3 * * * ?</cron-expression>
+             </cron>
+       </trigger>
+ </job>
+</quartz>

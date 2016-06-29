@@ -24,8 +24,8 @@ private static Logger logger = Logger.getLogger(QuzrtzJob.class);
 	  System.out.println("检测任务调度，当前时间为："+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SS").format(new Date()));
  	try {
 		i++;
-         String url = "http://docker.buptnsrc.com:1563/receiveTask";
-		// String url = "http://localhost:8080/Server/receiveTask";
+         //String url = "http://docker.buptnsrc.com:1563/receiveTask";
+		 String url = "http://localhost:8080/Server/receiveTask";
          String result =  HttpUtil.requestByGetMethod(url);
       	 System.out.println("the task still remain for "+ShellUtil.getShellEcho(list, "checkTaskNum.sh "+getConfigure.getDownloadChannelPath()).get(0));
       	 logger.info("the task still remain for "+ShellUtil.getShellEcho(list, "checkTaskNum.sh "+getConfigure.getDownloadChannelPath()).get(0));

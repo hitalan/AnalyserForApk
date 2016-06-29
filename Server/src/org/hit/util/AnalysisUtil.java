@@ -14,10 +14,7 @@ import org.apache.log4j.Logger;
 import org.hit.util.HttpClientUtils.HttpClientDownLoadProgress;
 import org.json.JSONObject;
 import com.google.gson.Gson;
-
-
-//输出的结果类型有：   1 高度疑似二次打包应用 2.二次打包应用 3.渠道信息不同但代码相同的正版应用 4.纯正版应用  5.钓鱼应用 6.盗版应用,7正版的不相关应用 8 正版的渠道信息不同的不相关应用 9同一签名的该公司正版应用
-public class AnalysisUtil {
+public class AnalysisUtil{
 private static Logger logger = Logger.getLogger(AnalysisUtil.class);  
 GetConfigure getConfigure=new GetConfigure();
  private   String packageName,versionCode,versionName,dexHashName,dexHashCode,apkHashName,apkHashCode,analysisReport;
@@ -26,31 +23,50 @@ GetConfigure getConfigure=new GetConfigure();
  private  List<String> deleteList = new ArrayList<String>();
  private  List<String> copyBadAppList = new ArrayList<String>();
  private  int result;
- private  int count;
+Counter counter = new Counter();
+ public String getChannelUrlInfo() {
+	return channelUrlInfo;
+}
+public void setChannelUrlInfo(String channelUrlInfo) {
+	this.channelUrlInfo = channelUrlInfo;
+}
+private  int count;
  private int length;
  private ApkInfo  []apkInfoList;
  public  String dirPath;
+ public String  channelUrlInfo;
  public  String getDirPath() {
 	return dirPath;
 }
 public  void setDirPath(String dirPath) {
 	this.dirPath = dirPath;
 }
-public  void dealTheApk(int type,String taskId,String dirPath){
+public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlInfo){
 	  setDirPath(dirPath);
+	  setChannelUrlInfo(channelUrlInfo);
 	  boolean isFinish  = false;
        if(type==0){ 
        processList = getShellEcho(processList,"info.sh "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
-       result = analysis(processList,type);
+       try{
+           result = analysis(processList,type);
        }
-       
+       catch(Exception e){
+    	   System.out.println("exception happened in the analysis");
+    	    DealException.sendFailInfo(taskId, "bad apkinfo in there xml");
+       }
+       }
        else  if(type==1){
     	   processList.clear();//当计算新请求的包名版本号等一系列信息的时候需要将client和channel的信息进行清空 重新得到新的second目录下的元素信息
            processList = getShellEcho(processList,"info.sh "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
-           result = analysis(processList,type);  
+           try{
+        	   result = analysis(processList,type);  
+           } catch(Exception e){
+        	   System.out.println("exception happened in the analysis");
+        	   DealException.sendFailInfo(taskId, "bad apkinfo in the second post  xml");
+           }
        }
-       else{
-    	   
+       else
+       {   
     	   System.out.println("do no info analyze");
        }
        if(result==-1&&type==0)
@@ -68,7 +84,6 @@ public  void dealTheApk(int type,String taskId,String dirPath){
         	   result = 10;//钓鱼应用
         		analysisReport = "钓鱼应用";
            }
-
            else{
         	   result = 9;//盗版应用  
         		analysisReport = "盗版应用";
@@ -90,29 +105,37 @@ public  void dealTheApk(int type,String taskId,String dirPath){
     		   badType = "1";
     	   else if(result==10)
     		    badType ="2";
-    	   if(badType!=null)
+    	   if(badType!=null) //留存问题app到本地目录下
     	   {
-    	   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+badType+" "+channelPackageName+" "+taskId);
-    	   copyBadAppList .clear();//清空
-    	   processList.clear(); //清空
+    		   // if(channelUrlInfo!=null&&channelUrlInfo!="")
+    		   //testAD(taskId,channelUrlInfo); //目前分析过程中，对于失败的分析任务通过在命名文件夹的时候获取到对应的dfs路径。进行进一步的分析
+    		   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+badType+" "+channelPackageName+" "+taskId);
+    		   copyBadAppList .clear();//清空
+    		   processList.clear(); //清空
     	   }
-    	  deleteList = getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
-    	  deleteList.clear();//清空
-    	  logger.info("finish the analyze task");
-    	  System.out.println("finish the analyze task");
-	      JSONObject json = new JSONObject();
-	      GetConfigure getConfigure = new GetConfigure();
- 	      json.put("agentId", getConfigure.getName());
- 	      json.put("subtaskId",taskId );
- 	      json.put("status", 4);
- 	      json.put("result", result);
- 	      json.put("analysisReport",analysisReport);
- 	      SendResult sendResult=new SendResult();
- 	      sendResult.send(json.toString());
- 	      logger.info("finish the send result task the result is"+ json.toString());
-          System.out.println("finish the send result task the result is"+ json.toString());
+           sendResult(taskId,type);
        }
     }
+   public void sendResult(String taskId,int type){
+ 	      deleteList = getShellEcho(deleteList,"delete.sh  "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
+ 	      deleteList.clear();///清空
+ 	 	  logger.info("finish the analyze task");
+ 	 	  System.out.println("finish the analyze task");
+	      JSONObject json = new JSONObject();
+	      GetConfigure getConfigure = new GetConfigure();
+	      json.put("agentId", getConfigure.getName());
+	      json.put("subtaskId",taskId );
+	      json.put("status", 4);
+	      json.put("result", result);
+	      json.put("analysisReport",analysisReport);
+	      SendResult sendResult=new SendResult();
+	      sendResult.send(json.toString());
+	      logger.info("finish the send result task the result is"+ json.toString());
+	      System.out.println("finish the send result task the result is"+ json.toString());
+	   
+	   
+   }
+   
     public  int  analysis(List<String> processList,int type){
     	 logger.info("白名单信息");
     	  System.out.println("白名单信息");
@@ -120,11 +143,9 @@ public  void dealTheApk(int type,String taskId,String dirPath){
          logger.info("the apkName is "+apkName);
          System.out.println("the apkName is "+apkName);
          String apkNameList[] = apkName.split(" ");
-         //int 
          length = apkNameList.length;
         logger.info("the length is "+length);
          System.out.println("the length is "+length);
-         //ApkInfo  []
          apkInfoList = new ApkInfo[length+1];
          String hashCodeList[] = processList.get(6).split(",");
          String clientSignatureList[] = processList.get(1).split(" ");
@@ -343,94 +364,103 @@ public  void dealTheApk(int type,String taskId,String dirPath){
           makeDirList = getShellEcho(makeDirList,"makeDir.sh  1 "+ getConfigure.getAnalyzerPath()+" "+dirPath);  
     	   String url = getConfigure.getWhiteListUrl()+packageName;
                  String result =   HttpUtil.requestByGetMethod(url);
-                 logger.info("we get the whitelist result of the diffrent package after we second post"+result);
-                 System.out.println("we get the whitelist result of the diffrent package after we second post"+result);
-                 Gson gson = new Gson();
-    	        try {
+      		   if(result.startsWith("bad get due to the server statuscode is"))
+      		   {
+      			 DealException.sendFailInfo(taskId, "bad connection with the taskmanager");;
+      		   }
+      			   
+      		   else
+      		   {
+      			   	logger.info("we get the whitelist result of the diffrent package after we second post"+result);
+      			   	System.out.println("we get the whitelist result of the diffrent package after we second post"+result);
+      			   	Gson gson = new Gson();
+      			   	try {
 					result = URLDecoder.decode(result, "UTF-8");
-				} catch (UnsupportedEncodingException e) {
+      			   	} catch (UnsupportedEncodingException e) {
 					e.printStackTrace();
-				}
-    			MessageInfo info = gson.fromJson(result, MessageInfo.class);
-    			List<HashMap<String,String>> hashList = info.getClientsApp();
-    		if(!hashList.isEmpty())
-    			{
-    			final List<String> clientUrl = new ArrayList<String>();
-    			for(HashMap hashmap : hashList){
-    				Iterator iter = hashmap.entrySet().iterator();
-    				while (iter.hasNext()) {
-    				Map.Entry entry = (Map.Entry) iter.next();
-    			    Object key = entry.getKey();
-    			    if(key.equals("url")){
-    			    	clientUrl.add( URLDecoder.decode((String)entry.getValue(),"UTF-8"));
-    			    }
-    			    }
-    			    }
-    			 logger.info("clientUrl.size() is " + clientUrl.size());
-    			String [] clientUrls = new String[clientUrl.size()];
-    			for(int i = 0;i<clientUrl.size();i++){
-    				clientUrls[i] = clientUrl.get(i);
-    			}
-    			String urlhost =getConfigure.getDownloadUrl();
-    			String clientpath =getConfigure.getDownloadSecondClientPath();
-    			int emptyClientUrl = 0;
-    			for(int i = 0;i<clientUrl.size();i++){
-    				if(clientUrls[i].equals(""))
-    				{
-    					emptyClientUrl++;
-    					logger.error("there are empty urls in the client url list ");
-    				}
+      			   	}
+      			   	MessageInfo info = gson.fromJson(result, MessageInfo.class);
+      			   	List<HashMap<String,String>> hashList = info.getClientsApp();
+      			   	if(!hashList.isEmpty())
+      			   	{
+      			   		final List<String> clientUrl = new ArrayList<String>();
+      			   		for(HashMap hashmap : hashList){
+      			   			Iterator iter = hashmap.entrySet().iterator();
+      			   			while (iter.hasNext()) {
+      			   				Map.Entry entry = (Map.Entry) iter.next();
+      			   				Object key = entry.getKey();
+      			   				if(key.equals("url")){
+      			   					clientUrl.add( URLDecoder.decode((String)entry.getValue(),"UTF-8"));
+      			   				}
+      			   				}
+      			   				}
+      			   			logger.info("clientUrl.size() is " + clientUrl.size());
+      			   			String [] clientUrls = new String[clientUrl.size()];
+      			   			for(int i = 0;i<clientUrl.size();i++){
+      			   			clientUrls[i] = clientUrl.get(i);
+      			   			}
+      			   			String urlhost =getConfigure.getDownloadUrl();
+      			   			String clientpath =getConfigure.getDownloadSecondClientPath();
+      			   			int emptyClientUrl = 0;
+      			   			int size;
+      			   			if(clientUrl.size()>=3)//白名单最多下载两个
+      			   				size = 3;
+      			   			else
+      			   				size = clientUrl.size();
+      			   			for(int i = 0;i<size;i++)
+      			   			{
+      			   				if(clientUrls[i].equals(""))
+      			   				{
+      			   				emptyClientUrl++;
+      			   				logger.error("there are empty urls in the client url list ");
+      			   				}
 
-    				else
-    				{
-    				HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/secondclient"+i+".apk",new HttpClientDownLoadProgress() {
-    					public void onProgress(int progress) {
-    						if(progress==100){
-    							logger.info("download client progress = " + progress);
-    							 System.out.println();
-    							count++;
-    							// logger.info("the count is "+count);
-    						}    
-    					}
-    				},"clientapk");
-    				}
+      			   				else
+      			   				{
+      			   					HttpClientUtils.getInstance().download(urlhost+clientUrls[i], clientpath+dirPath+"/secondclient"+i+".apk",new HttpClientDownLoadProgress() {
+      			   					public void onProgress(int progress) {
+      			   						if(progress==100){
+      			   							logger.info("download client progress = " + progress);
+      			   							System.out.println();
+      			   							count++;
+      			   							}    
+      			   							}
+      			   				},"clientapk",counter);
+      			   				}
+      			   			}
+      			   			while(count<=size){
+      			   				try {
+      			   					Thread.sleep(1000);
+      			   					if(counter.getBadClientCount()==size||emptyClientUrl==size)
+      			   					{
+      			   						dealTheApk(2,taskId,dirPath,channelUrlInfo);//搜索后发现提供的下载链接全部失败或者全部为空进行下面的操作。
+      			   						break;
+      			   					}
+      			   					else
+      			   					{	  
+      			   						if(count==size-emptyClientUrl-counter.getBadClientCount()){
+      			   							logger.info("we already download the new apk from our second post");
+      			   							System.out.println("we already download the new apk from our second post");
+      			   							dealTheApk(1,taskId,dirPath,channelUrlInfo);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
+      			   							break;
+      			   							}
+      			   					}
+      			   					} catch (InterruptedException e) {
+      			   						e.printStackTrace();
+      			   					}
+      			   					}
     			}
-    		  while(count<=clientUrl.size()){
-  				try {
-					Thread.sleep(1000);
-				    if(HttpClientUtils.badClientCount==clientUrl.size()||emptyClientUrl==clientUrl.size())
-	    			  {
-	    				  dealTheApk(2,taskId,dirPath);//搜索后发现提供的下载链接全部失败或者全部为空进行下面的操作。
-	    				  HttpClientUtils.badClientCount=0;  
-	    				//  count=0;
-	    		  		 break;
-	    			  }
-	    			  else
-	    			  {	  
-	    				if(count<=clientUrl.size()&&count>=1){
-	    					 logger.info("we already download the new apk from our second post");
-	    					 System.out.println("we already download the new apk from our second post");
-	    					// count = 0;
-	    					 HttpClientUtils.badClientCount=0;  
-	    		   			dealTheApk(1,taskId,dirPath);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
-	    		   			break;
-	    				}
-	    			}
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-    			}
-    			}
-    		else{
-    			       dealTheApk(2,taskId,dirPath);//搜索后发现提供的相关的包名为空，进行下面的操作。
-    		}
+      			else{
+    			       dealTheApk(2,taskId,dirPath,channelUrlInfo);//搜索后发现提供的相关的包名为空，进行下面的操作。
+      		   }
+      			   
+      		   }
+                
       }
       public  List<String> getShellEcho(List<String> list,String sh){
       Process process = null;
       try {
       	String shellPath =getConfigure.getShellPath();
-      	 //logger.info("the shellpath is "+shellPath);
       	 System.out.println("the shellpath is "+shellPath);
           process = Runtime.getRuntime().exec("sh " +shellPath+sh);
           BufferedReader input = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -449,4 +479,20 @@ public  void dealTheApk(int type,String taskId,String dirPath){
       }
      return list;
       }
+      
+  	public  void  testAD(String channelPathInDfs,String taskId){
+		String url =getConfigure.getAd_url()+taskId;
+		JSONObject jsonObject=new JSONObject();
+		jsonObject.put("location", channelPathInDfs);
+		jsonObject.put("port", getConfigure.getAd_receive_port());
+		jsonObject.put("path", getConfigure.getAd_receive_path());
+		System.out.println(jsonObject.toString());
+		try {
+			String adSendResult = HttpUtil.httpPostWithJSON(url, jsonObject.toString());
+	        System.out.println("post send result is "+adSendResult);
+	        logger.info("the ad analyse post result is"+adSendResult);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
     }

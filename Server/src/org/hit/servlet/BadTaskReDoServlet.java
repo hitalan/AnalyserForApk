@@ -27,7 +27,16 @@ public class BadTaskReDoServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int remainFailTask = new BadTaskReDoUtil().reDoBadTask();
+		int remainFailTask = -1;
+		try{
+		 remainFailTask = new BadTaskReDoUtil().reDoBadTask();
+		} catch(Exception e)
+		{
+			System.out.println("there are exception in the analyses");
+		}
+		if(remainFailTask==-1)
+		response.getWriter().append("Served at: ").append(request.getContextPath()+"there are errors in the analyzer");
+		else
 		response.getWriter().append("Served at: ").append(request.getContextPath()+"and the remain failed analyzer  task is"+remainFailTask);
 	}
 

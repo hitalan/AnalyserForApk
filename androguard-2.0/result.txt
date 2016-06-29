@@ -1,872 +1,454 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest android:versionCode="53" android:versionName="2.7.3.9451" package="com.nowcoder.app.florida" platformBuildVersionCode="23" platformBuildVersionName="6.0-2438415" xmlns:android="http://schemas.android.com/apk/res/android">
-	
+length of the difference from right to bad:223
+	<uses-permission android:name="com.tencent.tmsecurelite.permission.ACCESS_SERVICE">
 
-	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="23">
-</uses-sdk>
-	
+		<service android:enabled="true" android:name="com.tencent.mtt.external.reader.music.MusicNotificationService">
 
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE">
-</uses-permission>
-	
+		<receiver android:exported="true" android:name="com.tencent.mtt.browser.desktop.FrequentVisitReceiver">
 
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.OGG">
 
-	<uses-permission android:name="android.permission.READ_PHONE_STATE">
-</uses-permission>
-	
+				<action android:name="android.intent.action.REBOOT">
 
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
-</uses-permission>
-	
+				<data android:mimeType="*/1">
 
-	<uses-permission android:name="android.permission.INTERNET">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.pptx">
 
-	<uses-permission android:name="android.permission.READ_LOGS">
-</uses-permission>
-	
+				<action android:name="com.tencent.mtt.service.ACTION_NETWORKCHG">
 
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-</uses-permission>
-	
+				<data android:mimeType="mtt/vdat">
 
-	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
-</uses-permission>
-	
+				<action android:name="com.tencent.x5gameplayer.action.SHORTCUT">
 
-	<uses-permission android:name="android.permission.SET_DEBUG_APP">
-</uses-permission>
-	
+				<data android:mimeType="audio/ogg">
 
-	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW">
-</uses-permission>
-	
+		<receiver android:name="com.tencent.mtt.browser.push.service.ConnectivityReceiver" android:process=":service">
 
-	<uses-permission android:name="android.permission.GET_ACCOUNTS">
-</uses-permission>
-	
+				<data android:mimeType="audio/x-wav">
 
-	<uses-permission android:name="android.permission.USE_CREDENTIALS">
-</uses-permission>
-	
+		<service android:exported="true" android:name="com.tencent.mtt.sdk.BrowserSdkService">
 
-	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS">
-</uses-permission>
-	
+				<data android:mimeType="mtt/htm">
 
-	<uses-permission android:name="android.permission.RECORD_AUDIO">
-</uses-permission>
-	
+				<data android:mimeType="audio/aac">
 
-	<uses-permission android:name="android.permission.WAKE_LOCK">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.xlsx">
 
-	<uses-permission android:name="android.permission.VIBRATE">
-</uses-permission>
-	
+				<data android:mimeType="mtt/flac">
 
-	<uses-permission android:name="android.permission.WRITE_SETTINGS">
-</uses-permission>
-	
+				<data android:mimeType="mtt/mpg">
+
+				<data android:mimeType="mtt/xls">
+
+				<action android:name="com.tencent.mtt.ACTION_NF_CANCELLED">
+
+				<action android:name="com.tencent.mtt.service.ACTION_PUSH_ACTIVATED_BY_SDK">
+
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivityAlias" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
+
+				<data android:mimeType="mtt/wmv">
+
+				<action android:name="com.tencent.qlauncher.action.ACTION_INQUIRY_QQBrowser_SHORTCUT">
+
+		<meta-data android:name="xunlei_api_key" android:value="4041515337441f1a678dd4c365d5f913-20140214-144844-02-0001">
+
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:icon="@7F02001B" android:label="@7F0C000E" android:launchMode="2" android:name="com.tencent.mtt.browser.desktop.FrequentVisitActvity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.browser.desktop" android:theme="@7F0F000C">
+
+	<uses-permission android:name="android.permission.RESTART_PACKAGES">
+
+				<data android:mimeType="application/x-flac">
+
+				<data android:mimeType="mtt/doc">
+
+	<uses-permission android:name="android.permission.READ_CONTACTS">
+
+				<data android:pathPattern=".*\.AAC">
+
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.download">
+
+				<data android:mimeType="mtt/php">
 
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED">
-</uses-permission>
-	
 
-	<uses-permission android:name="android.permission.CAMERA">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.rar">
 
-	<uses-permission android:name="android.permission.RECORD_AUDIO">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.WMA">
 
-	<user-permission android:name="android.permission.WRITE_APN_SETTINGS">
-</user-permission>
-	
+				<data android:pathPattern=".*\.docx">
 
-	<user-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-</user-permission>
-	
+				<data android:mimeType="mtt/chm">
 
-	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE">
-</uses-permission>
-	
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.shop.show">
+
+				<action android:name="com.tencent.x5gameplayer.action.NEED_RELOGIN">
+
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.stop">
+
+				<data android:pathPattern=".*\.zip">
+
+				<data android:mimeType="mtt/webm">
+
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.push.service.ClipboardMonitorReceiver" android:process=":service">
+
+				<data android:mimeType="mtt/amr">
+
+				<data android:pathPattern=".*\.tar.gz">
+
+				<data android:pathPattern=".*\apk.1">
+
+		<receiver android:exported="false" android:name="com.tencent.mtt.sdk.NotificationBroadcastReceiver">
+
+				<data android:pathPattern=".*\.MPGA">
+
+				<action android:name="com.tencent.x5gameplayer.action.PAY">
 
 	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS">
-</uses-permission>
-	
 
-	<uses-feature android:name="android.hardware.camera" android:required="true">
-</uses-feature>
-	
+				<data android:pathPattern=".*\.M4A">
 
-	<uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED">
-</uses-permission>
-	
+				<data android:mimeType="application/x-gzip">
 
-	<uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.chm">
 
-	<uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL">
-</uses-permission>
-	
+				<data android:mimeType="text/plain">
 
-	<uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED">
-</uses-permission>
-	
+				<data android:mimeType="mtt/ppt">
 
-	<permission android:name="com.nowcoder.app.florida.permission.MIPUSH_RECEIVE" android:protectionLevel="0x00000002">
-</permission>
-	
+		<service android:label="@7F0C0BE8" android:name="com.tencent.mtt.browser.accessibility.QBAccessibiltyService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
 
-	<uses-permission android:name="com.nowcoder.app.florida.permission.MIPUSH_RECEIVE">
-</uses-permission>
-	
+				<data android:pathPattern=".*\.RA">
 
-	<application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@7F0204F7" android:label="@7F070064" android:name="com.qihoo.util.StubApplication" android:qihoo="activity" android:theme="@7F0A00C0">
-		
+				<data android:pathPattern=".*\.APE">
 
-		<meta-data android:name="AA_DB_NAME" android:value="nowcoder.db">
-</meta-data>
-		
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0906" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallZipReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
 
-		<meta-data android:name="AA_DB_VERSION" android:value="1">
-</meta-data>
-		
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.start">
 
-		<activity android:launchMode="2" android:name="com.nowcoder.app.florida.activity.home.SplashActivity" android:screenOrientation="1">
-			
+				<data android:pathPattern=".*\.WAV">
 
-			<intent-filter>
-				
+				<data android:pathPattern=".*\.ogg">
 
-				<action android:name="android.intent.action.MAIN">
-</action>
-				
+				<data android:mimeType="audio/x-flac">
 
-				<category android:name="android.intent.category.LAUNCHER">
-</category>
-				
+	<uses-permission android:name="android.permission.SEND_SMS">
 
-			</intent-filter>
-			
+				<data android:pathPattern=".*\.CHM">
 
-		</activity>
-		
+				<data android:pathPattern=".*\.aac">
 
-		<activity android:launchMode="2" android:name="com.nowcoder.app.florida.activity.home.EntryActivity" android:screenOrientation="1">
-</activity>
-		
+	<uses-permission android:name="android.permission.REORDER_TASKS">
 
-		<activity android:label="@7F070064" android:launchMode="2" android:name="com.nowcoder.app.florida.activity.home.MainV2Activity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="application/msword">
 
-		<activity android:launchMode="2" android:name="com.nowcoder.app.florida.activity.login.LoginActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/log">
 
-		<activity android:launchMode="2" android:name="com.nowcoder.app.florida.activity.login.RegisterActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:mimeType="application/x-chm">
 
-		<activity android:name="com.nowcoder.app.florida.activity.login.LostPWDActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:pathPattern=".*\.tar.bz2">
 
-		<activity android:name="com.nowcoder.app.florida.activity.login.ActiveRegisterActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<action android:name="com.tencent.mtt.service.ACTION_HEARTBEAT">
 
-		<activity android:name="com.nowcoder.app.florida.activity.common.WebViewActivity" android:screenOrientation="1">
-			
+				<data android:pathPattern=".*\.wma">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/wma">
 
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
+				<data android:mimeType="audio/flac">
 
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
+				<data android:mimeType="mtt/mkv">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/mpeg">
 
-		</activity>
-		
+			<meta-data android:name="android.accessibilityservice" android:resource="@7F060002">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.SettingsActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:pathPattern=".*\.ape">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdatePhoneActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/xlsx">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.ChangePwdActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/zip">
 
-		<activity android:launchMode="2" android:name="com.nowcoder.app.florida.activity.settings.AboutNKActivity" android:screenOrientation="1">
-</activity>
-		
+		<service android:exported="false" android:name="com.tencent.mtt.external.market.inhost.QQMarketService" android:process=":service">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateNickNameActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<action android:name="com.tencent.mtt.qqmarket.updateusage">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateJobsActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/3gp">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateIntelliQuestionNumActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:pathPattern=".*\.MP3">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateWorkActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+	<uses-permission android:name="com.android.alarm.permission.SET_ALARM">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateSchoolActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+		<service android:exported="false" android:label="@7F0C000B" android:name="com.tencent.mtt.browser.push.service.PushRemoteService" android:process=":service">
 
-		<activity android:name="com.nowcoder.app.florida.activity.paper.CompanyPaperTerminalActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="application/vnd.ms-excel">
 
-		<activity android:name="com.nowcoder.app.florida.activity.test.ScoreActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.push.service.ScreenshotMonitorReceiver" android:process=":service">
 
-		<activity android:name="com.nowcoder.app.florida.activity.test.AnswerCardActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/lrc">
 
-		<activity android:name="com.nowcoder.app.florida.activity.test.TestResultActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="audio/mid">
 
-		<activity android:name="com.nowcoder.app.florida.activity.test.ViewWebContentActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="audio/mp4">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.QuestionTerminalActivity" android:screenOrientation="1">
-			
+				<data android:mimeType="mtt/bz2">
 
-			<meta-data android:name="android.app.default_searchable" android:value=".activity.question.QuestionSearchActivity">
-</meta-data>
-			
+				<data android:mimeType="audio/amr">
 
-		</activity>
-		
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.JiucuoActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<data android:mimeType="mtt/3gpp">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.AddAnswerActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<action android:name="android.accessibilityservice.AccessibilityService">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.NavQuestionActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<action android:name="com.tencent.mtt.service.ACTION_SCREENSHOT_MONITOR">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.CommentTerminalActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:mimeType="application/rar">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.UserInfoActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+				<data android:mimeType="audio/3gpp">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyTestsActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+		<provider android:authorities="mtt_qqmarket" android:exported="false" android:name="com.tencent.mtt.external.market.inhost.QQMarketContentProvider">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyAnswerQuestionActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+				<action android:name="com.tencent.mtt.ResidentNotification">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyFollowingQuestionActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+				<data android:pathPattern=".*\.xls">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.WrongQuestionViewActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+				<data android:mimeType="mtt/txt">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.WrongQuestionPracticeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+		<service android:exported="false" android:label="@7F0C000C" android:name="com.tencent.mtt.BrowserService">
 
-		<activity android:name="com.nowcoder.app.florida.activity.discuss.DiscussMenuActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+				<data android:mimeType="application/vnd.ms-powerpoint">
 
-		<activity android:name="com.nowcoder.app.florida.activity.discuss.DiscussTerminalActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000013">
-</activity>
-		
+		<service android:exported="true" android:name="com.tencent.mtt.browser.video.service.H5VideoService" android:process=":VideoService">
 
-		<activity android:name="com.nowcoder.app.florida.activity.common.AddCommentActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<data android:mimeType="application/pdf">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyDiscussActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<data android:mimeType="mtt/mpga">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyFollowingDiscussActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+				<data android:mimeType="application/x-tar">
 
-		<activity android:name="com.nowcoder.app.florida.activity.discuss.NewDiscussActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
 
-		<activity android:name="com.nowcoder.app.florida.activity.discuss.NewDiscussChoseTypeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000010">
-</activity>
-		
+		<activity android:configChanges="0x400006E4" android:exported="false" android:name="com.tencent.mtt.external.gameplayer.X5GamePlayerBridgeActivity" android:screenOrientation="2" android:taskAffinity="com.tencent.mtt.external.x5gameplayer" android:theme="@android:01030010" android:windowSoftInputMode="0x00000022">
 
-		<activity android:name="com.nowcoder.app.florida.activity.message.PrivateMessageActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:pathPattern=".*\.mpga">
 
-		<activity android:name="com.nowcoder.app.florida.activity.message.QueryUserActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000024">
-</activity>
-		
+				<data android:mimeType="audio/AMR">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.GeneralProfileActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="audio/x-ape">
 
-		<activity android:launchMode="1" android:name="com.nowcoder.app.florida.activity.message.NoticeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.wav">
 
-		<activity android:launchMode="1" android:name="com.nowcoder.app.florida.activity.message.MenuMessageActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.FLAC">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.FollowListActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.show">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateEmailActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="audio/midi">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateSnsAccountActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.ppt">
 
-		<activity android:configChanges="0x000004A0" android:name="com.nowcoder.app.florida.activity.course.CourseTerminalActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.CacheListActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="application/x-gtar">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.CacheChoseActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.bz2">
 
-		<activity android:name="com.nowcoder.app.florida.activity.profile.MyDownloadListActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<action android:name="com.tencent.QQBrowser.action.residentnotification.weather.timer.restart">
 
-		<activity android:name="com.nowcoder.app.florida.activity.course.CourseSummaryActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+		<service android:exported="false" android:label="@7F0C000B" android:name="com.tencent.mtt.browser.push.service.ScreenshotMonitorService" android:process=":service">
 
-		<activity android:name="com.nowcoder.app.florida.activity.order.CourseOrderConfirmActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/avi">
 
-		<activity android:name="com.nowcoder.app.florida.activity.course.TeacherInfoActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<action android:name="com.tencent.x5gameplayer.action.LOGIN">
 
-		<activity android:name="com.nowcoder.app.florida.activity.order.CouponChoseActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
 
-		<activity android:name="com.nowcoder.app.florida.activity.order.CourseOrderTerminalActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/wav">
 
-		<activity android:name="com.nowcoder.app.florida.activity.order.CourseOrderSuccessActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/rar">
 
-		<activity android:name="com.nowcoder.app.florida.activity.common.ShowWebImageActivity" android:screenOrientation="1" android:theme="@7F0A00BF" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="*/mp3">
 
-		<activity android:name="com.nowcoder.app.florida.activity.paper.PaperListSwipeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/docx">
 
-		<activity android:name="com.nowcoder.app.florida.activity.test.IntelliTestSwipeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+	<uses-permission android:name="android.permission.GET_PACKAGE_SIZE">
 
-		<activity android:name="com.nowcoder.app.florida.activity.course.CourseListSwipeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/rmvb">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.QuestionListSwipeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:icon="@7F02001E" android:label="@7F0C0905" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallMusicReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
 
-		<activity android:name="com.nowcoder.app.florida.activity.question.FinalReViewListSwipeActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/midi">
 
-		<activity android:name="com.nowcoder.app.florida.activity.clock.ClockActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/pptx">
 
-		<activity android:name="com.nowcoder.app.florida.activity.clock.ClockCalendarActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.mid">
 
-		<activity android:name="com.nowcoder.app.florida.activity.clock.ClockRecordTerminalActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000012">
-</activity>
-		
+				<data android:mimeType="application/7z">
 
-		<activity android:name="com.nowcoder.app.florida.activity.settings.UpdateIntelliSourceActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:mimeType="mtt/xml">
 
-		<activity android:name="com.nowcoder.app.florida.activity.ta.TaListActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+				<data android:pathPattern=".*\.gz">
 
-		<activity android:launchMode="1" android:name="com.nowcoder.app.florida.activity.question.QuestionSearchActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000024">
-			
+	<uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/html">
 
-				<action android:name="android.intent.action.SEARCH">
-</action>
-				
+				<data android:mimeType="application/x-rar-compressed">
 
-			</intent-filter>
-			
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="false" android:icon="@7F02006E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallDocumentReaderActivityAlias" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
 
-			<meta-data android:name="android.app.searchable" android:resource="@7F050001">
-</meta-data>
-			
+	<uses-permission android:name="android.permission.READ_SMS">
 
-		</activity>
-		
+				<data android:mimeType="mtt/mht">
 
-		<activity android:launchMode="1" android:name="com.nowcoder.app.florida.activity.discuss.DiscussSearchActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000024">
-</activity>
-		
+				<data android:mimeType="mtt/ts">
 
-		<activity android:name="com.nowcoder.app.florida.activity.rank.RankingMenuActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000020">
-</activity>
-		
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS">
 
-		<activity android:launchMode="1" android:name="com.nowcoder.app.florida.activity.paper.PaperSearchActivity" android:screenOrientation="1" android:windowSoftInputMode="0x00000024">
-</activity>
-		
+				<data android:pathPattern=".*\.amr">
 
-		<activity android:name="com.nowcoder.app.florida.activity.discuss.DiscussListActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:pathPattern=".*\.mp3">
 
-		<activity android:name="com.nowcoder.app.florida.activity.rank.RankingTerminalActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/ape">
 
-		<activity android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="1">
-</activity>
-		
+				<action android:name="com.tencent.x5gameplayer.action.SHARE">
 
-		<activity android:name="com.nowcoder.app.florida.activity.clock.ClockNewsFeedActivity" android:screenOrientation="1">
-</activity>
-		
+				<action android:name="android.intent.action.ACTION_SHUTDOWN">
 
-		<activity android:name="com.nowcoder.app.florida.activity.clock.ClockListActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="audio/x-realaudio">
 
-		<activity android:name="com.nowcoder.app.florida.activity.common.LikeListActivity" android:screenOrientation="1">
-</activity>
-		
+				<data android:mimeType="mtt/mov">
 
-		<activity android:configChanges="0x00000090" android:launchMode="2" android:name="com.umeng.socialize.view.ShareActivity" android:noHistory="true" android:theme="@7F0A0107" android:windowSoftInputMode="0x00000014">
-</activity>
-		
+				<data android:host="*" android:mimeType="*/*" android:scheme="file">
 
-		<activity android:launchMode="2" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.intent.action.VIEW">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-				<category android:name="android.intent.category.BROWSABLE">
-</category>
-				
-
-				<data android:scheme="tencent101003590">
-</data>
-				
-
-			</intent-filter>
-			
-
-		</activity>
-		
-
-		<activity android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000004A0" android:exported="true" android:name="com.nowcoder.app.florida.wxapi.WXEntryActivity" android:screenOrientation="1" android:theme="@android:01030010">
-</activity>
-		
-
-		<activity android:configChanges="0x000000E0" android:name="com.renn.rennsdk.oauth.OAuthActivity">
-</activity>
-		
-
-		<activity android:name="com.umeng.fb.ConversationActivity">
-</activity>
-		
-
-		<activity android:configChanges="0x000000E0" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:screenOrientation="3" android:windowSoftInputMode="0x00000012">
-</activity>
-		
-
-		<service android:name="com.umeng.update.net.DownloadingService" android:process=":DownloadingService">
-</service>
-		
-
-		<activity android:name="com.umeng.update.UpdateDialogActivity" android:theme="@android:01030010">
-</activity>
-		
-
-		<receiver android:exported="false" android:name="com.umeng.message.NotificationProxyBroadcastReceiver" android:process=":push">
 </receiver>
-		
 
-		<receiver android:name="com.umeng.message.SystemReceiver" android:process=":push">
-			
+				<data android:mimeType="mtt/mp3">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/tar">
 
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
+				<data android:mimeType="application/epub+zip">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/bat">
 
-			<intent-filter>
-				
+				<data android:pathPattern=".*\.7z">
 
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
+				<data android:pathPattern=".*\.tar">
 
-			</intent-filter>
-			
+				<action android:name="com.tencent.mtt.ACTION_ACTIVATE_PUSH_BY_SDK">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/ogg">
 
-				<action android:name="android.intent.action.PACKAGE_REMOVED">
-</action>
-				
+				<data android:mimeType="mtt/f4v">
 
-				<data android:scheme="package">
-</data>
-				
+				<data android:pathPattern=".*\.AMR">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/js">
 
-		</receiver>
-		
+				<data android:mimeType="application/zip">
 
-		<receiver android:name="com.umeng.message.MessageReceiver" android:process=":push">
-			
+				<action android:name="com.tencent.mtt.service.ACTION_DEFAULT">
 
-			<intent-filter>
-				
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
 
-				<action android:name="org.agoo.android.intent.action.RECEIVE">
-</action>
-				
+				<action android:name="com.tencent.x5gameplayer.action.SHOW">
 
-			</intent-filter>
-			
+		<receiver android:exported="false" android:name="com.tencent.mtt.browser.security.SafetyNotiReceiver">
 
-		</receiver>
-		
+				<action android:name="com.tencent.mtt.qqmarket.engine.pushcmd">
 
-		<receiver android:name="com.umeng.message.ElectionReceiver" android:process=":push">
-			
+				<data android:mimeType="application/x-bzip2">
 
-			<intent-filter>
-				
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 
-				<action android:name="org.agoo.android.intent.action.ELECTION_RESULT_V4">
-</action>
-				
+				<data android:scheme="x5gameplayer">
 
-				<category android:name="umeng">
-</category>
-				
+				<data android:pathPattern=".*\.epub">
 
-			</intent-filter>
-			
+				<action android:name="com.tencent.mtt.ACTION_NF_CLICKED">
 
-		</receiver>
-		
+				<data android:pathPattern=".*\.MID">
 
-		<receiver android:exported="false" android:name="com.umeng.message.RegistrationReceiver">
-			
+				<data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation">
 
-			<intent-filter>
-				
+		<activity android:alwaysRetainTaskState="true" android:configChanges="0x400006E4" android:icon="@7F0200CC" android:label="X5Game" android:launchMode="2" android:name="com.tencent.mtt.external.gameplayer.X5GamePlayerActivity" android:process=":X5Game" android:screenOrientation="2" android:taskAffinity="com.tencent.mtt.external.x5gameplayer" android:theme="@7F0F0017" android:windowSoftInputMode="0x00000022">
 
-				<action android:name="com.nowcoder.app.florida.intent.action.COMMAND">
-</action>
-				
+				<data android:mimeType="mtt/flv">
 
-			</intent-filter>
-			
+		<activity-alias android:alwaysRetainTaskState="true" android:configChanges="0x000004A0" android:enabled="true" android:icon="@7F02001E" android:label="@7F0C0904" android:launchMode="2" android:name="com.tencent.mtt.external.reader.thirdcall.ThirdCallDocumentReaderActivity" android:screenOrientation="2" android:targetActivity="com.tencent.mtt.external.reader.thirdcall.ThirdCallFileReaderActivity" android:taskAffinity="com.tencent.mtt.external.reader" android:theme="@7F0F001A">
 
-		</receiver>
-		
+				<action android:name="com.tencent.mtt.service.ACTION_PUSH_ACTIVATED_BY_DAEMON">
 
-		<receiver android:name="com.umeng.message.UmengMessageBootReceiver">
-			
+		<receiver android:name="com.tencent.mtt.browser.notification.weather.ResidentNotificationReceiver" android:process=":service">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/m3u8">
 
-				<action android:name="android.intent.action.BOOT_COMPLETED">
-</action>
-				
+	<uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/pdf">
 
-		</receiver>
-		
+				<action android:name="com.tencent.QQBrowser.action.frequentvisit">
 
-		<receiver android:exported="true" android:name="com.nowcoder.app.florida.receiver.XiaomiReceiver">
-			
+				<data android:mimeType="audio/mpeg">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/gz">
 
-				<action android:name="com.xiaomi.mipush.RECEIVE_MESSAGE">
-</action>
-				
+				<data android:pathPattern=".*\1">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/mp4">
 
-			<intent-filter>
-				
+				<data android:mimeType="audio/x-pn-realaudio">
 
-				<action android:name="com.xiaomi.mipush.MESSAGE_ARRIVED">
-</action>
-				
+				<data android:mimeType="application/x-7z-compressed">
 
-			</intent-filter>
-			
+		<service android:enabled="true" android:name="com.tencent.mtt.browser.plugin.QBPluginSessionService">
 
-			<intent-filter>
-				
+				<data android:pathPattern=".*\.flac">
 
-				<action android:name="com.xiaomi.mipush.ERROR">
-</action>
-				
+				<data android:pathPattern=".*\.m4a">
 
-			</intent-filter>
-			
+		<activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:icon="@7F020017" android:label="@7F0C001A" android:launchMode="2" android:name="com.tencent.mtt.browser.desktop.BaiduActivity" android:screenOrientation="1" android:stateNotNeeded="true" android:taskAffinity="com.tencent.mtt.browser.search" android:theme="@7F0F000D">
 
-		</receiver>
-		
+				<data android:mimeType="mtt/7z">
 
-		<service android:enabled="true" android:name="com.baidu.location.f" android:process=":remote">
-</service>
-		
+				<data android:mimeType="mtt/rm">
 
-		<service android:exported="true" android:label="PushService" android:name="com.umeng.message.UmengService" android:process=":push">
-			
+		<service android:name="com.tencent.downloadprovider.QBDownloadService">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/m4a">
 
-				<action android:name="com.nowcoder.app.florida.intent.action.START">
-</action>
-				
+				<data android:mimeType="mtt/ini">
 
-			</intent-filter>
-			
+				<data android:pathPattern=".*\.ra">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/ra">
 
-				<action android:name="com.nowcoder.app.florida.intent.action.COCKROACH">
-</action>
-				
+				<data android:mimeType="audio/x-ms-wma">
 
-			</intent-filter>
-			
+				<data android:pathPattern=".*\.doc">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/asf">
 
-				<action android:name="org.agoo.android.intent.action.PING_V4">
-</action>
-				
+		<service android:name="com.qvod.player.core.p2p.service.P2PService" android:process=":qvodservice">
 
-				<category android:name="umeng">
-</category>
-				
+				<data android:mimeType="*/apk.1">
 
-			</intent-filter>
-			
+				<data android:mimeType="mtt/epub">
 
-		</service>
-		
+	<permission android:name="com.tencent.mtt.broadcast" android:protectionLevel="0x00000002">
 
-		<service android:name="com.umeng.message.UmengIntentService" android:process=":push">
-</service>
-		
+				<data android:pathPattern=".*\.pdf">
 
-		<service android:exported="true" android:name="com.umeng.message.UmengMessageIntentReceiverService" android:process=":push">
-			
+				<data android:mimeType="application/ogg">
 
-			<intent-filter>
-				
+				<data android:mimeType="mtt/ogv">
 
-				<action android:name="org.android.agoo.client.MessageReceiverService">
-</action>
-				
+				<action android:name="com.tencent.QQBrowser.action.safetynoti.danger.show">
 
-			</intent-filter>
-			
+				<data android:mimeType="application/flac">
 
-			<intent-filter>
-				
+		<receiver android:exported="true" android:name="com.tencent.mtt.browser.push.service.PushStatReceiver" android:process=":service">
 
-				<action android:name="org.android.agoo.client.ElectionReceiverService">
-</action>
-				
+length of the difference from bad to right:3
+		<service android:exported="true" android:name="com.tencent.mtt.sdk.BrowserSdkService" android:stopWithTask="true">
 
-			</intent-filter>
-			
+		<service android:name="com.tencent.downloadprovider.QBDownloadService" android:stopWithTask="true">
 
-		</service>
-		
-
-		<service android:name="com.umeng.message.UmengDownloadResourceService">
-</service>
-		
-
-		<service android:enabled="true" android:name="com.xiaomi.push.service.XMPushService" android:process=":pushservice">
-</service>
-		
-
-		<service android:enabled="true" android:exported="true" android:name="com.xiaomi.mipush.sdk.PushMessageHandler">
-</service>
-		
-
-		<service android:enabled="true" android:name="com.xiaomi.mipush.sdk.MessageHandleService">
-</service>
-		
-
-		<service android:name="com.nowcoder.app.florida.PolyvDemoService">
-</service>
-		
-
-		<receiver android:exported="true" android:name="com.xiaomi.push.service.receivers.NetworkStatusReceiver">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE">
-</action>
-				
-
-				<category android:name="android.intent.category.DEFAULT">
-</category>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<receiver android:exported="false" android:name="com.xiaomi.push.service.receivers.PingReceiver" android:process=":pushservice">
-			
-
-			<intent-filter>
-				
-
-				<action android:name="com.xiaomi.push.PING_TIMER">
-</action>
-				
-
-			</intent-filter>
-			
-
-		</receiver>
-		
-
-		<meta-data android:name="UMENG_APPKEY" android:value="54c4baa8fd98c5930f000537">
-</meta-data>
-		
-
-		<meta-data android:name="UMENG_MESSAGE_SECRET" android:value="4370858c4b42e208947556b647f9ce59">
-</meta-data>
-		
-
-		<meta-data android:name="UMENG_CHANNEL" android:value="yingyongbao">
-</meta-data>
-		
-
-		<meta-data android:name="com.baidu.lbsapi.API_KEY" android:value="cxeLB4BmcOmcCeTRgOARe4k8">
-</meta-data>
-		
-
-	</application>
-	
-
-</manifest>
+		<service android:exported="true" android:name="com.tencent.mtt.browser.video.service.H5VideoService" android:process=":VideoService" android:stopWithTask="true">
 
