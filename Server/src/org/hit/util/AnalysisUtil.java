@@ -22,14 +22,8 @@ GetConfigure getConfigure=new GetConfigure();
  private  List<String> similarityList = new ArrayList<String>();
  private  List<String> deleteList = new ArrayList<String>();
  private  List<String> copyBadAppList = new ArrayList<String>();
+ Counter counter = new Counter();
  private  int result;
-Counter counter = new Counter();
- public String getChannelUrlInfo() {
-	return channelUrlInfo;
-}
-public void setChannelUrlInfo(String channelUrlInfo) {
-	this.channelUrlInfo = channelUrlInfo;
-}
 private  int count;
  private int length;
  private ApkInfo  []apkInfoList;
@@ -40,6 +34,12 @@ private  int count;
 }
 public  void setDirPath(String dirPath) {
 	this.dirPath = dirPath;
+}
+public String getChannelUrlInfo() {
+	return channelUrlInfo;
+}
+public void setChannelUrlInfo(String channelUrlInfo) {
+	this.channelUrlInfo = channelUrlInfo;
 }
 public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlInfo){
 	  setDirPath(dirPath);
@@ -67,18 +67,19 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
        }
        else
        {   
-    	   System.out.println("do no info analyze");
+    	   System.out.println("do no info analyze"); //type 2 直接进行相似度分析就好
        }
        if(result==-1&&type==0)
        {
            try {
 			dealDifferentPackage(packageName,taskId);
-		} catch (UnsupportedEncodingException e) {
+		   } catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
-		}
+		   }
        }
        //相似度分析的情况
-       else if(((result==-1||result==6||result==7||result==8)&&type==1)||(result==-1&&type==2)){
+       else if(((result==-1||result==6||result==7||result==8)&&type==1)||(type==2))
+       {
            similarityList = getShellEcho(similarityList,"analysis.sh "+ getConfigure.getAnalyzerPath()+" "+dirPath);
            if( similarityList.get(1).equals( "seems that the two apks is not related")){
         	   result = 10;//钓鱼应用
@@ -237,16 +238,17 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
           System.out.println("the apk dex hash is "+dexHashCode);
           apkInfoList[length].setApkType("channelApk");
      	 int status = -1;
-     for(int i = 0;i<length;i++){
+     for(int i = 0;i<length;i++)
+     {
      	if(apkInfoList[length].getApkHashCode().equals(apkInfoList[i].getApkHashCode()))
      	{
      		if(type==1)
      			status=5;
      		else
      		status=0;
-     		break;
      	}
      	else
+     	{
      		 if(apkInfoList[length].getPackageName().equals(apkInfoList[i].getPackageName())){
      			 				if(apkInfoList[length].getSignaTure().equals(apkInfoList[i].getSignaTure())){
      			 						if(apkInfoList[length].getVersionCode().equals(apkInfoList[i].getVersionCode()))
@@ -262,47 +264,58 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
      			 								status=5;
      			 							else
      			 							status=2;
-     			 						break;
      			 						}
      			 					} 
      			 				else{
-     			 								if(apkInfoList[length].getVersionCode().equals(apkInfoList[i].getVersionCode())) {
+     			 							if(apkInfoList[length].getVersionCode().equals(apkInfoList[i].getVersionCode())) {
      			 												if(apkInfoList[length].getDexHashCode().equals(apkInfoList[i].getDexHashCode())){
      			 														if(type==1)
      			 													     status=5;
      			 														else
      			 														status=3;
-     			 											            break;
      			 										              }
      			 										       else{
      			 											            status=7;
-     			 											            break;
      			 										                }
      			                               }
      			 							else 
      			 							   {
      			 								if(apkInfoList[length].getDexHashCode().equals(apkInfoList[i].getDexHashCode()))
      				                               {
-     					                                      status=6;
-         			                                          break;
+     					                                     status=6;
      				                                }
      				                       else{
          				                                  status=8;
-    					                                  continue;
      				                                }
      			 							    }
-     		                                }
+     		                          }
      			 								
-     		 }
+     	}
      		 else
      		 {
-      			if(apkInfoList[length].getSignaTure().equals(apkInfoList[i].getSignaTure())){
- 						status = 4;
- 			    } 
+      			if(apkInfoList[length].getSignaTure().equals(apkInfoList[i].getSignaTure()))
+ 						status = 4; 
      		 }
-
-     	     break;
-     	 }
+     }
+     	/*int temp = 0; // 用来做status的标记位
+     	if(i==0){
+     		temp = status;
+     	}
+     	else{
+     		if(temp<=status)
+     			status=temp; //例如通过对后面的应用进行比对发现
+     		else
+     			temp = status;
+     	}*/
+     	if(status==-1&&type==0) //只有在发现包名不同、且签名不同的情况下。再对下一个进行检测，防止出现
+     		//，误认为是不相关应用，而非后面的应用可以给出的正版应用信息 参考齐鲁银行可能白名单
+     		//中第一个可能给出的是旧版本应用。则后面的可能是正版应用。这样就不会因为是第一个就
+     		//包名不同，然后直接白名单了。确保所有的都是包名不同的情况下，再进行包名请求和分析
+     		//对于type = 1的情况 因为第二次请求都是同包名的 所以检测一个就可以了 不需要continue
+     		continue;
+     	else
+     		break;
+    }
      	 if(status==-1)
      	 {
      	     logger.info("没有与之相同的包名，需要进行包名不同情况下的相似度分析");
@@ -403,8 +416,8 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   			String clientpath =getConfigure.getDownloadSecondClientPath();
       			   			int emptyClientUrl = 0;
       			   			int size;
-      			   			if(clientUrl.size()>=3)//白名单最多下载两个
-      			   				size = 3;
+      			   			if(clientUrl.size()>=2)//白名单最多下载两个  这是很精妙的地方
+      			   				size = 2;
       			   			else
       			   				size = clientUrl.size();
       			   			for(int i = 0;i<size;i++)
@@ -428,7 +441,7 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   				},"clientapk",counter);
       			   				}
       			   			}
-      			   			while(count<=size){
+      			   			while(count<=size-emptyClientUrl-counter.getBadClientCount()){
       			   				try {
       			   					Thread.sleep(1000);
       			   					if(counter.getBadClientCount()==size||emptyClientUrl==size)

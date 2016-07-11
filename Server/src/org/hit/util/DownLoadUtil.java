@@ -17,6 +17,7 @@ public class DownLoadUtil {
 	private int count;
 	private boolean isBad;
 	private int whileTime;
+    int size;
 	Counter counter = new Counter();
 	public boolean download(List<Object> apkinfo){		
 		Gson gson = new Gson();
@@ -103,7 +104,12 @@ public class DownLoadUtil {
 			
 		}
 		else{
-			for(int i = 0;i<clientUrl.size();i++){
+
+	   			if(clientUrl.size()>=2)//白名单最多下载两个  这是很精妙的地方
+	   				size = 2;
+	   			else
+	   				size = clientUrl.size();
+			for(int i = 0;i<size;i++){
 				if(clientUrls[i].equals(""))
 				{
 
@@ -119,16 +125,16 @@ public class DownLoadUtil {
 						}
 					},"clientapk",counter);
 				}
-		}	
+		    }	
 		}
-		while(count<=clientUrl.size()+1)
+		while(count<=size+1-counter.getBadClientCount()-emptyClientUrl)
 			{
 			try {
 					Thread.sleep(1000);
 					whileTime++;
 					System.out.println("the subtaskid is "+taskId+" the count is "+count);
 					System.out.println("the subtaskid is "+taskId+" whileTimes is "+whileTime);
-				  if(counter.getBadClientCount()==clientUrl.size()||counter.getBadChannelCount()==1)
+				  if(counter.getBadClientCount()==size||counter.getBadChannelCount()==1)
 				  {
 				  	logger.error("we finish this analyze because the bad 404 or bad 502 download");
 					System.out.println("we finish this analyze because the bad 404 or bad 502 download");
@@ -138,7 +144,7 @@ public class DownLoadUtil {
 				  }			  
 				  else
 				  {
-					  if(count==clientUrl.size()+1-counter.getBadClientCount()){
+					  if(count==size+1-counter.getBadClientCount()-emptyClientUrl){
 						  logger.info("finish download task");
 						  System.out.println("finish download task");
 							Thread.sleep(2000);

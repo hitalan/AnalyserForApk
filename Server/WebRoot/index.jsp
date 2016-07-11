@@ -11,6 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my analyzer  version is 20160629 improve the ability of delete unused folder and the download exception   <br>
+    This is my analyzer  version is 20160708 <br/>
+    avoid the not relation apk before maybe relation apk do the different package name until the last apk package is not the same <br/>
   </body>
 </html>
