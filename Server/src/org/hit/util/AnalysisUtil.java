@@ -416,8 +416,8 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   			String clientpath =getConfigure.getDownloadSecondClientPath();
       			   			int emptyClientUrl = 0;
       			   			int size;
-      			   			if(clientUrl.size()>=2)//白名单最多下载两个  这是很精妙的地方
-      			   				size = 2;
+      			   			if(clientUrl.size()>=1)//白名单最多下载1个  这是很精妙的地方
+      			   				size = 1;
       			   			else
       			   				size = clientUrl.size();
       			   			for(int i = 0;i<size;i++)

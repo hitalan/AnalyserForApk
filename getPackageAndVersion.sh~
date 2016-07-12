@@ -17,7 +17,7 @@ echo "${filesignature[*]}"
 c=0
 for file in ${filelist[*]}
 do
-  filepackage[$c]=$(aapt dump badging $file | grep -m1 'package:')
+  filepackage[$c]=$(aapt dump badging $file | grep 'package:')
   c=`expr $c + 1`
 done
 echo "${filepackage[*]}"

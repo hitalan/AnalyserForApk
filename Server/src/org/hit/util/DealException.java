@@ -22,8 +22,10 @@ public class DealException {
 		  System.out.println(json.toString());
 		  logger.error("the result we send is "+json.toString());	
 	     if(!failinfo.equals("bad apkinfo in the second post  xml"))
-	    	 ShellUtil.getShellEcho(list, "delete.sh "+getConfigure.getAnalyzerPath()+"  0  "+taskId);
+	    	// ;
+	    	ShellUtil.getShellEcho(list, "delete.sh "+getConfigure.getAnalyzerPath()+"  0  "+taskId);
 	     else
+	        //;
 	    	 ShellUtil.getShellEcho(list, "delete.sh "+getConfigure.getAnalyzerPath()+"  1  "+taskId);
 		  logger.error("delete the FailInfo Floder safely");
 		  list.clear();
