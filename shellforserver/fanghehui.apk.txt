@@ -1,0 +1,20 @@
+[10.0.3.15:52091] -- -- --> [106.39.219.1:80] 
+POST http://s.appjiagu.com:80/pkl16.html
+HTTP/1.1 200 OK
+
+[10.0.3.15:47056] -- -- --> [106.38.193.117:80] 
+POST http://a.appjiagu.com/ad-service/ad/mark
+HTTP/1.1 200 OK
+
+[10.0.3.15:50233] -- -- --> [139.129.10.27:7071] 
+GET http://139.129.10.27:7071/fanghh/versionUpdate.action
+HTTP/1.1 200 OK
+
+[10.0.3.15:40368] -- -- --> [139.129.10.27:7071] 
+GET http://139.129.10.27:7071/fanghh/getHomeDynamicElement.action?cityId=1
+HTTP/1.1 200 OK
+
+[10.0.3.15:50233] -- -- --> [139.129.10.27:7071] 
+GET http://139.129.10.27:7071/fanghh/getDictionaryAll.action
+HTTP/1.1 200 OK
+

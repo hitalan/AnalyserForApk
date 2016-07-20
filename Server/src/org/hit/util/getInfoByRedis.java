@@ -6,8 +6,8 @@ public class getInfoByRedis {
 
     public  static List<Object> getInfo()  {
     	 List<Object> result = null;
-    		GetConfigure getConfigure=new GetConfigure();
-    		//return getConfigure.getRedis_queue();
+    	GetConfigure getConfigure=new GetConfigure();
+    	//return getConfigure.getRedis_queue();
         try 
         {
             Jedis jedis = RedisClientPool.getJedis();
@@ -20,11 +20,14 @@ public class getInfoByRedis {
 
         }
         catch (Exception e){
-            e.printStackTrace();
+        	System.out.println("bad connection to the redis");
+        	result = null;
+           // e.printStackTrace();
         }
+        finally{
             return result;  
        }
-    
+    }
     
     
     public  static String getResultInfo()  {

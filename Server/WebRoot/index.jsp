@@ -11,9 +11,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my analyzer  version is 20160712 <br/>
+    This is my analyzer  version is 20160719 <br/>
+    fixed the bad connection with the redis and when bad connection happened there will not be some bad exception and quick the speed of the analyzer</br>
+    -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+    update log:<br/>
+    20160712<br/>
     fixed the bug of two package name may cause the bad analyzer and change the second download just download one</br>
-    update log<br/>
     20160708<br/>
     avoid the not relation apk before maybe relation apk do the different package name until the last apk package is not the same <br/>
   </body>
