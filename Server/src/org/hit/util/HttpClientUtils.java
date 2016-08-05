@@ -25,7 +25,7 @@ public class HttpClientUtils
 public static  String taskId;
 public  int badClientCount;
 public  int badChannelCount;
-public static final int THREAD_POOL_SIZE = 10;
+public static final int THREAD_POOL_SIZE = 100;
 private static Logger logger = Logger.getLogger(HttpClientUtils.class);  
 	public interface HttpClientDownLoadProgress {
 		public void onProgress(int progress);

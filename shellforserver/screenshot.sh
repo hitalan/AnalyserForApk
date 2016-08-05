@@ -1,3 +1,4 @@
+# $1 mean the method of -c or -h $2 mean the type of the bad $3 mean the apkname and it also is the floder name $4 mean the number of the png
 #!/bin/bash
 if [ $# -eq 0 ];
     then
@@ -7,7 +8,7 @@ elif [ $1 = "-c" ]                 # colon
     NAME=$(date +%Y%m%d_%H:%M:%S).png
 elif [ $1 = "-h" ]                 # hyphen
     then
-    NAME=$(date +%Y%m%d_%H-%M-%S).png
+    NAME=$4'.png'
 else
     echo -e "\033[31m *Invalid argument.\n *Usage '$0 -[ch]' \033[0m"
     exit 1

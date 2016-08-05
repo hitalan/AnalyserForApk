@@ -22,7 +22,7 @@ do
    adb shell monkey -p $2 20 
    echo $i times try to capture ;
    cd ~/shellforserver/
-   sh screenshot.sh -h $2 $file
+   sh screenshot.sh -h $2 $file $i
  done;
  echo "finished the monkey and capture testing"
  adb uninstall $2

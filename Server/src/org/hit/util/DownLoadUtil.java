@@ -67,12 +67,12 @@ public class DownLoadUtil {
 			{
 				emptyClientUrl++;
 				logger.error("there are empty url in the clienturls");
-				if(emptyClientUrl==clientUrl.size()){
-					 isClientUrlEmptyTrue =  true;
-				}
 			}
 		}
-		if(channelUrl.equals("")||isClientUrlEmptyTrue){
+		if(emptyClientUrl==clientUrl.size()){
+			 isClientUrlEmptyTrue =  true;
+		}
+		if(channelUrl.equals("")||isClientUrlEmptyTrue||clientUrl.size()==0){
 			 DealException.sendFailInfo(taskId, "clientapk or channelapk url is empty");
 			 isBad = true;
 		}
@@ -158,7 +158,7 @@ public class DownLoadUtil {
 						   }
 							break;
 			            }
-					  else if(whileTime>=60){
+					  else if(whileTime>=100){
 							 DealException.sendFailInfo(taskId, "download time out ");
 							 isBad = true;
 							 break;

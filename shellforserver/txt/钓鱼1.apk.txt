@@ -1,0 +1,8 @@
+[10.0.3.15:45218] -- -- --> [219.234.85.192:80] 
+GET http://app.wapx.cn/action/connect/active?app_id=62843a0a3dbd81e759fdf47765345ae6&udid=000000000000000&imsi=310260000000000&net=wifi&base=wapx.cn&app_version=1.2.3&sdk_version=2.2.0&device_name=Custom%20Phone%20-%204.1.1%20-%20API%2016%20-%20768x1280&device_brand=generic&y=7c2124a3803465c4348779e25dbdbbee&device_type=android&os_version=4.1.1&country_code=US&language=en&act=ddf70de1f752p4e52.b2d0p8d75cc56c432&root=true&channel=163&device_width=768&device_height=1184&rec=w5QwWP4kp6V3whN9ZC92Qsx2Oh4VoB76YkePUeDVkgkXAvab5Y8VB2HdjgJif%2FcsgQGz64D%2FANI5%0AdhDU8Zk2tryu16gANNKXPPQlFpkGd47onsP1YqVp2zAmY%2BzT%2BUbmwKaAUex26%2FugiABxR80LMxOI%0AHIxhKUummuBY0bfamRA%2FxxAEncIsA96UqEM7Qvon6WQQLPfl%2FU1NnWIRFL%2BoKmdAivPL%2BttOHSUf%0ALnNvCF%2BxP4%2B5D51Y4Ns7%2BHN79Ym0PjieT3yLC6mZblM%2FwhgLCFJ%2F5viC5qRnyV%2FQM96rn2Y%3D%0A&at=1469589299002
+HTTP/1.1 200 OK
+
+[10.0.3.15:42492] -- -- --> [140.205.159.56:80] 
+POST http://oc.umeng.com/check_config_update
+HTTP/1.1 200 OK
+
