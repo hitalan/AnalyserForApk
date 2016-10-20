@@ -1,0 +1,36 @@
+[10.0.3.15:50520] -- -- --> [110.173.196.36:80] 
+POST http://alog.umeng.com/app_logs
+HTTP/1.1 200 OK
+
+[10.0.3.15:55312] -- -- --> [211.139.91.42:80] 
+GET http://wap.gs.10086.cn/?sign=da12c7cd860f905a67f0e68ab4dc22f8bca37ebb&time=1474877107981&str=ba6FKw
+HTTP/1.1 302 Moved Temporarily
+
+[10.0.3.15:56927] -- -- --> [140.205.160.70:80] 
+GET http://utop.umengcloud.com/rest/api3.do?ttid=android%40umeng&t=1474877108&imei=umeng&appKey=umeng%3A545b181cfd98c5635c002ed4&v=4.0&sign=99463f6ab107688be6424dfd581fdc93&data=%7B%22new_device%22%3A%22true%22%2C%22c1%22%3A%22Custom+Phone+-+4.3+-+API+18+-+768x1280%22%2C%22c2%22%3A%22umeng%22%2C%22device_global_id%22%3A%22V9etSSDDCDoDAJwcljDl33Z%5C%2F%22%2C%22c0%22%3A%22generic%22%2C%22c6%22%3A%22c246973bd2b3667%22%2C%22package_name%22%3A%22com.xinyue.gsmobilewxzt%22%2C%22c5%22%3A%22unknown%22%2C%22app_version%22%3A%222.0.5%22%2C%22sdk_version%22%3A20131220%2C%22c4%22%3A%2208%3A00%3A27%3A9a%3A3a%3A2b%22%2C%22c3%22%3A%22umeng%22%7D&api=mtop.push.device.createAndRegister&imsi=umeng
+HTTP/1.1 200 OK
+
+[10.0.3.15:55313] -- -- --> [211.139.91.42:80] 
+GET http://wap.gs.10086.cn/wap/adv1/index.html
+HTTP/1.1 200 OK
+
+[10.0.3.15:51882] -- -- --> [140.205.230.45:80] 
+POST http://msg.umengcloud.com/register
+HTTP/1.1 200 OK
+
+[10.0.3.15:55314] -- -- --> [211.139.91.42:80] 
+GET http://wap.gs.10086.cn/wap/adv1/css/ds_css.css
+HTTP/1.1 200 OK
+
+[10.0.3.15:55313] -- -- --> [211.139.91.42:80] 
+GET http://wap.gs.10086.cn/wap/userfiles/resource/ecuwap/js/jquery-1.7.1.min.js
+HTTP/1.1 200 OK
+
+[10.0.3.15:55313] -- -- --> [211.139.91.42:80] 
+GET http://wap.gs.10086.cn/wap/adv1/images/gfjf.png
+HTTP/1.1 302 Found
+
+[10.0.3.15:40187] -- -- --> [10.3.200.202:80] 
+GET http://10.3.200.202/cache/12/04/10086.cn/8712c72b8d01205b8fbb29f7ee13405f/gfjf.png
+HTTP/1.1 200 OK
+

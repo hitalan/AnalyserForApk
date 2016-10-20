@@ -11,11 +11,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my analyzer  version is 20160804
-    change the dfs to ip due to the bad host and fixed the bug of clienurl when is null
+    This is my analyzer  version is 20161011
+    save the badxml apk and  short the redoTask time
     -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
     update log:<br/>
     ------------------------------------------------------------------------------------------------------------------</br>
+    20160804
+    change the dfs to ip due to the bad host and fixed the bug of clienurl when is null
     20160727
     due to the big size of the game apk change the  wait time from 20s to 30s and make the size pool from 10 to 100
     20160720 <br/>

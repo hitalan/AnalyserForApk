@@ -1,1 +1,8 @@
+/info_test.properties
+/log4j.properties
 /org/
+/quartz.properties
+/quartz_jobs.xml
+/info_port_1563.properties
+/info_port_1564.properties
+/info_port_1565.properties

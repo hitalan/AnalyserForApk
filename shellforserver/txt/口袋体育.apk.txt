@@ -1,0 +1,44 @@
+[192.168.31.197:56208] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:47227] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:43170] -- -- --> [210.14.69.223:80] 
+GET http://api.zhui.cn/utility/Notify.json?LastID=&PageSize=1&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612
+HTTP/1.1 200 OK
+
+[192.168.31.197:52402] -- -- --> [210.14.69.223:80] 
+GET http://api.zhui.cn/passport/UserRegAuto.json?DevName=chocobo&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612
+HTTP/1.1 200 OK
+
+[192.168.31.197:41271] -- -- --> [210.14.69.223:80] 
+GET http://api.zhui.cn/content/NewCheck.json?ZID=0&LastID=0&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=rPPG4WQ%2fKI9AceXz9StFA%2fhU4%2fvV4I%2bRg6q4jwOs4FgtK89CsM1otLSoqEjhxGez&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612
+HTTP/1.1 200 OK
+
+[192.168.31.197:37198] -- -- --> [210.14.69.223:80] 
+GET http://api.zhui.cn/content/ZIDList.json?ZID=0&TEXTHTML=1&PicWidth=360&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612&softsign=e9e0787e211339d5105bc12069e0d227&AllowDynaPage=1&PageSize=20
+HTTP/1.1 200 OK
+
+[192.168.31.197:50799] -- -- --> [222.66.199.151:80] 
+GET http://apiimg.zhui.cn/utility/ImageShow.ashx?LimitWidth=720&LimitHeight=0&U=http%3A%2F%2Fcdn.zhui.cn%2F%2FRes%2FUIMG%2F366%2F21284366%2Fdynapage%2F635619982861774777.png&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=rPPG4WQ%2fKI9AceXz9StFA%2fhU4%2fvV4I%2bRg6q4jwOs4FgtK89CsM1otLSoqEjhxGez&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612
+HTTP/1.1 302 Found
+
+[192.168.31.197:38626] -- -- --> [210.14.69.226:80] 
+GET http://cdn.zhui.cn//Res/UIMG/366/21284366/dynapage/635619982861774777.png?imageView/2/w/720
+HTTP/1.1 200 OK
+
+[192.168.31.197:37220] -- -- --> [101.226.125.126:80] 
+POST http://monitor.uu.qq.com/analytics/rqdsync
+HTTP/1.1 200 OK
+
+[192.168.31.197:51268] -- -- --> [222.66.199.151:80] 
+GET http://apiimg.zhui.cn/utility/ImageShow.ashx?LimitWidth=720&LimitHeight=360&U=http%3A%2F%2Fcdn.zhui.cn%2F%2FRes%2FUIMG%2F366%2F21284366%2Fdynapage%2F635457227429040807.png&ability=11111111111&gzip=1&Version=2.1&SoftVersion=2.801&MID=1&UID=21284366&SoftBuild=16&SoftID=1400634&EncryptUserInfo=rPPG4WQ%2fKI9AceXz9StFA%2fhU4%2fvV4I%2bRg6q4jwOs4FgtK89CsM1otLSoqEjhxGez&taoke_pid=32171060&imei=860919020500922&CType=1,2,3,4,10,101,201,202,1101,1102,1108,1109&HL=0&LatLon=null&SCID=105612
+HTTP/1.1 302 Found
+
+[192.168.31.197:55619] -- -- --> [210.14.69.226:80] 
+GET http://cdn.zhui.cn//Res/UIMG/366/21284366/dynapage/635457227429040807.png?imageView/2/w/720
+HTTP/1.1 200 OK
+

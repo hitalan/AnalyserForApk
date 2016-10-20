@@ -12,7 +12,8 @@ public class DealException {
 	public  static void sendFailInfo(String taskId,String failinfo){
 		   JSONObject json = new JSONObject();
 		   GetConfigure getConfigure = new GetConfigure();
-		   json.put("agentId", getConfigure.getName());
+		   
+		   json.put("agentId", getConfigure.getName()+HttpUtil.getIp());
 		   json.put("subtaskId",taskId);
 		   json.put("status", 0);
 		   json.put("result","-1" );
@@ -21,11 +22,9 @@ public class DealException {
 		  sendResult.send(json.toString());
 		  System.out.println(json.toString());
 		  logger.error("the result we send is "+json.toString());	
-	     if(!failinfo.equals("bad apkinfo in the second post  xml"))
-	    	// ;
+	     if(!failinfo.equals("exception happened in the second  analysis"))
 	    	ShellUtil.getShellEcho(list, "delete.sh "+getConfigure.getAnalyzerPath()+"  0  "+taskId);
 	     else
-	        //;
 	    	 ShellUtil.getShellEcho(list, "delete.sh "+getConfigure.getAnalyzerPath()+"  1  "+taskId);
 		  logger.error("delete the FailInfo Floder safely");
 		  list.clear();

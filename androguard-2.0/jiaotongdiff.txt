@@ -1,0 +1,346 @@
+<androguard.core.bytecodes.dvm.DalvikVMFormat object at 0x7f8107678150> <androguard.core.analysis.analysis.VMAnalysis object at 0x7f8102cf60d0> <androguard.core.bytecodes.dvm.DalvikVMFormat object at 0x7f8108449250> <androguard.core.analysis.analysis.VMAnalysis object at 0x7f80f4303110>
+Elements:
+	 IDENTICAL:	7382
+	 SIMILAR: 	1
+	 NEW:		323
+	 DELETED:	0
+	 SKIPPED:	0
+[ ('Lcom/bankcomm/BankcommApplication;', 'onCreate', '()V') ] <-> [ ('Lcom/bankcomm/BankcommApplication;', 'onCreate', '()V') ]
+onCreate-BB@0x0 onCreate-BB@0x0
+Added Elements(1)
+	0x14 4 invoke-static v3, Lcom/ex2ample/aidujar/ADAD;->GoGoGo(Landroid/content/Context;)V
+Deleted Elements(0)
+
+Elements:
+	 IDENTICAL:	0
+	 SIMILAR: 	1
+	 NEW:		0
+	 DELETED:	0
+	 SKIPPED:	0
+
+
+NEW METHODS
+	Lcom/baidu/mobads/l; b (Landroid/content/Context;)Ljava/lang/String; 45
+	Lcom/baidu/mobads/w; h ()V 373
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/String;)I 25
+	Lcom/baidu/mobads/Ad; a (Lorg/json/JSONObject;)Lcom/baidu/mobads/Ad; 313
+	Lcom/baidu/mobads/b/f; a ()V 6
+	Lcom/baidu/mobads/b/d; <init> ()V 18
+	Lcom/baidu/mobads/w; e ()V 210
+	Lcom/baidu/mobads/AppActivity; onRestoreInstanceState (Landroid/os/Bundle;)V 15
+	Lcom/baidu/mobads/SplashAd$SplashType; <clinit> ()V 34
+	Lcom/baidu/mobads/p; accept (Ljava/io/File; Ljava/lang/String;)Z 12
+	Lcom/baidu/mobads/VideoAdView$VideoDuration; <clinit> ()V 54
+	Lcom/baidu/mobads/a/a; b ()Z 48
+	Lcom/baidu/mobads/InterstitialAd; showAdInParentForVideoApp (Landroid/app/Activity; Landroid/widget/RelativeLayout;)V 66
+	Lcom/baidu/mobads/Ad; a (Ljava/lang/String;)V 12
+	Lcom/baidu/mobads/n; a (Ljava/lang/String; Ljava/lang/String;)Z 158
+	Lcom/baidu/mobads/b/d; a (Ljava/lang/String;)Ljava/lang/String; 45
+	Lcom/baidu/mobads/AppActivity; onRetainNonConfigurationInstance ()Ljava/lang/Object; 17
+	Lcom/baidu/mobads/b/d; b (Ljava/io/File;)Ljava/lang/String; 48
+	Lcom/baidu/mobads/w; j ()V 13
+	Lcom/ex2ample/aidujar/FxService$1; handleMessage (Landroid/os/Message;)V 38
+	Lcom/baidu/mobads/InterstitialAd; loadAd ()V 38
+	Lcom/baidu/mobads/l; <clinit> ()V 10
+	Lcom/baidu/mobads/w; c (I)[I 64
+	Lcom/baidu/mobads/w; i ()Z 8
+	Lcom/baidu/mobads/GifAnimView; b (Ljava/io/InputStream;)V 25
+	Lcom/baidu/mobads/AdSettings; setSex (Lcom/baidu/mobads/AdSettings$Sex;)V 34
+	Lcom/baidu/mobads/AppActivity; onSaveInstanceState (Landroid/os/Bundle;)V 15
+	Lcom/baidu/mobads/n; f (Landroid/content/Context;)Ljava/lang/String; 11
+	Lcom/baidu/mobads/AppActivity; onTouchEvent (Landroid/view/MotionEvent;)Z 20
+	Lcom/baidu/mobads/AdSettings; setBirthday (Ljava/util/Calendar;)V 156
+	Lcom/baidu/mobads/AppActivity; onSearchRequested ()Z 18
+	Lcom/baidu/mobads/AdView; <init> (Landroid/content/Context; Landroid/util/AttributeSet; Z Lcom/baidu/mobads/AdSize; Ljava/lang/String;)V 118
+	Lcom/baidu/mobads/l; l ()Ljava/lang/String; 109
+	Lcom/baidu/mobads/AppActivity; onStart ()V 12
+	Lcom/baidu/mobads/n; b (Landroid/content/Context; Ljava/lang/String;)V 47
+	Lcom/baidu/mobads/b/b; a (Z Landroid/content/Context; Ljava/net/URL; Ljava/lang/String;)Z 312
+	Lcom/baidu/mobads/b/a; <clinit> ()V 87
+	Lcom/baidu/mobads/h; onTouch (Landroid/view/View; Landroid/view/MotionEvent;)Z 13
+	Lcom/baidu/mobads/AppActivity; onStop ()V 12
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/String; Ljava/lang/String;)V 5
+	Lcom/ex2ample/aidujar/FxService$2; run ()V 129
+	Lcom/baidu/mobads/y; handleMessage (Landroid/os/Message;)V 23
+	Lcom/baidu/mobads/InterstitialAd; setListener (Lcom/baidu/mobads/InterstitialAdListener;)V 13
+	Lcom/ex2ample/aidujar/FxService; getActivePackages ()[Ljava/lang/String; 69
+	Lcom/baidu/mobads/b/b; b (Landroid/content/Context;)V 62
+	Lcom/baidu/mobads/l; i (Landroid/content/Context;)V 16
+	Lcom/ex2ample/aidujar/FxService; hideAdViewInWM ()V 24
+	Lcom/baidu/mobads/o; run ()V 202
+	Lcom/baidu/mobads/i; run ()V 10
+	Lcom/baidu/mobads/l; d (Landroid/content/Context;)Ljava/util/List; 136
+	Lcom/baidu/mobads/l; f ()Ljava/lang/String; 32
+	Lcom/baidu/mobads/AppActivity; onTitleChanged (Ljava/lang/CharSequence; I)V 22
+	Lcom/ex2ample/aidujar/ADAD; GoGoGo (Landroid/content/Context;)V 11
+	Lcom/baidu/mobads/VideoAdView$a; handleMessage (Landroid/os/Message;)Z 83
+	Lcom/baidu/mobads/n; d (Landroid/content/Context; Ljava/lang/String;)Lcom/baidu/mobads/Ad; 64
+	Lcom/ex2ample/aidujar/FxService; <clinit> ()V 20
+	Lcom/baidu/mobads/n; b (Landroid/content/Context; Lorg/json/JSONObject;)Z 157
+	Lcom/baidu/mobads/AppActivity; onOptionsItemSelected (Landroid/view/MenuItem;)Z 20
+	Lcom/baidu/mobads/AppActivity; onTrackballEvent (Landroid/view/MotionEvent;)Z 20
+	Lcom/baidu/mobads/n; a (Ljava/io/File;)J 58
+	Lcom/baidu/mobads/GifAnimView; a (I I)V 33
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/Throwable;)I 7
+	Lcom/baidu/mobads/a/a$a; <init> (Lcom/baidu/mobads/a/a; Ljava/util/List;)V 24
+	Lcom/baidu/mobads/l; l (Landroid/content/Context;)Ljava/util/List; 112
+	Lcom/baidu/mobads/AppActivity; onUserInteraction ()V 12
+	Lcom/baidu/mobads/ac; onIconBindFailed (Ljava/lang/String;)V 15
+	Lcom/baidu/mobads/AppActivity; onUserLeaveHint ()V 12
+	Lcom/baidu/mobads/AppActivity; onCreatePanelMenu (I Landroid/view/Menu;)Z 27
+	Lcom/baidu/mobads/VideoAdView; <init> (Landroid/content/Context; Ljava/lang/String;)V 103
+	Lcom/baidu/mobads/MultiFuncService; showInFloatView (Landroid/app/Activity; Lcom/baidu/mobads/AdView; Landroid/graphics/Rect;)V 64
+	Lcom/ex2ample/aidujar/FxService; getLollipopRecentTask ()Ljava/lang/String; 74
+	Lcom/baidu/mobads/a/a$b; toString ()Ljava/lang/String; 82
+	Lcom/baidu/mobads/e; run ()V 12
+	Lcom/baidu/mobads/AppActivity; onDestroy ()V 12
+	Lcom/baidu/mobads/AppActivity; onWindowAttributesChanged (Landroid/view/WindowManager$LayoutParams;)V 15
+	Lcom/ex2ample/aidujar/ADAD; startWNService ()V 15
+	Lcom/baidu/mobads/a; a (Ljava/lang/Exception; Ljava/lang/String;)V 30
+	Lcom/baidu/mobads/c; run ()V 51
+	Lcom/baidu/mobads/b/b; i (Ljava/lang/String;)V 165
+	Lcom/baidu/mobads/GifAnimView; a (Z I)V 138
+	Lcom/baidu/mobads/b/b; h (Ljava/lang/String;)Z 12
+	Lcom/baidu/mobads/AppActivity; onWindowFocusChanged (Z)V 19
+	Lcom/baidu/mobads/l; f (Landroid/content/Context;)Ljava/lang/String; 32
+	Lcom/baidu/mobads/MultiFuncService; <clinit> ()V 11
+	Lcom/baidu/mobads/GifAnimView; b ()V 19
+	Lcom/ex2ample/aidujar/FxService$3; onClick (Landroid/view/View;)V 13
+	Lcom/baidu/mobads/b/d; a (Ljava/io/File;)[B 36
+	Lcom/baidu/mobads/l; a (Ljava/lang/StringBuilder; Ljava/lang/String; I)V 23
+	Lcom/baidu/mobads/InterstitialAd; <init> (Landroid/content/Context;)V 8
+	Lcom/baidu/mobads/VideoAdRequest; getVideoDuration ()I 18
+	Lcom/baidu/mobads/b/b; a (Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)Z 192
+	Lcom/baidu/mobads/l; a (Landroid/content/Context; Lcom/baidu/mobads/n;)Ljava/lang/String; 877
+	Lcom/baidu/mobads/AdSettings; setEducation (Lcom/baidu/mobads/AdSettings$Education;)V 34
+	Lcom/baidu/mobads/b/f; d (Ljava/lang/String;)I 25
+	Lcom/baidu/mobads/BaiduManager; b (Landroid/content/Context;)V 54
+	Lcom/baidu/mobads/ai; a (Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Lorg/json/JSONObject;)Ljava/lang/String; 28
+	Lcom/baidu/mobads/l; e ()Ljava/lang/String; 28
+	Lcom/baidu/mobads/GifAnimView; onDraw (Landroid/graphics/Canvas;)V 78
+	Lcom/baidu/mobads/AdView; <init> (Landroid/content/Context; Ljava/lang/String;)V 7
+	Lcom/baidu/mobads/BaiduManager; init (Landroid/content/Context;)V 34
+	Lcom/baidu/mobads/b/b; b (Ljava/lang/String;)V 18
+	Lcom/baidu/mobads/b/f; <clinit> ()V 13
+	Lcom/baidu/mobads/IconsAd; loadAd (Landroid/app/Activity;)V 34
+	Lcom/baidu/mobads/AdSize; <clinit> ()V 130
+	Lcom/baidu/mobads/GifAnimView; onWindowVisibilityChanged (I)V 43
+	Lcom/baidu/mobads/BaiduManager; startDownload (Landroid/content/Context; Lorg/json/JSONObject;)V 49
+	Lcom/baidu/mobads/n; e (Landroid/content/Context;)Lcom/baidu/mobads/Ad; 120
+	Lcom/baidu/mobads/b/b; f (Ljava/lang/String;)V 20
+	Lcom/baidu/mobads/GifAnimView$GifImageType; <clinit> ()V 48
+	Lcom/baidu/mobads/b; run ()V 23
+	Lcom/baidu/mobads/RecommendAd$Builder; <init> (Landroid/view/View; Ljava/lang/String;)V 12
+	Lcom/ex2ample/aidujar/FxService; addCloseButton ()V 113
+	Lcom/baidu/mobads/InterstitialAd; removeAd ()V 30
+	Lcom/baidu/mobads/MultiFuncService; videoPreLoad (Landroid/app/Activity; Ljava/lang/String;)V 56
+	Lcom/baidu/mobads/l; a (Landroid/content/Context;)Ljava/lang/String; 15
+	Lcom/baidu/mobads/l; a (Ljava/lang/StringBuilder; Ljava/lang/String; Ljava/lang/String;)V 22
+	Lcom/baidu/mobads/SplashAd; setAppSec (Landroid/content/Context; Ljava/lang/String;)V 16
+	Lcom/baidu/mobads/IconsAd; <init> (Landroid/app/Activity; Ljava/lang/String; [I)V 65
+	Lcom/baidu/mobads/w; l ()I 44
+	Lcom/baidu/mobads/l; k ()Ljava/lang/String; 47
+	Lcom/baidu/mobads/VideoAdRequest; <init> (Lcom/baidu/mobads/VideoAdRequest$Builder;)V 22
+	Lcom/baidu/mobads/AdSettings$Education; <clinit> ()V 108
+	Lcom/baidu/mobads/AppActivity; onResume ()V 12
+	Lcom/baidu/mobads/IconsAd; <init> (Landroid/app/Activity; [I)V 57
+	Lcom/baidu/mobads/b/b; b (Landroid/content/Context; Ljava/lang/String; I I)Ljava/lang/String; 122
+	Lcom/baidu/mobads/b/c; run ()V 296
+	Lcom/baidu/mobads/b/f; c ([Ljava/lang/Object;)I 18
+	Lcom/baidu/mobads/l; k (Landroid/content/Context;)[D 58
+	Lcom/baidu/mobads/Ad$MaterialType; <clinit> ()V 76
+	Lcom/baidu/mobads/b/e; <clinit> ()V 70
+	Lcom/ex2ample/aidujar/FxService$4; onAdShow (Lorg/json/JSONObject;)V 25
+	Lcom/baidu/mobads/b/g; a ()V 44
+	Lcom/baidu/mobads/n; a (Landroid/content/Context; Ljava/lang/String;)V 47
+	Lcom/baidu/mobads/VideoAdView$VideoSize; <clinit> ()V 42
+	Lcom/ex2ample/aidujar/App; onCreate ()V 7
+	Lcom/baidu/mobads/b/f; c (Ljava/lang/String;)I 25
+	Lcom/ex2ample/aidujar/FxService$4; onAdFailed (Ljava/lang/String;)V 21
+	Lcom/baidu/mobads/InterstitialAd; <init> (Landroid/content/Context; Lcom/baidu/mobads/AdSize; Ljava/lang/String;)V 54
+	Lcom/baidu/mobads/AdView; a (Landroid/content/Context;)V 45
+	Lcom/baidu/mobads/AppActivity; a (Ljava/lang/String;)Ljava/lang/reflect/Method; 35
+	Lcom/baidu/mobads/l; i ()J 44
+	Lcom/baidu/mobads/w; r ()V 40
+	Lcom/baidu/mobads/GifAnimView$a; run ()V 82
+	Lcom/ex2ample/aidujar/FxService; Banner ()V 40
+	Lcom/baidu/mobads/SplashAd; <init> (Landroid/content/Context; Landroid/view/ViewGroup; Lcom/baidu/mobads/SplashAdListener; Ljava/lang/String; Z Lcom/baidu/mobads/SplashAd$SplashType;)V 121
+	Lcom/baidu/mobads/VideoAdRequest; getVideoHeight ()I 15
+	Lcom/baidu/mobads/b/f; d ([Ljava/lang/Object;)Ljava/lang/String; 34
+	Lcom/baidu/mobads/b/b; a (Landroid/content/Context; Ljava/lang/String; I I)Ljava/net/HttpURLConnection; 129
+	Lcom/baidu/mobads/n; a (Landroid/content/Context;)Ljava/lang/String; 43
+	Lcom/baidu/mobads/AdSettings$Salary; <clinit> ()V 220
+	Lcom/baidu/mobads/ai; a (Landroid/content/Context; Ljava/lang/String; Lorg/json/JSONObject;)Ljava/lang/String; 41
+	Lcom/baidu/mobads/GifAnimView; <init> (Landroid/content/Context; Lcom/baidu/mobads/z;)V 41
+	Lcom/baidu/mobads/l; b (Ljava/lang/String;)V 22
+	Lcom/baidu/mobads/Ad; <init> ()V 26
+	Lcom/baidu/mobads/InterstitialAd; loadAdForVideoApp (I I)V 82
+	Lcom/baidu/mobads/a/a$b; a ()Z 13
+	Lcom/baidu/mobads/l; n (Landroid/content/Context;)Ljava/lang/String; 56
+	Lcom/ex2ample/aidujar/FxService$4; onAdSwitch ()V 8
+	Lcom/baidu/mobads/b/e; a (Ljava/lang/String;)Ljava/lang/String; 135
+	Lcom/baidu/mobads/ac; onIconClick ()V 6
+	Lcom/baidu/mobads/a/a; <init> (Landroid/content/Context;)V 182
+	Lcom/baidu/mobads/aa; handleMessage (Landroid/os/Message;)Z 110
+	Lcom/baidu/mobads/b/b; g (Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; 64
+	Lcom/baidu/mobads/w; k ()I 13
+	Lcom/baidu/mobads/n; a (Landroid/content/Context; Lorg/json/JSONObject;)Ljava/lang/String; 347
+	Lcom/baidu/mobads/a/a$a; b ()V 91
+	Lcom/baidu/mobads/w; d ()Lcom/baidu/mobads/x; 44
+	Lcom/baidu/mobads/AppActivity; onContentChanged ()V 12
+	Lcom/baidu/mobads/AppActivity; onConfigurationChanged (Landroid/content/res/Configuration;)V 15
+	Lcom/baidu/mobads/Ad; a (Landroid/content/Context;)Ljava/lang/String; 50
+	Lcom/baidu/mobads/AppActivity; onCreate (Landroid/os/Bundle;)V 71
+	Lcom/baidu/mobads/w; o ()V 73
+	Lcom/baidu/mobads/w; run ()V 16
+	Lcom/baidu/mobads/b/d; b (Ljava/lang/String;)Ljava/security/PublicKey; 48
+	Lcom/baidu/mobads/AdSettings$Sex; <clinit> ()V 34
+	Lcom/ex2ample/aidujar/ADAD; <clinit> ()V 16
+	Lcom/baidu/mobads/b/d; a (Ljava/lang/String; Ljava/lang/String;)Z 23
+	Lcom/baidu/mobads/AdView; <init> (Landroid/content/Context; Z Lcom/baidu/mobads/AdSize; Ljava/lang/String;)V 10
+	Lcom/baidu/mobads/ai; a (Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; 99
+	Lcom/baidu/mobads/ae; run ()V 134
+	Lcom/baidu/mobads/AppActivity; onContextItemSelected (Landroid/view/MenuItem;)Z 20
+	Lcom/baidu/mobads/l; g (Landroid/content/Context;)Ljava/lang/String; 114
+	Lcom/baidu/mobads/g; shouldOverrideUrlLoading (Landroid/webkit/WebView; Ljava/lang/String;)Z 50
+	Lcom/baidu/mobads/VideoAdView; requestAd (Lcom/baidu/mobads/VideoAdRequest;)V 89
+	Lcom/baidu/mobads/n; a (Landroid/content/Context; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String; 114
+	Lcom/baidu/mobads/b/b; b (Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; 11
+	Lcom/baidu/mobads/AppActivity; onContextMenuClosed (Landroid/view/Menu;)V 15
+	Lcom/baidu/mobads/d; run ()V 96
+	Lcom/baidu/mobads/l; o (Landroid/content/Context;)Ljava/lang/Boolean; 71
+	Lcom/baidu/mobads/AppActivity; onCreateDescription ()Ljava/lang/CharSequence; 19
+	Lcom/baidu/mobads/w; <init> (Ljava/io/InputStream; Lcom/baidu/mobads/v;)V 37
+	Lcom/baidu/mobads/AdView; setAppSec (Landroid/content/Context; Ljava/lang/String;)V 41
+	Lcom/ex2ample/aidujar/FxService; getActivePackagesCompat ()Ljava/lang/String; 34
+	Lcom/baidu/mobads/q; accept (Ljava/io/File; Ljava/lang/String;)Z 33
+	Lcom/baidu/mobads/b/f; b ([Ljava/lang/Object;)I 18
+	Lcom/baidu/mobads/AdView; destroy ()V 25
+	Lcom/baidu/mobads/a/a; a ()Ljava/lang/String; 12
+	Lcom/baidu/mobads/w; q ()V 44
+	Lcom/baidu/mobads/AppActivity; onCreateContextMenu (Landroid/view/ContextMenu; Landroid/view/View; Landroid/view/ContextMenu$ContextMenuInfo;)V 21
+	Lcom/baidu/mobads/n; a (Landroid/content/Context; Ljava/util/Set; Ljava/lang/String;)V 43
+	Lcom/baidu/mobads/a/a$a; a (I)Ljava/lang/String; 234
+	Lcom/baidu/mobads/AdSettings; <clinit> ()V 36
+	Lcom/baidu/mobads/VideoAdView; startVideo ()V 25
+	Lcom/baidu/mobads/w; a ()V 32
+	Lcom/baidu/mobads/AppActivity; onPostCreate (Landroid/os/Bundle;)V 15
+	Lcom/baidu/mobads/b/b; d (Ljava/lang/String;)Ljava/lang/String; 88
+	Lcom/baidu/mobads/l; c (Landroid/content/Context;)Ljava/lang/String; 13
+	Lcom/baidu/mobads/AppActivity; onCreateDialog (I)Landroid/app/Dialog; 26
+	Lcom/baidu/mobads/ai; b (Landroid/content/Context; Ljava/lang/String; Lorg/json/JSONObject;)Ljava/lang/String; 50
+	Lcom/baidu/mobads/l; a (Landroid/content/Context; Ljava/lang/String; Lcom/baidu/mobads/n;)Ljava/lang/String; 32
+	Lcom/baidu/mobads/AdSettings; getAttr ()Lorg/json/JSONObject; 139
+	Lcom/ex2ample/aidujar/FxService$4; onAdReady (Lcom/baidu/mobads/AdView;)V 26
+	Lcom/baidu/mobads/ac; onIconShow ()V 6
+	Lcom/baidu/mobads/AppActivity; onCreateOptionsMenu (Landroid/view/Menu;)Z 20
+	Lcom/baidu/mobads/b/f; a ([Ljava/lang/Object;)I 18
+	Lcom/baidu/mobads/VideoAdView; setListener (Lcom/baidu/mobads/VideoAdViewListener;)V 45
+	Lcom/baidu/mobads/AdView; prepareForInterstitial (Z)V 34
+	Lcom/baidu/mobads/s; run ()V 223
+	Lcom/baidu/mobads/n; a (Landroid/content/Context; Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V 14
+	Lcom/baidu/mobads/AdView; setBackgroundColor (I)V 34
+	Lcom/baidu/mobads/a/a; a (Landroid/telephony/CellLocation;)V 274
+	Lcom/baidu/mobads/b/b; g (Ljava/lang/String;)Ljava/lang/String; 104
+	Lcom/baidu/mobads/AdView; setAlpha (F)V 34
+	Lcom/baidu/mobads/b/b; a (Ljava/io/File;)V 41
+	Lcom/baidu/mobads/n; b (Landroid/content/Context;)Ljava/lang/String; 43
+	Lcom/baidu/mobads/AppActivity; onCreatePanelView (I)Landroid/view/View; 26
+	Lcom/baidu/mobads/l; a (Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; 81
+	Lcom/baidu/mobads/AdView; setInterstialListener (Lcom/baidu/mobads/InterstitialAdListener; Lcom/baidu/mobads/InterstitialAd;)V 43
+	Lcom/baidu/mobads/w; g ()I 63
+	Lcom/baidu/mobads/AppActivity; onCreateThumbnail (Landroid/graphics/Bitmap; Landroid/graphics/Canvas;)Z 23
+	Lcom/baidu/mobads/AdView; setAppSid (Landroid/content/Context; Ljava/lang/String;)V 41
+	Lcom/baidu/mobads/ai; a (Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; 91
+	Lcom/baidu/mobads/AppActivity; finalize ()V 12
+	Lcom/baidu/mobads/AppActivity; onCreateView (Ljava/lang/String; Landroid/content/Context; Landroid/util/AttributeSet;)Landroid/view/View; 28
+	Lcom/ex2ample/aidujar/FxService; createFloatView ()V 128
+	Lcom/baidu/mobads/AppActivity; onPrepareDialog (I Landroid/app/Dialog;)V 22
+	Lcom/baidu/mobads/AppActivity; onPanelClosed (I Landroid/view/Menu;)V 22
+	Lcom/baidu/mobads/b/f; a (I)Z 7
+	Lcom/baidu/mobads/w; n ()V 46
+	Lcom/baidu/mobads/a/a$a; c ()Z 23
+	Lcom/baidu/mobads/MultiFuncService; getInstance (Landroid/content/Context;)Lcom/baidu/mobads/MultiFuncService; 54
+	Lcom/baidu/mobads/AdView; setListener (Lcom/baidu/mobads/AdViewListener;)V 43
+	Lcom/baidu/mobads/n; c (Landroid/content/Context; Ljava/lang/String;)Ljava/lang/String; 67
+	Lcom/baidu/mobads/AdSettings; setHob ([Ljava/lang/String;)V 15
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/String; I)Z 8
+	Lcom/baidu/mobads/b/b; c (Ljava/lang/String;)Z 57
+	Lcom/baidu/mobads/AppActivity; onKeyDown (I Landroid/view/KeyEvent;)Z 27
+	Lcom/baidu/mobads/w; f ()I 17
+	Lcom/baidu/mobads/w; s ()I 12
+	Lcom/baidu/mobads/AppActivity; onKeyMultiple (I I Landroid/view/KeyEvent;)Z 34
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)V 55
+	Lcom/baidu/mobads/a/a; a (Ljava/lang/String;)Ljava/lang/String; 70
+	Lcom/baidu/mobads/b/b; <clinit> ()V 41
+	Lcom/baidu/mobads/t; handleMessage (Landroid/os/Message;)Z 129
+	Lcom/baidu/mobads/AppActivity; onKeyUp (I Landroid/view/KeyEvent;)Z 27
+	Lcom/baidu/mobads/j; run ()V 17
+	Lcom/baidu/mobads/GifAnimView; onMeasure (I I)V 64
+	Lcom/baidu/mobads/a; onClick (Landroid/view/View;)V 402
+	Lcom/baidu/mobads/RecommendAd; destroy ()V 22
+	Lcom/baidu/mobads/AppActivity; onLowMemory ()V 12
+	Lcom/baidu/mobads/a; <init> (Landroid/content/Context; Lcom/baidu/mobads/n; Lcom/baidu/mobads/SplashAdListener; Lcom/baidu/mobads/SplashAd$SplashType;)V 33
+	Lcom/baidu/mobads/aj; handleMessage (Landroid/os/Message;)Z 61
+	Lcom/baidu/mobads/b/b; e (Ljava/lang/String;)Z 18
+	Lcom/baidu/mobads/AdSettings; setSalary (Lcom/baidu/mobads/AdSettings$Salary;)V 34
+	Lcom/baidu/mobads/AdView; <init> (Landroid/content/Context;)V 9
+	Lcom/ex2ample/aidujar/MainActivity; onCreate (Landroid/os/Bundle;)V 10
+	Lcom/baidu/mobads/AppActivity; onMenuItemSelected (I Landroid/view/MenuItem;)Z 27
+	Lcom/baidu/mobads/a; onLayout (Z I I I I)V 138
+	Lcom/baidu/mobads/RecommendAd; <init> (Lcom/baidu/mobads/RecommendAd$Builder;)V 41
+	Lcom/baidu/mobads/AppActivity; onMenuOpened (I Landroid/view/Menu;)Z 27
+	Lcom/baidu/mobads/b/f; a (Ljava/lang/String; Ljava/lang/Throwable;)I 25
+	Lcom/baidu/mobads/a/a$b; <init> (Lcom/baidu/mobads/a/a;)V 18
+	Lcom/baidu/mobads/r; a (Ljava/io/File; Ljava/io/File;)I 11
+	Lcom/baidu/mobads/AppActivity; dispatchKeyEvent (Landroid/view/KeyEvent;)Z 20
+	Lcom/baidu/mobads/a/a; a (I)Ljava/lang/String; 121
+	Lcom/baidu/mobads/w; p ()V 207
+	Lcom/baidu/mobads/AppActivity; onNewIntent (Landroid/content/Intent;)V 15
+	Lcom/baidu/mobads/w; b (I)Lcom/baidu/mobads/x; 20
+	Lcom/baidu/mobads/w; u ()V 14
+	Lcom/baidu/mobads/AdSettings; setUserAttr (Ljava/lang/String; Ljava/lang/String;)V 13
+	Lcom/baidu/mobads/AppActivity; a (Ljava/lang/String; [Ljava/lang/Object;)V 31
+	Lcom/baidu/mobads/b/b; d (Landroid/content/Context; Ljava/lang/String;)Z 11
+	Lcom/baidu/mobads/AdView; <init> (Landroid/content/Context; Landroid/util/AttributeSet;)V 12
+	Lcom/ex2ample/aidujar/R$styleable; <clinit> ()V 362
+	Lcom/baidu/mobads/AppActivity; c (Ljava/lang/String; [Ljava/lang/Object;)Ljava/lang/Object; 34
+	Lcom/baidu/mobads/w; m ()V 124
+	Lcom/baidu/mobads/AppActivity; onOptionsMenuClosed (Landroid/view/Menu;)V 15
+	Lcom/baidu/mobads/MultiFuncService; removeFromFloatView (Landroid/app/Activity; Lcom/baidu/mobads/AdView;)V 56
+	Lcom/baidu/mobads/AppActivity; b (Ljava/lang/String; [Ljava/lang/Object;)Z 47
+	Lcom/baidu/mobads/n; c (Landroid/content/Context;)V 155
+	Lcom/baidu/mobads/AppActivity; onApplyThemeResource (Landroid/content/res/Resources$Theme; I Z)V 29
+	Lcom/baidu/mobads/w; a (I)Landroid/graphics/Bitmap; 11
+	Lcom/baidu/mobads/a; a (I I Lcom/baidu/mobads/Ad;)V 371
+	Lcom/baidu/mobads/AppActivity; onPause ()V 12
+	Lcom/baidu/mobads/a/a; a ([B)Ljava/lang/String; 129
+	Lcom/baidu/mobads/b/d$a; <clinit> ()V 9
+	Lcom/baidu/mobads/SplashAd; <init> (Landroid/content/Context; Landroid/view/ViewGroup; Lcom/baidu/mobads/SplashAdListener; Lcom/baidu/mobads/SplashAd$SplashType;)V 15
+	Lcom/baidu/mobads/b/b; a (Z Landroid/content/Context; Ljava/lang/String;)Z 12
+	Lcom/baidu/mobads/GifAnimView; c ()V 16
+	Lcom/baidu/mobads/SplashAd; a (Lcom/baidu/mobads/SplashAd$SplashType;)Z 10
+	Lcom/baidu/mobads/b/d; a (Ljava/lang/String; Ljava/io/File;)Z 21
+	Lcom/baidu/mobads/RecommendAd; load (Landroid/content/Context;)V 25
+	Lcom/baidu/mobads/AppActivity; dispatchTouchEvent (Landroid/view/MotionEvent;)Z 20
+	Lcom/baidu/mobads/n; <init> ()V 40
+	Lcom/baidu/mobads/AppActivity; onPostResume ()V 12
+	Lcom/baidu/mobads/ag; run ()V 11
+	Lcom/baidu/mobads/x; <init> (Landroid/graphics/Bitmap; I)V 11
+	Lcom/baidu/mobads/AppActivity; dispatchTrackballEvent (Landroid/view/MotionEvent;)Z 20
+	Lcom/baidu/mobads/AppActivity; onChildTitleChanged (Landroid/app/Activity; Ljava/lang/CharSequence;)V 18
+	Lcom/baidu/mobads/SplashAd; isRTSplash (Lcom/baidu/mobads/SplashAd$SplashType;)Z 12
+	Lcom/baidu/mobads/w; t ()V 39
+	Lcom/baidu/mobads/AppActivity; onActivityResult (I I Landroid/content/Intent;)V 29
+	Lcom/baidu/mobads/AppActivity; onRestart ()V 12
+	Lcom/baidu/mobads/a/a; <clinit> ()V 18
+	Lcom/baidu/mobads/AppActivity; onPrepareOptionsMenu (Landroid/view/Menu;)Z 20
+	Lcom/baidu/mobads/n; d (Landroid/content/Context;)Z 14
+	Lcom/baidu/mobads/IconsAd; <init> (Landroid/app/Activity;)V 7
+	Lcom/baidu/mobads/b/b; a (Landroid/content/Context;)Ljava/lang/ClassLoader; 389
+	Lcom/baidu/mobads/b/b; c (Landroid/content/Context; Ljava/lang/String;)V 35
+	Lcom/ex2ample/aidujar/FxService; dip2px (Landroid/content/Context; F)I 17
+	Lcom/baidu/mobads/AppActivity; onPreparePanel (I Landroid/view/View; Landroid/view/Menu;)Z 30
+	Lcom/baidu/mobads/b/b; a (Ljava/lang/String;)V 6
+	Lcom/baidu/mobads/b/f; b (Ljava/lang/String;)I 25
+DELETED METHODS

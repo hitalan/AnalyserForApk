@@ -15,6 +15,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.hit.util.GetConfigure;
+import org.hit.util.HttpUtil;
 import org.hit.util.ShellUtil;
 import org.json.JSONObject;
 import org.quartz.Job;
@@ -43,7 +44,8 @@ public class SendHeartJob implements Job{
 		type=getConfigure.getType();
 		version=getConfigure.getVersion();
 		url=getConfigure.getUrl();
-		name=getConfigure.getName();
+		name=getConfigure.getName()+HttpUtil.getIp();
+		System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++add the name " + name);
 		maxCap=getConfigure.getMaxCap();
 	     JSONObject jo=new JSONObject();
          jo.put("ip", ip);
@@ -58,7 +60,6 @@ public class SendHeartJob implements Job{
          String json=jo.toString();
          try {
         	String content =  send(url+"/heart_beat/"+name,json,"POST",true,(Map)null);
-			//String content = HttpUtil.httpPostWithJSON(url+"/heart_beat/"+name, json);
 			System.out.println("we get the response content is "+content);
 			 logger.info("we get the response content is "+content);
 			

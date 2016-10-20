@@ -28,22 +28,23 @@ private  int count;
  private int length;
  private ApkInfo  []apkInfoList;
  public  String dirPath;
- public String  channelUrlInfo;
+ public boolean isBad;
+// public String  channelUrlInfo;
  public  String getDirPath() {
 	return dirPath;
 }
 public  void setDirPath(String dirPath) {
 	this.dirPath = dirPath;
 }
-public String getChannelUrlInfo() {
-	return channelUrlInfo;
-}
-public void setChannelUrlInfo(String channelUrlInfo) {
-	this.channelUrlInfo = channelUrlInfo;
-}
-public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlInfo){
+//public String getChannelUrlInfo() {
+//	return channelUrlInfo;
+//}
+//public void setChannelUrlInfo(String channelUrlInfo) {
+//	this.channelUrlInfo = channelUrlInfo;
+//}
+public  void dealTheApk(int type,String taskId,String dirPath){
 	  setDirPath(dirPath);
-	  setChannelUrlInfo(channelUrlInfo);
+	  //setChannelUrlInfo(channelUrlInfo);
 	  boolean isFinish  = false;
        if(type==0){ 
        processList = getShellEcho(processList,"info.sh "+getConfigure.getAnalyzerPath()+" "+type+" "+dirPath);
@@ -51,8 +52,11 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
            result = analysis(processList,type);
        }
        catch(Exception e){
-    	   System.out.println("exception happened in the analysis");
-    	    DealException.sendFailInfo(taskId, "bad apkinfo in there xml");
+    	   System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++exception happened in the analysis");
+// 		   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+3+" "+apkInfoList[length].getPackageName()+" "+taskId);
+// 		   copyBadAppList .clear();//清空
+    	   isBad = true;
+    	   DealException.sendFailInfo(taskId, "exception happened in the analysis");
        }
        }
        else  if(type==1){
@@ -62,7 +66,10 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
         	   result = analysis(processList,type);  
            } catch(Exception e){
         	   System.out.println("exception happened in the analysis");
-        	   DealException.sendFailInfo(taskId, "bad apkinfo in the second post  xml");
+//        	   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+3+" "+apkInfoList[length].getPackageName()+" "+taskId);
+//        	   copyBadAppList .clear();//清空
+        	   isBad = true;
+        	   DealException.sendFailInfo(taskId, "exception happened in the second  analysis");
            }
        }
        else
@@ -96,9 +103,8 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
        {
        isFinish = true;
        }
-       if (isFinish)
+       if (isFinish&&!isBad)
        {
-    	   String channelPackageName = apkInfoList[length].getPackageName();
     	   String badType = null;
     	   if(result==6||result==7||result==8)
     		   badType = "0";
@@ -108,10 +114,8 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
     		    badType ="2";
     	   if(badType!=null) //留存问题app到本地目录下
     	   {
-    		   // if(channelUrlInfo!=null&&channelUrlInfo!="")
-    		   //testAD(taskId,channelUrlInfo); //目前分析过程中，对于失败的分析任务通过在命名文件夹的时候获取到对应的dfs路径。进行进一步的分析
-    		   copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+badType+" "+channelPackageName+" "+taskId);
-    		   copyBadAppList .clear();//清空
+    		 //  copyBadAppList = getShellEcho(copyBadAppList,"mvChannel.sh "+getConfigure.getDownloadChannelPath()+" "+dirPath+" "+badType+" "+channelPackageName+" "+taskId);
+    		 //  copyBadAppList .clear();//清空
     		   processList.clear(); //清空
     	   }
            sendResult(taskId,type);
@@ -124,7 +128,7 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
  	 	  System.out.println("finish the analyze task");
 	      JSONObject json = new JSONObject();
 	      GetConfigure getConfigure = new GetConfigure();
-	      json.put("agentId", getConfigure.getName());
+	      json.put("agentId", getConfigure.getName()+HttpUtil.getIp());
 	      json.put("subtaskId",taskId );
 	      json.put("status", 4);
 	      json.put("result", result);
@@ -446,7 +450,7 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   					Thread.sleep(1000);
       			   					if(counter.getBadClientCount()==size||emptyClientUrl==size)
       			   					{
-      			   						dealTheApk(2,taskId,dirPath,channelUrlInfo);//搜索后发现提供的下载链接全部失败或者全部为空进行下面的操作。
+      			   						dealTheApk(2,taskId,dirPath);//搜索后发现提供的下载链接全部失败或者全部为空进行下面的操作。
       			   						break;
       			   					}
       			   					else
@@ -454,7 +458,7 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   						if(count==size-emptyClientUrl-counter.getBadClientCount()){
       			   							logger.info("we already download the new apk from our second post");
       			   							System.out.println("we already download the new apk from our second post");
-      			   							dealTheApk(1,taskId,dirPath,channelUrlInfo);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
+      			   							dealTheApk(1,taskId,dirPath);//查询对应的包 返回对应结果 但是要防止再次出现包名不同的情况
       			   							break;
       			   							}
       			   					}
@@ -464,7 +468,7 @@ public  void dealTheApk(int type,String taskId,String dirPath,String channelUrlI
       			   					}
     			}
       			else{
-    			       dealTheApk(2,taskId,dirPath,channelUrlInfo);//搜索后发现提供的相关的包名为空，进行下面的操作。
+    			       dealTheApk(2,taskId,dirPath);//搜索后发现提供的相关的包名为空，进行下面的操作。
       		   }
       			   
       		   }

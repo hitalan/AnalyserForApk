@@ -31,6 +31,24 @@ public class GetConfigure {
 	private String analyzerPath;
 	private String whiteListUrl;
 	private String downloadSecondClientPath;
+	private String badAnalyzerJobUrl;
+	private String quartzJobUrl;
+	public String getBadAnalyzerJobUrl() {
+		return badAnalyzerJobUrl;
+	}
+
+	public void setBadAnalyzerJobUrl(String badAnalyzerJobUrl) {
+		this.badAnalyzerJobUrl = badAnalyzerJobUrl;
+	}
+
+	public String getQuartzJobUrl() {
+		return quartzJobUrl;
+	}
+
+	public void setQuartzJobUrl(String quartzJobUrl) {
+		this.quartzJobUrl = quartzJobUrl;
+	}
+
 	public String getDownloadSecondClientPath() {
 		return downloadSecondClientPath;
 	}
@@ -74,7 +92,14 @@ public class GetConfigure {
 	public  GetConfigure(){
 		  Properties pros = new Properties();
 			try {
-				    pros.load(GetConfigure.class.getResourceAsStream("/infopc.properties"));
+			     //      pros.load(GetConfigure.class.getResourceAsStream("/info_alanpc.properties"));
+
+			          pros.load(GetConfigure.class.getResourceAsStream("/info_docker_1.properties"));
+			         //   pros.load(GetConfigure.class.getResourceAsStream("/info_test.properties"));
+			        //     pros.load(GetConfigure.class.getResourceAsStream("/info_port_1563.properties"));
+			       //        pros.load(GetConfigure.class.getResourceAsStream("/info_port_1564.properties"));  //sv_1
+			      //            pros.load(GetConfigure.class.getResourceAsStream("/info_port_1565.properties")); //sv_2
+
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -105,6 +130,8 @@ public class GetConfigure {
 			analyzerPath=pros.getProperty("analyzerPath");
 			whiteListUrl=pros.getProperty("whiteListUrl");
 			downloadSecondClientPath=pros.getProperty("downloadSecondClientPath");
+			badAnalyzerJobUrl=pros.getProperty("badAnalyzerJobUrl");
+			quartzJobUrl=pros.getProperty("quartzJobUrl");
 	}
 	
 	public String getRedis_timeout() {

@@ -151,7 +151,7 @@ public class DownLoadUtil {
 						   isBad = false;
 						   try
 						   {
-								new AnalysisUtil().dealTheApk(0,taskId,dirPath,channelUrlInfo);
+								new AnalysisUtil().dealTheApk(0,taskId,dirPath);
 						   }catch(Exception e){
 							   System.out.println("there are bad apk xml error happened when they are analyzed");
 							   logger.error("there are bad apk xml error happened when they are analyzed and the taskId is "+taskId );

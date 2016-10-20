@@ -72,7 +72,7 @@ public class Test {
 		    remain = list.size() -  i;
 		   System.out.println("we still remain bad analyzer task for"+remain);
 			try {
-				new AnalysisUtil().dealTheApk(0,list.get(i),list.get(i),"");
+				new AnalysisUtil().dealTheApk(0,list.get(i),list.get(i));
 				Thread.sleep(100000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

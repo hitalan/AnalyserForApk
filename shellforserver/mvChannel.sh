@@ -3,6 +3,7 @@
 #$3 means the type of the bad apk
 #$4 means the packagename of the apk
 #$5 means the subtaskId which can determine the apk
+ 
   newAPKname=$5".apk"
 if [ "$3" = "0" ];then
   if [ -d ~/badApp/repackageapk/$4 ];then
@@ -20,7 +21,7 @@ elif [ "$3" = "1" ];then
   fi
   cp $1/$2/channel.apk ~/badApp/piracy/$4/$newAPKname
   echo "copy the piracyapk into a new folder"
-else
+elif [ "$3" = "2" ];then
   if [ -d ~/badApp/fish/$4 ];then
   echo "floder exist"
   else
@@ -28,4 +29,13 @@ else
   fi
   cp $1/$2/channel.apk ~/badApp/fish/$4/$newAPKname
   echo "copy the fish apk into a new folder"
+else
+  if [ -d ~/badApp/badxml/$4 ];then
+  echo "floder exist"
+  else
+  mkdir ~/badApp/badxml/$4
+  fi
+  cp $1/$2/channel.apk ~/badApp/badxml/$4/$newAPKname
+  cp $1/$2/client.apk ~/badApp/badxml/$4/$newAPKname
+  echo "copy the badxml apk into a new folder"
 fi

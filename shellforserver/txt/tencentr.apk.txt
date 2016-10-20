@@ -1,0 +1,56 @@
+[192.168.31.197:39066] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/?mc=2
+HTTP/1.1 200 OK
+
+[192.168.31.197:47980] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:39066] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:57406] -- -- --> [101.226.125.125:80] 
+POST http://monitor.uu.qq.com/analytics/rqdsync
+HTTP/1.1 200 OK
+
+[192.168.31.197:47211] -- -- --> [101.226.125.125:80] 
+POST http://monitor.uu.qq.com/analytics/rqdsync
+HTTP/1.1 200 OK
+
+[192.168.31.197:53538] -- -- --> [123.151.139.64:80] 
+GET http://omgid.qq.com/
+HTTP/1.0 200 OK
+
+[192.168.31.197:53538] -- -- --> [123.151.139.64:80] 
+GET http://omgid.qq.com/?k=8b51e3a227b4dfb7a832b1d032ad0f5ef79d86c3&s=2144346237
+HTTP/1.0 200 OK
+
+[192.168.31.197:57764] -- -- --> [123.151.10.204:80] 
+POST http://dp3.qq.com/dynamic/
+HTTP/1.1 200 OK
+
+[192.168.31.197:38941] -- -- --> [123.151.71.115:80] 
+POST http://news.l.qq.com/app
+HTTP/1.1 200 OK
+
+[192.168.31.197:53538] -- -- --> [123.151.139.64:80] 
+POST http://omgid.qq.com/?s=2144346237
+HTTP/1.0 200 OK
+
+[192.168.31.197:38694] -- -- --> [183.57.48.66:80] 
+POST http://rcgi.video.qq.com/stts_qqlivehd_start
+HTTP/1.1 200 OK
+
+[192.168.31.197:38374] -- -- --> [123.151.78.140:80] 
+GET http://mcgi.v.qq.com/commdatav2?platform=2&os=2&qqlog=&selfguid=8544786ce2461034a4d780fbd48ad00a&sysver=4.2.1&device_type=X817&player_channel_id=000&install_time=1476330876&device_id=860919020500922&playerver=V3.1.000.0672&lang=zh&appver=4.1.1.8905&os_version=17&guid=e186fce10df72b01&cmd=50&randnum=0.3266373205006342&market_id=704&device=X817
+HTTP/1.1 200 OK
+
+[192.168.31.197:55185] -- -- --> [123.151.152.113:80] 
+POST http://123.151.152.113:80/
+HTTP/1.1 200 OK
+
+[192.168.31.197:38056] -- -- --> [203.156.253.2:80] 
+GET http://m.irs01.com/cfg/appkey-46026aad9c1ca4de
+HTTP/1.1 200 OK
+

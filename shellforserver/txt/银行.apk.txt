@@ -1,0 +1,40 @@
+[192.168.31.197:57846] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:55285] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/?mc=2
+HTTP/1.1 200 OK
+
+[192.168.31.197:55285] -- -- --> [123.151.15.204:80] 
+POST http://pmir.3g.qq.com/
+HTTP/1.1 200 OK
+
+[192.168.31.197:57783] -- -- --> [101.226.125.126:80] 
+POST http://monitor.uu.qq.com/analytics/rqdsync
+HTTP/1.1 200 OK
+
+[192.168.31.197:35288] -- -- --> [123.58.147.155:80] 
+POST http://api.exc.mob.com/errconf
+HTTP/1.1 200 OK
+
+[192.168.31.197:45611] -- -- --> [123.58.147.155:80] 
+POST http://api.exc.mob.com/errconf
+HTTP/1.1 200 OK
+
+[192.168.31.197:55243] -- -- --> [121.14.46.121:80] 
+POST http://api.share.mob.com/conn
+HTTP/1.1 200 OK
+
+[192.168.31.197:55243] -- -- --> [121.14.46.121:80] 
+POST http://api.share.mob.com/conf5
+HTTP/1.1 200 OK
+
+[192.168.31.197:52224] -- -- --> [183.131.150.185:80] 
+GET http://m.data.mob.com/cconf?appkey=15df1fe980c3b&plat=1&apppkg=com.yitong.mbank.gy&appver=1.3.4&networktype=wifi
+HTTP/1.1 200 OK
+
+[192.168.31.197:56738] -- -- --> [121.14.46.121:80] 
+POST http://api.share.mob.com/snsconf
+HTTP/1.1 200 OK
+

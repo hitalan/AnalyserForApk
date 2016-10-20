@@ -18,3 +18,4 @@ done
 rm -r ./$1
 rm *.jar
 rm *.zip
+rm *.tmp

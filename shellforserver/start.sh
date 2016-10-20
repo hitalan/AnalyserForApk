@@ -13,7 +13,7 @@ do
   adb  shell   monkey -p  $package  -v 1
   cd $2
   adb shell < packet.sh
-  adb pull /sdcard/data/net.pcap ~/
+  adb pull /data/local/net.pcap ~/
   i=$file".txt"
   parse-pcap ~/net.pcap>$i
   adb uninstall $package

@@ -5,17 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.net.Inet4Address;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.util.Enumeration;
 import org.apache.http.HttpEntity;
-import org.apache.http.NameValuePair;
-import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -23,10 +19,40 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicHeader;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 public class HttpUtil {
+	static GetConfigure getConfigure=new GetConfigure();
+public static  String getIp() {
+			final String port=getConfigure.getPort();
+	    	String result = "";
+	    	Enumeration allNetInterfaces;
+			try {
+				allNetInterfaces = NetworkInterface.getNetworkInterfaces();
+				InetAddress ip = null;
+		    	while (allNetInterfaces.hasMoreElements())
+		    	{
+		    	NetworkInterface netInterface = (NetworkInterface) allNetInterfaces.nextElement();
+		    	Enumeration addresses = netInterface.getInetAddresses();
+		    		while (addresses.hasMoreElements())
+		    		{
+		    			ip = (InetAddress) addresses.nextElement();
+		    			if (ip != null && ip instanceof Inet4Address&&ip.getHostAddress().substring(0, 6).equals("10.108"))
+		    			{
+		    				System.out.println("本机的IP = " + ip.getHostAddress());
+		    				result = ip.getHostAddress().replace(".", "_")+":"+port;
+		    			} 
+		    		}
+		    	}
+				} catch (SocketException e) {
+					e.printStackTrace();
+					result = "";
+				}
+			finally{
+				return result;
+			}
+	   }
+
 	  public static void download(String localfile,String url,String fileName/*,String filePath*/){
 			CloseableHttpClient client = HttpClients.createDefault();
 			HttpPost post = new HttpPost(url); 
